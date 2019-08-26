@@ -25,15 +25,29 @@ end
 def create_skill(user, brand)
   skill = Skill.create!(
     user: user,
-    brand: brand)
+    brand: brand
+  )
+  Skill.last
 end
 
-# DESTROY
+def create_equipement(user, brand, model, status)
+  Equipement.create!(
+    user: user,
+    brand: brand,
+    model: model,
+    status: status
+  )
+  Equipement.last
+end
+
+# DESTROY #####################################
 
 puts "destroy all users"
 
 User.destroy_all
 
+
+# CREATE USER ############################################
 
 puts "create user"
 
@@ -59,7 +73,8 @@ daniel = create_user(
   'Gruson',
   'pro')
 
-# CREATE SKILL
+# CREATE SKILL ###########################################
+# def create_skill(user, brand)
 
 puts "Create skills"
 
@@ -67,7 +82,18 @@ create_skill(daniel, 'Chaffoteaux')
 create_skill(daniel, 'Saunier Duval')
 create_skill(daniel, 'Atlantic')
 
+
+# CREATE EQUIPEMENTS ######################################
+
+puts "create Equipement"
+# def create_equipement(user, brand, model, status)
+
+create_equipement(remi, 'Chaffoteaux', 'Mira C Green', 'panne')
+create_equipement(remi, 'Saunier Duval', 'ThemaPlus Condens', 'panne')
+
+
 puts "#{User.count} users created"
 puts "#{Skill.count} skills created"
+puts "#{Equipement.count} equipements created"
 
 

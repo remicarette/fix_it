@@ -4,6 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :skills, dependent: :destroy
+  has_many :equipements, dependent: :destroy
+
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :phone, presence: true, length: { minimum: 10 }
@@ -11,6 +14,7 @@ class User < ApplicationRecord
   validates :zip_code, presence: true, length: { is: 5 }
   validates :city, presence: true, length: { minimum: 3 }
   validates :user_type, presence: true, inclusion: { in: %W(pro perso) }
+
 
 end
 
