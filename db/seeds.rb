@@ -1,10 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
 
 
 def create_user(password, first_name, last_name, phone, address, zip_code, city, user_type)
@@ -38,6 +32,28 @@ def create_equipement(user, brand, model, status)
     status: status
   )
   Equipement.last
+end
+
+def create_booking(equipement, pro, error_code, description, status, start)
+  Booking.create!(
+    equipement: equipement,
+    user: pro,
+    error_code: error_code,
+    description: description,
+    status: status,
+    begin: start
+  )
+  Booking.last
+end
+
+def create_review(title, content, stars, booking)
+  Review.create!(
+    title: title,
+    content: content,
+    stars: stars,
+    booking: booking
+  )
+  Review.last
 end
 
 # DESTROY #####################################
@@ -88,12 +104,29 @@ create_skill(daniel, 'Atlantic')
 puts "create Equipement"
 # def create_equipement(user, brand, model, status)
 
-create_equipement(remi, 'Chaffoteaux', 'Mira C Green', 'panne')
-create_equipement(remi, 'Saunier Duval', 'ThemaPlus Condens', 'panne')
+mira = create_equipement(remi, 'Chaffoteaux', 'Mira C Green', 'panne')
+thema_plus = create_equipement(remi, 'Saunier Duval', 'ThemaPlus Condens', 'panne')
 
+
+# CREATE BOOKINGS ######################################
+
+puts "create bookings"
+# def create_booking(equipement, pro, error_code, description, status, start)
+
+create_booking(mira, daniel, "108", "Ma chaudière ne démarre plus", "en attente", Date.today)
+
+# CREATE REVIEWS ######################################
+
+puts "Create review"
+
+# def create_review(title, content, stars, booking)
+
+create_review("Titre de la review", "Contenu de la review", 5, Booking.last)
 
 puts "#{User.count} users created"
 puts "#{Skill.count} skills created"
 puts "#{Equipement.count} equipements created"
+puts "#{Booking.count} bookings created"
+puts "#{Review.count} reviews created"
 
 
