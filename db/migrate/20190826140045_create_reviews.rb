@@ -4,6 +4,7 @@ class CreateReviews < ActiveRecord::Migration[5.2]
       t.string :title
       t.string :content
       t.integer :stars
+      t.references :booking, foreign_key: true
 
       t.timestamps
     end
