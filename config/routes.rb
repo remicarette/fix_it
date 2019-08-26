@@ -13,8 +13,11 @@ Rails.application.routes.draw do
   # SHOW BOOKINGS => "/bookings/:id"
   resources :bookings, only: { :show } do
 
-    # CREATE MESSAGE => "/bookings/:id"
+    # CREATE MESSAGE => "/bookings/:id/messages"
     resources :messages, only: :create
+
+    # CREATE REVIEW => /bookings/:id/reviews
+    resources :reviews, only: :create
   end
 
   # CANCEL BOOKING => /bookings/:id/cancel
@@ -22,5 +25,4 @@ Rails.application.routes.draw do
 
   # UPDATE BOOKING => /bookings/:id/edit
   resources :bookings, only: :update
-
 end
