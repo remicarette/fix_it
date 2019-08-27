@@ -1,0 +1,72 @@
+.btn-green {
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 24px;
+  color: white;
+  border-radius: 5px;
+  background-color: $green-fix-it;
+  box-shadow: 0px 10px 15px rgba(230,230,230, 1);
+}
+
+.btn-orange {
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 24px;
+  color: white;
+  border-radius: 5px;
+  background-color: $orange-fix-it;
+  box-shadow: 0px 10px 15px rgba(230,230,230, 1);
+}
+
+.btn-facebook {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 24px;
+  color: white;
+  width: 490px;
+  height: 66px;
+  border-radius: 5px;
+  background-color: #52A490;
+  box-shadow: 0px 10px 15px rgba(230,230,230, 1);
+}
+
+.btn-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 24px;
+  color: white;
+  width: 490px;
+  height: 66px;
+  border-radius: 5px;
+  background-color: #52A490;
+  box-shadow: 0px 10px 15px rgba(230,230,230, 1);
+}
+
+.btn-chat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0px 10px 15px rgba(230,230,230, 1);
+}
+
+.btn-resume {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 24px;
+  color: white;
+  width: 211px;
+  height: 64px;
+  border-radius: 5px;
+  background-color: #52A490;
+  box-shadow: 0px 10px 15px rgba(230,230,230, 1);
+}
