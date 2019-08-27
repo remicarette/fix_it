@@ -21,7 +21,7 @@
   </div>
 
   <div class="chat">
-    <%= simple_form_for @message do %>
+    <%= simple_form_for [@booking, @message] do %>
       <%= f.input :content %>
       <%= f.submit :content %>
     <% end %>
