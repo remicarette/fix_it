@@ -1,4 +1,12 @@
+<h1>Nos meilleurs entreprises à <%= params[:city]  %></h1>
+
+<ul>
+ <%  @users.each do |user|  %>
+ <% if user.user_type == "pro" %>
+ <li> <%=  user.first_name %> </li>
+    <% end %>
+ <% end %>
 
 
+</ul>
 
-<% console %>
