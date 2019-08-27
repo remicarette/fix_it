@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   # SHOW BOOKINGS => "/bookings/:id"
-  resource :bookings, only: :show  do
+  get 'bookings/:id', to: 'bookings#show' do
 
     # CREATE MESSAGE => "/bookings/:id/messages"
     resource :messages, only: :create
