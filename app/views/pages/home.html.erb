@@ -1,3 +1,30 @@
-<h1>Pages#home</h1>
-<p class="btn-orange"> i'm orange</p>
-<p class="btn-green"> i'm green</p>
+ <!-- BOOKING FORM  -->
+    <%= simple_form_for "", url: profiles_path , method: :get do |f| %>
+      <div class="form-inline home-form">
+        <div class="row">
+          <div class="col-12  col-sm-12 col-md-6 d-flex">
+            <%= f.input :zip_code,
+                        as: :string,
+                        required: true,
+                        label: false,
+                        placeholder: "59180",
+                        input_html: {class: " form-control input-w200px input-text-blue-duck"} %>
+            <%= f.input :model,
+                        as: :string,
+                        required: false,
+                        label: false,
+                        placeholder: "chauffeaudeau",
+                        input_html: {class: " form-control input-w200px input-text-blue-duck"} %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <div class="col-12 col-sm-12 col-md-6">
+            <%= submit_tag "Trouver", name: nil, class: "btn-green" %>
+            <%= link_to "Nos meilleurs entreprises à Lille pour vous depanner", profiles_path, class: "btn-green" %>
+          </div>
+
+<!-- HOME PAGE CONTENT -->
+<div class="container">
+<p class="btn-green"></p>
+</div>
