@@ -8,18 +8,22 @@
     </div>
   </div>
 
-  <div class="messages">
-    <div class="message-sender">
-      test
+  <div class="messages pb-2">
+    <div class="message receive">
+      <div class="message-receiver">Message receive</div>
     </div>
-    <div class="message-receiver">
-      test receive
+    <div class="message send pt-2">
+      <div class="message-sender">Message send 1</div>
+    </div>
+    <div class="message send pt-2">
+      <div class="message-sender">Message send 2</div>
     </div>
   </div>
+
   <div class="chat">
-    <%# simple_form_for [@booking, @message] %>
-      <%# f.input :content %>
-      <%# f.submit :content %>
-    <%# end %>
+    <%= simple_form_for @message do %>
+      <%= f.input :content %>
+      <%= f.submit :content %>
+    <% end %>
   </div>
 </div>
