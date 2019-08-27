@@ -22,8 +22,8 @@
 
   <div class="chat">
     <%= simple_form_for [@user, @message], html: { class: "d-flex"} do |f| %>
-      <%= f.input :content %>
-      <%= f.submit, class: ""%>
+      <%= f.input :content, html: { class: "input-chat"}, label: false %>
+      <%= f.submit 'validate', class: "btn-chat" %>
     <% end %>
   </div>
 </div>

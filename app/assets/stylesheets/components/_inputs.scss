@@ -2,6 +2,12 @@ input {
   outline: none;
 }
 
+.form-control:focus {
+  outline: none !important;
+  border-color: $green-fix-it !important;
+  box-shadow: none;
+}
+
 .input-home {
   height:60px;
   background-color: white;
@@ -65,4 +71,5 @@ input {
   box-shadow:  0 5px 0 0 #808080;
   text-align: center;
   color: #2F80ED;
+  outline: none;
 }
