@@ -3,6 +3,10 @@
   background: $green-fix-it;
 }
 
+.navbar-light .navbar-brand {
+  color: white;
+}
+
 .navbar-fix-it .navbar-collapse {
   flex-grow: 0;
 }
