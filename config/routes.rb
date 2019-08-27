@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   # INDEX PRO => "/profiles"
   # SHOW PRO => "/profiles/:id"
+
   resource :profiles, only: [ :index, :show ] do
 
     # CREATE BOOKING => "/profiles/:id"
