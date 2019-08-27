@@ -4,25 +4,26 @@ Rails.application.routes.draw do
 
   # INDEX PRO => "/profiles"
   # SHOW PRO => "/profiles/:id"
-  resources :profiles, only: { :index, :show } do
+
+  resource :profiles, only: [ :index, :show ] do
 
     # CREATE BOOKING => "/profiles/:id"
-    ressources :bookings, only: :create
+    resource :bookings, only: :create
   end
 
   # SHOW BOOKINGS => "/bookings/:id"
-  resources :bookings, only: { :show } do
+  resource :bookings, only: :show  do
 
     # CREATE MESSAGE => "/bookings/:id/messages"
-    resources :messages, only: :create
+    resource :messages, only: :create
 
     # CREATE REVIEW => /bookings/:id/reviews
-    resources :reviews, only: :create
+    resource :reviews, only: :create
   end
 
   # CANCEL BOOKING => /bookings/:id/cancel
-  PATCH 'bookings/:id/cancel', to: 'bookings#cancel', as: :cancel_booking
+  patch 'bookings/:id/cancel', to: 'bookings#cancel', as: :cancel_booking
 
   # UPDATE BOOKING => /bookings/:id/edit
-  resources :bookings, only: :update
+  resource :bookings, only: :update
 end
