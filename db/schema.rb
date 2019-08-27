@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 2019_08_26_142914) do
 
   # These are extensions that must be enabled in order to support this database
@@ -94,5 +93,4 @@ ActiveRecord::Schema.define(version: 2019_08_26_142914) do
   add_foreign_key "messages", "users", column: "sender_id"
   add_foreign_key "reviews", "bookings"
   add_foreign_key "skills", "users"
-
 end
