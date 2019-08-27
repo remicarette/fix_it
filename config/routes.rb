@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resource :profiles, only: [ :index, :show ] do
 
     # CREATE BOOKING => "/profiles/:id"
-    ressource :bookings, only: :create
+    resource :bookings, only: :create
   end
 
   # SHOW BOOKINGS => "/bookings/:id"
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   end
 
   # CANCEL BOOKING => /bookings/:id/cancel
-  PATCH 'bookings/:id/cancel', to: 'bookings#cancel', as: :cancel_booking
+  patch 'bookings/:id/cancel', to: 'bookings#cancel', as: :cancel_booking
 
   # UPDATE BOOKING => /bookings/:id/edit
   resource :bookings, only: :update
