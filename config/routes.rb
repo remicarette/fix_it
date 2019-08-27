@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resource :profiles, only: [ :index, :show ] do
 
     # CREATE BOOKING => "/profiles/:id"
-    ressources :bookings, only: :create
+    ressource :bookings, only: :create
   end
 
   # SHOW BOOKINGS => "/bookings/:id"
