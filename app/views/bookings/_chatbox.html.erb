@@ -21,9 +21,9 @@
   </div>
 
   <div class="chat">
-    <%= simple_form_for [@booking, @message] do %>
+    <%= simple_form_for [@user, @message], html: { class: "d-flex"} do |f| %>
       <%= f.input :content %>
-      <%= f.submit :content %>
+      <%= f.submit, class: ""%>
     <% end %>
   </div>
 </div>
