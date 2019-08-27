@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :skills, dependent: :destroy
   has_many :equipements, dependent: :destroy
+  has_many :bookings, through: :equipements
 
   validates :first_name, presence: true
   validates :last_name, presence: true

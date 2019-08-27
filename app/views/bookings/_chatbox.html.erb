@@ -9,15 +9,18 @@
   </div>
 
   <div class="messages pb-2">
-    <div class="message receive">
-      <div class="message-receiver">Message receive</div>
-    </div>
-    <div class="message send pt-2">
-      <div class="message-sender">Message send 1</div>
-    </div>
-    <div class="message send pt-2">
-      <div class="message-sender">Message send 2</div>
-    </div>
+
+    <% @messages.each do |message| %>
+      <% if message.sender == current_user %>
+
+        <!-- partial sender -->
+        <%= render 'message_sent', message: message %>
+
+      <% else %>
+        <!-- partial receiver -->
+        <%= render 'message_receive', message: message %>
+      <% end %>
+    <% end %>
   </div>
 
   <div class="chat">

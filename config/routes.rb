@@ -17,8 +17,7 @@ Rails.application.routes.draw do
 
   # SHOW BOOKINGS => "/bookings/:id"
 
-  get 'bookings/:id', to: 'bookings#show' do
-
+  resources :bookings, only: :show do
 
     # CREATE REVIEW => /bookings/:id/reviews
     resource :reviews, only: :create
