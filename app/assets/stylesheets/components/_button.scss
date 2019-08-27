@@ -1,15 +1,25 @@
-.btn-home {
+.test {
+  width: 250px;
+  min-heigth: 500px;
+  background-color:white;
+}
+
+.btn-green {
+  padding: 10px 20px;
   font-weight: bold;
   font-size: 24px;
   color: white;
-  width: 376px;
-  height:62px;
   border-radius: 5px;
-  color-background: #52A490;
-  box-shadow: 0px 10px 10px, rgba(0,0,0,1);
+  background-color: $green-fix-it;
+  box-shadow: 0px 10px 15px rgba(230,230,230, 1);
 }
 
+/*
+
 .btn-card-show {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: bold;
   font-size: 24px;
   color: white;
@@ -17,71 +27,90 @@
   width: 176px;
   height:86px;
   border-radius: 5px;
-  color-background: #52A490;
-  box-shadow: 0px 10px 10px, rgba(0,0,0,1);
-
+  background-color: #52A490;
+  box-shadow: 0px 10px 15px rgba(230,230,230, 1);
 }
 
 .btn-form-book {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: bold;
   font-size: 24px;
   color: white;
   width: 211px;
   height: 64px;
   border-radius: 5px;
-  color-background: #52A490;
-  box-shadow: 0px 10px 10px, rgba(0,0,0,1);
+  background-color: #52A490;
+  box-shadow: 0px 10px 15px rgba(230,230,230, 1);
 }
 
 
 .btn-form-signup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: bold;
   font-size: 24px;
   color: white;
   width: 211px;
   height: 64px;
   border-radius: 5px;
-  color-background: #52A490;
-  box-shadow: 0px 10px 10px, rgba(0,0,0,1);
+  background-color: #52A490;
+  box-shadow: 0px 10px 15px rgba(230,230,230, 1);
 }
 
+*/
+
 .btn-facebook {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: bold;
   font-size: 24px;
   color: white;
   width: 490px;
   height: 66px;
   border-radius: 5px;
-  color-background: #52A490;
-  box-shadow: 0px 10px 10px, rgba(0,0,0,1);
+  background-color: #52A490;
+  box-shadow: 0px 10px 15px rgba(230,230,230, 1);
 }
 
 .btn-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: bold;
   font-size: 24px;
   color: white;
   width: 490px;
   height: 66px;
   border-radius: 5px;
-  color-background: #52A490;
-  box-shadow: 0px 10px 10px, rgba(0,0,0,1);
+  background-color: #52A490;
+  box-shadow: 0px 10px 15px rgba(230,230,230, 1);
 }
 
 .btn-chat {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 60px;
   height: 60px;
   border-radius: 5px;
-  color-background: white;
-  box-shadow: 0px 10px 10px, rgba(0,0,0,1);
-
+  background-color: white;
+  box-shadow: 0px 10px 15px rgba(230,230,230, 1);
+}
 
 .btn-resume {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: bold;
   font-size: 24px;
   color: white;
   width: 211px;
   height: 64px;
   border-radius: 5px;
-  color-background: #52A490;
-  box-shadow: 0px 10px 10px, rgba(0,0,0,1);
+  background-color: #52A490;
+  box-shadow: 0px 10px 15px rgba(230,230,230, 1);
 }
