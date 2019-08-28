@@ -1,39 +1,30 @@
-<!-- HOME -->
-<div class="banner title-banner"><h1>Pour les urgences,<br> un dépannage serein,<br> avec un rendez-vous sous 24 heures.</h1>
+<!-- HOME  SCREEN-->
+<div class="banner title-banner">
+  <div class="row">
+
+    <!-- TITLE -->
+
+    <h1 class="col-12  col-sm-12 col-md-6">Pour les urgences,<br> un dépannage serein,<br> avec un rendez-vous sous 24 heures.</h1>
+
  <!-- SEARCH FORM-->
 
-  <div class= "banner-form">
-    <div class="w-78 mx-auto mt-20"><p class="p-form-home">Où est votre problème?</p>
-      <%= simple_form_for "", url: profiles_path , method: :get do |f| %>
-        <%= f.input :zip_code,
-                    as: :string,
-                    required: true,
-                    label: false,
-                    placeholder: "59180",
-                    input_html: {class: "input input-home"} %><p class="p-form-home">Quel est votre modèle?</p>
-        <%= f.input :model,
-                    required: false,
-                    label: false,
-                    collection: ["Frisquet", "Viessmann", "Atlantic", "Weishaupt", "Vergne"],
-                    input_html: {class: "input input-home"} %>
-        <%= link_to "Trouver votre professionnel", profiles_path, id:"button-home", class: "btn-green input-home" %>
-      <% end %>
+    <div class= "banner-form col-12  col-sm-12 col-md-6">
+      <div class="w-78 mx-auto mt-20"><p class="p-form-home">Où est votre problème?</p>
+        <%= simple_form_for "profiles", url: profiles_path, method: :get do |f| %>
+          <%= f.input :zip_code,
+                      as: :string,
+                      required: true,
+                      label: false,
+                      placeholder: "59180",
+                      input_html: {class: "input input-home"} %><p class="p-form-home">Quel est votre modèle?</p>
+          <%= f.input :model,
+                      required: false,
+                      label: false,
+                      collection: ["Frisquet", "Viessmann", "Atlantic", "Weishaupt", "Vergne"],
+                      input_html: {class: "input input-home"} %>
+          <%= link_to "Trouver votre professionnel", profiles_path, id:"button-home", class: "btn-green input-home" %>
+        <% end %>
+      </div>
     </div>
   </div>
-
-
 </div>
-
-<!--HOME PAGE CONTENT
-<div class="container">
-<p class="btn-green"></p>
-
-<h1>Pages#home</h1>
-
-<div class="form-home"><p>our home</p>
-    <div class="btn-home"></div>
-
-</div>
-
-</div>
--->
