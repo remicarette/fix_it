@@ -1,0 +1,28 @@
+<%full_stars = "<i class='fas fa-star'></i>"%>
+<%empty_stars = "<i class='far fa-star'></i>"%>
+<%half_stars = "<i class='fas fa-star-half-alt'></i>"%>
+
+<%  array.where("user_type = 'pro'").each do |user|  %>
+  <div class="card-pro">
+    <div class = "card-pro-name"> <%= user.first_name %> </div>
+    <div class = "card-pro-number-reviews"> <%= user.reviews.size %> Reviews</div>
+    <div class = "card-pro-number-bookings"> RDV: <%= user.bookings.size %></div>
+    <div class = "card-pro-number-stars"> <%=  %> </div>
+      <div class="stars">
+        <% average_stars_pro = 0 %>
+        <% user.reviews.each do |review| %>
+            <%  average_stars_pro += review.stars %>
+        <% end %>
+        <% user.show_stars(average_stars_pro)[0].times do %>
+          <%= full_stars.html_safe %>
+        <% end %>
+        <% user.show_stars(average_stars_pro)[1].times do %>
+          <%= half_stars.html_safe %>
+        <% end %>
+        <% user.show_stars(average_stars_pro)[2].times do %>
+          <%= empty_stars.html_safe %>
+        <% end %>
+      </div>
+    <div class= "avatar-perso"></div>
+  </div>
+<% end %>

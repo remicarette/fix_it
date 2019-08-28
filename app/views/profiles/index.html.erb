@@ -1,12 +1,10 @@
-<h1>Nos meilleurs entreprises à <%= params[:city]  %></h1>
+<div class = "container">
+  <h1>Nos meilleurs entreprises à <%= params[:city]  %></h1>
 
-<ul>
- <%  @users.each do |user|  %>
- <% if user.user_type == "pro" %>
- <li> <%=  user.first_name %> </li>
-    <% end %>
- <% end %>
+  <div class = "cards">
+    <%= render"shared/card_pro", array: @users %>
+  </div>
+</div>
 
 
-</ul>
-
+<%= console %>
