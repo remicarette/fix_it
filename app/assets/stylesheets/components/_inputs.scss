@@ -2,11 +2,6 @@ input {
   outline: none;
 }
 
-.form-control:focus {
-  outline: none !important;
-  border-color: $green-fix-it !important;
-  box-shadow: none;
-}
 
 .input-home {
   height:60px;
@@ -64,6 +59,8 @@ input {
 }
 
 .input-chat {
+  display: flex;
+  flex-grow: 3;
   height:60px;
   border: 1px solid white;
   border-radius: 10px;
