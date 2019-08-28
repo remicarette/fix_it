@@ -25,7 +25,7 @@
 
     <!-- BOOKING -->
     <div class="card-info-item rdv text-center">
-      Rendez vous le <%= @booking.begin  %>
+      Rendez vous le <%= l(@booking.begin) %> <%# @booking.begin, format: '%d/%m/%Y %k:%M' %>
     </div>
   </div>
 </div>
