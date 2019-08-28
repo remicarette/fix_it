@@ -1,0 +1,14 @@
+function refreshChatbox(innerHTML) {
+  const newMessageForm = document.getElementById('chatbox');
+  newMessageForm.innerHTML = innerHTML;
+}
+
+
+
+// console.log("create JS")
+
+<% if @message.errors.any? %>
+  refreshChatbox('<%= j render "bookings/chatbox", user_pro: @message.receiver, messages: @messages, message: @message %>');
+<% else %>
+  refreshChatbox('<%= j render "bookings/chatbox", user_pro: @message.receiver, messages: @messages, message: Message.new %>');
+<% end %>

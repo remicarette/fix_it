@@ -1,4 +1,4 @@
-<%= simple_form_for [@user, @message], html: { class: "w-100"} do |f| %>
+<%= simple_form_for([user_pro, message], remote: true, html: { class: "w-100"}) do |f| %>
   <div class="form-row">
     <div class="col-11 form-group">
       <%= f.input :content, html: { class: "input-chat"}, label: false, autofocus: true %>
