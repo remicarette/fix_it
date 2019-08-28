@@ -1,20 +1,22 @@
 <div id="chatbox">
   <div class="title d-flex flex-column justify-content-around">
-    <%= render 'chat_title.html.erb', entreprise: @booking.pro.full_name %>
+    <div class="d-flex justify-content-around align-items-center">
+      <div class="chat-with">Chat with <%= user_pro.full_name %></div>
+    </div>
+    <div class="d-flex justify-content-around">
+      <div class="green-bar pt-1"></div>
+    </div>
   </div>
 
-  <div class="messages pb-2">
-
-    <% @messages.each do |message| %>
-      <% if message.sender == current_user %>
-        <%= render 'message_sent', message: message %>
-      <% else %>
-        <%= render 'message_receive', message: message %>
-      <% end %>
+  <div id="messages" class="messages pb-2">
+    <% messages.each do |message| %>
+      <div class="message <%= message.sender == current_user ? "send pt-2" : "receive"%>">
+        <div class="<%= message.sender == current_user ? "message-sender" :  "message-receiver" %>"><%= message.content %></div>
+      </div>
     <% end %>
   </div>
 
   <div class="chat">
-    <%= render 'form_chat.html.erb' %>
+    <%= render 'bookings/form_chat', user_pro: user_pro, message: message %>
   </div>
 </div>
