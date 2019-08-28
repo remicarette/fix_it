@@ -32,14 +32,14 @@ def create_equipement(user, brand, model, status)
   Equipement.last
 end
 
-def create_booking(equipement, pro, error_code, description, status, start)
+def create_booking(equipement, pro, error_code, description, begin_string)
   Booking.create!(
     equipement: equipement,
     user: pro,
     error_code: error_code,
     description: description,
-    status: status,
-    begin: start
+    status: 0,
+    begin: DateTime.parse('2001/02/03 03:05')
   )
   Booking.last
 end
@@ -123,7 +123,7 @@ thema_plus = create_equipement(remi, 'Saunier Duval', 'ThemaPlus Condens', 'pann
 puts "create bookings"
 # def create_booking(equipement, pro, error_code, description, status, start)
 
-create_booking(mira, daniel, "108", "Ma chaudière ne démarre plus", "en attente", Date.today)
+create_booking(mira, daniel, "108", "Ma chaudière ne démarre plus", Date.today)
 
 # CREATE REVIEWS ######################################
 

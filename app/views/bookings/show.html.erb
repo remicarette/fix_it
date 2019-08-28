@@ -3,18 +3,28 @@
     <div class="col-12">
       <!-- TITLE -->
       <div id="title" class="text-center my-3">
-        <h1>L’entreprise prend en charge votre intervention</h1>
+        <h1><%= @booking.progress %></h1>
       </div>
       <!-- PROGRESS BAR -->
-      <%= render 'progress_bar' %>
+      <%= render 'progress_bar', status: @booking.status %>
     </div>
     <div class="col-4">
       <!-- CARD INFO BOOKING -->
       <%= render 'card_info' %>
     </div>
-    <div class="col-8">
-      <!-- CHATBOX  -->
-      <%= render 'chatbox' %>
-    </div>
+
+    <% if @booking.status < 4 %>
+      <div class="col-8">
+        <!-- CHATBOX  -->
+        <%= render 'bookings/chatbox', messages: @messages, user_pro: @user, message: @message%>
+      </div>
+    <% else %>
+      <div class="col-8">
+         <%= render 'reviews/review_form', review: @review, booking: @booking %>
+      </div>
+    <% end %>
+
   </div>
 </div>
+
+
