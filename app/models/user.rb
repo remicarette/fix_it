@@ -9,7 +9,6 @@ class User < ApplicationRecord
 
   has_many :bookings, dependent: :destroy
   has_many :reviews, through: :bookings
-  has_many :bookings, through: :equipements
 
   validates :first_name, presence: true
   validates :last_name, presence: true
@@ -18,6 +17,10 @@ class User < ApplicationRecord
   validates :zip_code, presence: true, length: { is: 5 }
   validates :city, presence: true, length: { minimum: 3 }
   validates :user_type, presence: true, inclusion: { in: %W(pro perso) }
+
+  def bookings_as_client
+    self.equipements.map { |equipment| equipment.bookings}.flatten
+  end
 
   def full_name
     "#{self.first_name.downcase.capitalize} #{self.last_name.downcase.capitalize}"
