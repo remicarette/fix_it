@@ -16,7 +16,9 @@ class User < ApplicationRecord
   validates :city, presence: true, length: { minimum: 3 }
   validates :user_type, presence: true, inclusion: { in: %W(pro perso) }
 
-
+  def full_name
+    "#{self.first_name.downcase.capitalize} #{self.last_name.downcase.capitalize}"
+  end
 end
 
   # create_table "users", force: :cascade do |t|

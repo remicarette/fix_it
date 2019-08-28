@@ -1,11 +1,6 @@
 <div id="chatbox">
   <div class="title d-flex flex-column justify-content-around">
-    <div class="d-flex justify-content-around align-items-center">
-      <div class="chat-with">Chat with nom de l'entreprise</div>
-    </div>
-    <div class="d-flex justify-content-around">
-      <div class="green-bar pt-1"></div>
-    </div>
+    <%= render 'chat_title.html.erb', entreprise: @booking.pro.full_name %>
   </div>
 
   <div class="messages pb-2">
@@ -20,15 +15,6 @@
   </div>
 
   <div class="chat">
-    <%= simple_form_for [@user, @message], html: { class: "w-100"} do |f| %>
-      <div class="form-row">
-        <div class="col-11 form-group">
-          <%= f.input :content, html: { class: "input-chat"}, label: false, autofocus: true %>
-        </div>
-        <div class="col-1 form-group">
-          <%= f.submit "", class: "btn-chat" %>
-        </div>
-      </div>
-    <% end %>
+    <%= render 'form_chat.html.erb' %>
   </div>
 </div>

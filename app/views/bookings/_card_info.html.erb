@@ -1,26 +1,31 @@
 <div id="card-info">
   <div class="infos">
-    <div class="title text-center">
-      Nom de l'entreprise
+
+    <!-- AVATAR -->
+    <div class="">
+      <%= image_tag "https://www.scene-7.fr/images/depannage-chaudiere-gagny-93220.jpg", alt: "alttext", class:"avatar-pro" %>
     </div>
+
+    <!-- PRO FULL NAME -->
+    <div class="title text-center">
+      <%= @booking.pro.full_name %>
+    </div>
+
+    <!-- INFOS -->
     <div class="card-info-item info text-center">
       Vos infos
     </div>
     <div class="green-bar"></div>
 
-    <div class="card-info-item text-center">
-      Votre marque
-    </div>
-    <div class="green-bar"></div>
+    <!-- BRAND -->
+    <%= render "card_info_item", info: "#{@booking.equipement.brand}" %>
 
-    <div class="card-info-item text-center">
-      Votre modele
-    </div>
+    <!-- MODEL -->
+    <%= render "card_info_item", info: "#{@booking.equipement.model}" %>
 
-    <div class="green-bar"></div>
-
+    <!-- BOOKING -->
     <div class="card-info-item rdv text-center">
-      Rendez vous le 03/02/2019
+      Rendez vous le <%= @booking.begin  %>
     </div>
   </div>
 </div>
