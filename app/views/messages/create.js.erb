@@ -1,18 +1,14 @@
-function refreshForm(innerHTML) {
-  const newReviewForm = document.getElementById('new_message');
-  newReviewForm.innerHTML = innerHTML;
+function refreshChatbox(innerHTML) {
+  const newMessageForm = document.getElementById('chatbox');
+  newMessageForm.innerHTML = innerHTML;
 }
 
-function addMessage(messageHTML) {
-  const messages = document.getElementById('messages');
-  messages.insertAdjacentHTML('beforeend', messageHTML);
-}
 
-console.log("create JS")
+
+// console.log("create JS")
 
 <% if @message.errors.any? %>
-  refreshForm('<%= j render "bookings/form_chat", booking: @booking, message: @message %>');
+  refreshChatbox('<%= j render "bookings/chatbox", user_pro: @message.receiver, messages: @messages, message: @message %>');
 <% else %>
-  AddMessage('<%= j render "bookings/show", message: @message %>');
-  refreshForm('<%= j render "bookings/form_chat", booking: @booking, message: Message.new %>');
+  refreshChatbox('<%= j render "bookings/chatbox", user_pro: @message.receiver, messages: @messages, message: Message.new %>');
 <% end %>

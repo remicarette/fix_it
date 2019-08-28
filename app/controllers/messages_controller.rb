@@ -7,6 +7,7 @@ class MessagesController < ApplicationController
     @message.receiver = User.find(params[:user_id])
 
     if @message.save
+      @messages = Message.all
       respond_to do |format|
         format.html { redirect_to booking_path(@booking) }
         format.js

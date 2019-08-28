@@ -6,7 +6,7 @@
         <h1>L’entreprise prend en charge votre intervention</h1>
       </div>
       <!-- PROGRESS BAR -->
-      <%= render 'progress_bar' %>
+      <%= render 'progress_bar', status: "2" %>
     </div>
     <div class="col-4">
       <!-- CARD INFO BOOKING -->
@@ -14,7 +14,7 @@
     </div>
     <div class="col-8">
       <!-- CHATBOX  -->
-      <%= render 'chatbox' %>
+      <%= render 'bookings/chatbox', messages: @messages, user_pro: @user, message: @message%>
     </div>
   </div>
 </div>

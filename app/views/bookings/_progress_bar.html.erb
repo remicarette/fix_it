@@ -1,29 +1,9 @@
 <div id="progress-bar" class="d-flex justify-content-center align-items-center">
-
-    <i class="fas fa-paper-plane plane"></i>
-
-    <i class="fas fa-minus minus"></i>
-    <i class="fas fa-minus minus"></i>
-    <i class="fas fa-minus minus"></i>
-
-    <i class="fas fa-check-circle circle-green"></i>
-
-    <i class="fas fa-minus minus"></i>
-    <i class="fas fa-minus minus"></i>
-    <i class="fas fa-minus minus"></i>
-
-    <i class="far fa-calendar-check calendar"></i>
-
-    <i class="fas fa-minus minus"></i>
-    <i class="fas fa-minus minus"></i>
-    <i class="fas fa-minus minus"></i>
-
-    <i class="fas fa-truck truck"></i>
-
-    <i class="fas fa-minus minus"></i>
-    <i class="fas fa-minus minus"></i>
-    <i class="fas fa-minus minus"></i>
-
-    <i class="fas fa-thumbs-up like pb-4"></i>
-
+  <% ["fa-paper-plane plane", "fa-check-circle circle-green", "fa-calendar-check calendar", "fa-truck truck"].each_with_index do |toto, index| %>
+    <i class="fas <%= "fa-color" if index %> <%= toto %>"></i>
+    <% 3.times do  %>
+      <i class="fas fa-minus minus"></i>
+    <% end %>
+  <% end %>
+  <i class="fas fa-thumbs-up like pb-4"></i>
 </div>
