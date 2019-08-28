@@ -1,0 +1,100 @@
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  margin-top: 150px;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.card-pro {
+  color:           white;
+  font-weight:     bold;
+  text-shadow:     1px 1px 3px rgba(0,0,0,0.2);
+  border-radius:   5px;
+  box-shadow:      0 0 15px rgba(0,0,0,0.2);
+  position:        relative;
+  .top {
+    height:          320px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+  }
+  .bottom {
+    height:          60px;
+  }
+}
+
+.top .card-pro-name {
+  font-size: 24px;
+  color: #2F4F4F;
+  margin-top: 100px;
+}
+
+.top .btn-green {
+  margin-top: 40px;
+  max-width: 65%;
+  font-size: 18px;
+}
+
+.top .avatar-pro {
+  position: absolute;
+  top: -80px;
+}
+
+.card-pro .stars {
+  font-size: 18px;
+  font-weight: lighter;
+  color: #E6BE2E;
+}
+
+.card-pro .stars p {
+  color: #2F4F4F;
+  font-size: 21px;
+  font-weight: lighter;
+}
+
+.card-pro  .card-pro-number-bookings {
+  color: #2F4F4F;
+  font-size: 18px;
+  font-weight: lighter;
+}
+
+.separating-line-card-pro {
+  border-right: 1px solid $green-fix-it;
+  height: 50px;
+}
