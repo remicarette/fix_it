@@ -1,4 +1,7 @@
+<div class="container">
+  <h1>Nos meilleurs entreprises à <%= params[:city] %></h1>
 
-
-
-<% console %>
+  <div class="cards">
+    <%= render"shared/card_pro", array: @users %>
+  </div>
+</div>
