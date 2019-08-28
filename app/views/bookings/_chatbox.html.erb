@@ -1,0 +1,20 @@
+<div id="chatbox">
+  <div class="title d-flex flex-column justify-content-around">
+    <%= render 'chat_title.html.erb', entreprise: @booking.pro.full_name %>
+  </div>
+
+  <div class="messages pb-2">
+
+    <% @messages.each do |message| %>
+      <% if message.sender == current_user %>
+        <%= render 'message_sent', message: message %>
+      <% else %>
+        <%= render 'message_receive', message: message %>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="chat">
+    <%= render 'form_chat.html.erb' %>
+  </div>
+</div>
