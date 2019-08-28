@@ -1,6 +1,4 @@
 
-
-
 def create_user(password, first_name, last_name, phone, address, zip_code, city, user_type)
   remi = User.create!(
     password: password,
@@ -56,11 +54,23 @@ def create_review(title, content, stars, booking)
   Review.last
 end
 
+def create_message(sender, receiver, content)
+  Message.create!(
+    sender: sender,
+    receiver: receiver,
+    content: content
+  )
+  Message.last
+end
+
+
 # DESTROY #####################################
 
 puts "destroy all users"
 
+Message.destroy_all
 User.destroy_all
+
 
 
 # CREATE USER ############################################
@@ -123,10 +133,24 @@ puts "Create review"
 
 create_review("Titre de la review", "Contenu de la review", 5, Booking.last)
 
+
+puts "Create messages"
+
+# p daniel
+# p remi
+# def create_message(sender, receiver, content)
+create_message(daniel, remi, "Je quitte mon rendez et arrive dans 10 min")
+create_message(remi, daniel, "C'est noté, je préviens ma femme")
+
+
+
 puts "#{User.count} users created"
 puts "#{Skill.count} skills created"
 puts "#{Equipement.count} equipements created"
 puts "#{Booking.count} bookings created"
 puts "#{Review.count} reviews created"
+puts "#{Message.count} messages created"
+
+p "#{Booking.last.id}"
 
 

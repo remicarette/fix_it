@@ -2,6 +2,7 @@ input {
   outline: none;
 }
 
+
 .input-home {
   height:60px;
   background-color: white;
@@ -58,6 +59,8 @@ input {
 }
 
 .input-chat {
+  display: flex;
+  flex-grow: 3;
   height:60px;
   border: 1px solid white;
   border-radius: 10px;
@@ -65,4 +68,5 @@ input {
   box-shadow:  0 5px 0 0 #808080;
   text-align: center;
   color: #2F80ED;
+  outline: none;
 }

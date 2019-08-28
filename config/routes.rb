@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+  resources :user, only: [] do
+    resources :messages, only: :create
+  end
+
   # INDEX PRO => "/profiles"
   # SHOW PRO => "/profiles/:id"
 
@@ -12,10 +16,8 @@ Rails.application.routes.draw do
   end
 
   # SHOW BOOKINGS => "/bookings/:id"
-  resource :bookings, only: :show  do
 
-    # CREATE MESSAGE => "/bookings/:id/messages"
-    resource :messages, only: :create
+  resources :bookings, only: :show do
 
     # CREATE REVIEW => /bookings/:id/reviews
     resource :reviews, only: :create
