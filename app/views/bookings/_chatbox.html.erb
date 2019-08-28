@@ -3,7 +3,7 @@
     <%= render 'chat_title.html.erb', entreprise: @booking.pro.full_name %>
   </div>
 
-  <div class="messages pb-2">
+  <div id="messages" class="messages pb-2">
 
     <% @messages.each do |message| %>
       <% if message.sender == current_user %>
