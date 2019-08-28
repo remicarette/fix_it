@@ -7,8 +7,10 @@ class Booking < ApplicationRecord
   validates :user, presence: true
   validates :error_code, presence: true
   validates :description, presence: true
-  validates :status, presence: true, inclusion: { in: ['annulé', 'refusé', 'en attente', 'validé', 'en cours', 'terminé'] }
+  validates :status, presence: true
   validates :begin, presence: true
+
+  BOOKING_STATUS = ['En attente', 'Accepté', 'Programmé', 'En cours', 'Terminé']
 
   def client
     self.equipement.user
@@ -17,5 +19,25 @@ class Booking < ApplicationRecord
   def pro
     self.user
   end
+
+  def booking_status
+    BOOKING_STATUS[self.status]
+  end
+
+  def progress
+    case self.status
+    when 0
+      "Votre demande d'intervention a été transmise"
+    when 1
+      "L'entreprise a pris en charge votre demande"
+    when 2
+      "Le rendez-vous est validé le #{self.begin}"
+    when 3
+      "Le technicien est en route"
+    when 4
+      "L'intervention est terminée"
+    end
+  end
+
 
 end

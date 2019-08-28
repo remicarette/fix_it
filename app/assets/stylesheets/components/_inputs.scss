@@ -3,6 +3,7 @@ input {
   padding-top: 30px;
 }
 
+
 .input-home {
   background-color: white;
   border: 1.5px solid $green-fix-it;
@@ -62,6 +63,8 @@ input {
 }
 
 .input-chat {
+  display: flex;
+  flex-grow: 3;
   height:60px;
   border: 1px solid white;
   border-radius: 10px;
@@ -69,4 +72,5 @@ input {
   box-shadow:  0 5px 0 0 #808080;
   text-align: center;
   color: #2F80ED;
+  outline: none;
 }

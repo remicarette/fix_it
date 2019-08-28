@@ -1,0 +1,11 @@
+<% icons = ["fa-paper-plane plane", "fa-check-circle circle-green", "fa-calendar-check calendar", "fa-truck truck"] %>
+<%= status %>
+<div id="progress-bar" class="d-flex justify-content-center align-items-center">
+  <% icons.each_with_index do |icon, index| %>
+    <i class="fas <%= "fa-color" if status >= index %> <%= icon %>"></i>
+    <% 3.times do  %>
+      <i class="fas fa-minus minus <%= "fa-color" if status >= index %>"></i>
+    <% end %>
+  <% end %>
+  <i class="fas fa-thumbs-up like pb-4 <%= "fa-color" if status >= 4 %>"></i>
+</div>
