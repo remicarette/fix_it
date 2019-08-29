@@ -37,9 +37,13 @@
       <div class="card-pro-number-bookings">
         RDV:
         <p style="text-align:center;">
-          <%= user.bookings.size %>
+          <%= user.bookings.size%>
         </p>
       </div>
     </div>
   </div>
 <% end %>
+
+pro.bookings.each do |booking|
+      booked_out << booking.begin
+    end

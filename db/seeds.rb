@@ -297,6 +297,16 @@ thema = create_equipement(moritz, 'Saunier Duval', 'ThemaPlus Condens', 'panne')
 puts "create booking for abdel to be full tomorrow"
 # def create_booking(equipement, pro, error_code, description, begin_string, end_string)
 
+
+create_booking(
+  thema,
+  eric,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/29 18:00',
+  '2019/08/29 19:00'
+)
+
 create_booking(
   thema,
   abdel,
