@@ -1,5 +1,30 @@
-<h1>Pages#home</h1>
+<!-- HOME  SCREEN-->
+<div class="banner title-banner">
+  <div class="row">
 
-<div class="form-home"><p>our home</p>
-    <div class="btn-home"></div>
+    <!-- TITLE -->
+
+    <h1 class="col-12  col-sm-12 col-md-6">Pour les urgences,<br> un dépannage serein,<br> avec un rendez-vous sous 24 heures.</h1>
+
+ <!-- SEARCH FORM-->
+
+    <div class= "banner-form col-12  col-sm-12 col-md-6">
+      <div class="w-78 mx-auto mt-20"><p class="p-form-home">Où est votre problème?</p>
+        <%= simple_form_for "query", url: profiles_path, method: :get do |f| %>
+          <%= f.input :zip_code,
+                      as: :string,
+                      required: true,
+                      label: false,
+                      placeholder: "59180",
+                      input_html: {class: "input input-home"} %><p class="p-form-home">Quel est votre modèle?</p>
+          <%= f.input :model,
+                      required: false,
+                      label: false,
+                      collection: ["Frisquet", "Viessmann", "Atlantic", "Weishaupt", "Vergne"],
+                      input_html: {class: "input input-home"} %>
+          <%= submit_tag "Trouver votre professionnel", name: nil, id:"button-home", class: "btn-green input-home" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>

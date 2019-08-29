@@ -1,1 +1,36 @@
-// Specific CSS for your home-page
+.title-banner h1{
+  color: $green-fix-it;
+  text-align: right;
+  font: regular 44px;
+  position: absolute;
+  right: 45px;
+  top: 110px;
+}
+
+.p-form-home{
+  padding-left: 20px;
+  margin-left: 10px;
+  margin-top: 20px;
+
+}
+
+.input:hover {
+  background-color: white;
+  color: $green-fix-it;
+  border: solid 3px $green-fix-it;
+  border-radius: 5px;
+  box-shadow: 0px 10px 15px rgba(230,230,230, 1);
+  text-decoration: none;
+  outline: none;
+}
+
+
+.btn-green:hover {
+  background-color: white;
+  color: $green-fix-it;
+  border: solid 3px $green-fix-it;
+  border-radius: 5px;
+  box-shadow: 0px 10px 15px rgba(230,230,230, 1);
+  text-decoration: none;
+  outline: none;
+}
