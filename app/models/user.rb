@@ -30,7 +30,95 @@ class User < ApplicationRecord
   def full_name
     "#{self.first_name.downcase.capitalize} #{self.last_name.downcase.capitalize}"
   end
+
+  def availability_today
+    Time.now.hour > 7 ? h = Time.now.hour : h = 7
+    shifts_today = (h..18).to_a
+    booked_today = self.bookings.select { |booking|
+      booking.begin.day == Time.now.day
+    }
+    booked_today.each do |booking|
+      shifts_today.delete(booking.begin.hour)
+    end
+    return shifts_today
+  end
+
+  def availability_tomorrow
+    h = 7
+    shifts_tomorrow = (h..18).to_a
+    booked_tomorrow = self.bookings.select { |booking|
+      booking.begin.day == Date.tomorrow.day
+    }
+    booked_tomorrow.each do |booking|
+      shifts_tomorrow.delete(booking.begin.hour)
+    end
+    return shifts_tomorrow
+  end
+
+  def first_free_slot
+    if self.availability_today == []
+      return self.availability_tomorrow.first
+    else
+      return self.availability_today.first
+    end
+  end
 end
+  # def next_available_slot(pro)
+  #   ty = Date.today
+  #   tw = Date.tomorrow
+  #   h_ty = (Time.now.to_s[11] + Time.now.to_s[12]).to_i
+  #   h_tw = 7
+  #   @availability_ty = []
+  #   @availability_tw = []
+  #   (18 - h_ty).times do
+  #     @availability_ty << "#{ty} #{h_ty += 1}:00"
+  #   end
+  #   12.times do
+  #     @availability_tw << "#{tw} #{h_tw += 1}:00"
+  #   end
+  #   booked_out = []
+  #   pro.bookings.each do |booking|
+  #     booked_out << "#{booking.begin.date} #{booking.begin.hour}:00"
+  #   end
+  #   booked_out.each do |booked|
+  #     @availability_ty.delete(booked)
+  #     @availability_tw.delete(booked)
+  #   end
+  #   if @availability_ty.nil?
+  #     @availability_tw.nil? ? "Sorry, #{pro.full_name} is booked out" : "Disponible demain #{@availability_tw.first.slice(-5..-1)}"
+  #   else
+  #     return "Disponible aujourd'hui #{@availability_ty.first.slice(-5..-1)}"
+  #   end
+  # end
+
+  # def availability_pros(pro)
+  #   ty = Date.today
+  #   tw = Date.tomorrow
+  #   h_ty = (Time.now.to_s[11] + Time.now.to_s[12]).to_i
+  #   h_tw = 7
+  #   @availability_ty = []
+  #   @availability_tw = []
+  #   (18 - h_ty).times do
+  #     @availability_ty << "#{ty} #{h_ty += 1}:00"
+  #   end
+  #   12.times do
+  #     @availability_tw << "#{tw} #{h_tw += 1}:00"
+  #   end
+  #   booked_out = []
+  #   pro.bookings.each do |booking|
+  #     booked_out << booking.begin
+  #   end
+  #   booked_out.each do |booked|
+  #     @availability_ty.delete(booked)
+  #     @availability_tw.delete(booked)
+  #   end
+  #   if @availability_ty.nil?
+  #     return @availability_tw.first
+  #   else
+  #     return @availability_ty.first
+  #   end
+  # end
+
 
   # create_table "users", force: :cascade do |t|
   #   t.string "email", default: "", null: false

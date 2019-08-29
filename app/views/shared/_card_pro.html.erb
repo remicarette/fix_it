@@ -12,13 +12,11 @@
         <%= user.first_name.capitalize %> <%= user.last_name.capitalize %>
       </div>
       <div class="btn-green text-center">
-
-        <% booked_out = []
-        user.bookings.each do |booking|
-          booked_out << booking.begin.hour
-        end %>
-
-        <%= booked_out %><%= user.next_available_slot(user) %></div>
+        Disponible
+        <%= user.availability_today == [] ? "demain" : "aujourd'hui" %>
+        à
+        <%= user.first_free_slot %>
+      </div>
     </div>
     <div class="bottom text-center d-flex justify-content-around">
       <div class="stars">
