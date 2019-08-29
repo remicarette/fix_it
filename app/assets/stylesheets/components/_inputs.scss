@@ -1,18 +1,22 @@
 input {
   outline: none;
+  padding-top: 30px;
 }
 
 
 .input-home {
-  height:60px;
   background-color: white;
   border: 1.5px solid $green-fix-it;
   border-radius: 5px;
   text-align: center;
-  text-color: yellow;
+  display: flex;
+  justify-content: center;
   font-weight: bold;
-  font-size: 28px;
+  font-size: 24px;
   color: $green-fix-it;
+  margin-top: 20px;
+  text-decoration: none;
+  outline: none;
 }
 
 .input-show-form {
