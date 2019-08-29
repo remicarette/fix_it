@@ -4,6 +4,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @message = Message.new
     @user = @booking.pro
+    @review = Review.new
 
     # charger les messages
     conversation = Message.where(sender: current_user, receiver: @user) + Message.where(sender: @user, receiver: current_user)
