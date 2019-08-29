@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'reviews/create'
   devise_for :users
   root to: 'pages#home'
 
@@ -21,7 +20,7 @@ Rails.application.routes.draw do
   resources :bookings, only: :show do
 
     # CREATE REVIEW => /bookings/:id/reviews
-    resource :reviews, only: :create
+    resources :reviews, only: :create
   end
 
   # CANCEL BOOKING => /bookings/:id/cancel
