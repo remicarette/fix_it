@@ -1,17 +1,10 @@
 <!-- HOME  SCREEN-->
-<div class="banner container-fluid">
-  <div class="row">
-
-    <!-- TITLE -->
-
-    <h1 class="title-banner col-12 col-sm-9 col-md-6">Pour les urgences, un dépannage serein, avec un rendez-vous sous 24 heures.</h1>
-
+<div class="banner">
+  <div class="container-fluid">
+      <div class="row p-155">
  <!-- SEARCH FORM-->
-    <div class= "banner-form col-12 col-sm-9 col-md-3">
-
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12 col-sm-9 col-md-6"><p class="p-form-home">Où est votre problème?</p>
+      <div class= "banner-form col-lg-5 p-150 ml-auto">
+          <div><p class="p-form-home">Où est votre problème?</p>
             <%= simple_form_for "query", url: profiles_path, method: :get do |f| %>
               <%= f.input :zip_code,
                           as: :string,
@@ -23,12 +16,16 @@
                           required: false,
                           label: false,
                           collection: ["Frisquet", "Viessmann", "Atlantic", "Weishaupt", "Vergne"],
-                          input_html: {class: "input input-home"} %>
-              <%= submit_tag "Trouver votre professionnel", name: nil, id:"button-home", class: "btn-green input-home" %>
+                          input_html: {class: "input input-home
+                            styled-select"} %>
+              <%= submit_tag "Trouver votre professionnel", name: nil, class: "btn-green input-home" %>
             <% end %>
           </div>
         </div>
-      </div>
+
+      <!-- TITLE -->
+    <div class= "col-lg-7 ml-auto">
+      <h1 class="title-banner">Pour les urgences, un dépannage serein, avec un rendez-vous sous 24 heures.</h1>
     </div>
   </div>
 </div>
