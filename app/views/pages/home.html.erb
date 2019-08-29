@@ -10,7 +10,7 @@
 
     <div class= "banner-form col-12  col-sm-12 col-md-6">
       <div class="w-78 mx-auto mt-20"><p class="p-form-home">Où est votre problème?</p>
-        <%= simple_form_for "profiles", url: profiles_path, method: :get do |f| %>
+        <%= simple_form_for "query", url: profiles_path, method: :get do |f| %>
           <%= f.input :zip_code,
                       as: :string,
                       required: true,
@@ -22,7 +22,7 @@
                       label: false,
                       collection: ["Frisquet", "Viessmann", "Atlantic", "Weishaupt", "Vergne"],
                       input_html: {class: "input input-home"} %>
-          <%= link_to "Trouver votre professionnel", profiles_path, id:"button-home", class: "btn-green input-home" %>
+          <%= submit_tag "Trouver votre professionnel", name: nil, id:"button-home", class: "btn-green input-home" %>
         <% end %>
       </div>
     </div>
