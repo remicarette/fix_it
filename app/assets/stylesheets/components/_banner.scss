@@ -1,13 +1,22 @@
 
-.banner {
-  background-image:    asset-url('reparateur-z.png');
+.banner-home {
+  background-image:    asset-url('reparateur.png');
   background-size:     cover;
   background-position: center;
   padding:             0 0 200px 0;
   margin-bottom:       20px;
   height:              100vh;
   position:            relative;
+}
 
+.banner {
+  background-image:    asset-url('reparateur.png');
+  background-size:     cover;
+  background-position: center;
+  padding:             0 0 200px 0;
+  margin-bottom:       20px;
+  height:              150vh;
+  position:            relative;
 }
 
 .banner-form {

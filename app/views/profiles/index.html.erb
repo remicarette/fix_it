@@ -1,8 +1,14 @@
-<div class="container">
-  <h1>Nos meilleurs entreprises à <%= params[:zip_code] %></h1>
-  <div class="cards">
-    <%= render"shared/card_pro", array: @users %>
+<div class="banner">
+  <div class="row">
+    <div class="container">
+      <h1>Nos meilleurs entreprises près de <%= params[:zip_code] %>  </h1>
+      <div class="cards">
+        <% @users.sort_by{|user| user.availability_pros(user)}.each do |user| %>
+          <%= render"shared/card_pro", array: @users %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
 
-<% console %>
+

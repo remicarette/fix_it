@@ -292,10 +292,29 @@ puts "create Equipement for remi"
 
 mira = create_equipement(remi, 'Chaffoteaux', 'Mira C Green', 'panne')
 thema_plus = create_equipement(remi, 'Saunier Duval', 'ThemaPlus Condens', 'panne')
-
+thema = create_equipement(moritz, 'Saunier Duval', 'ThemaPlus Condens', 'panne')
 
 puts "create booking for abdel to be full tomorrow"
 # def create_booking(equipement, pro, error_code, description, begin_string, end_string)
+
+create_booking(
+  thema,
+  abdel,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/09/01 08:00',
+  '2019/08/30 09:00'
+)
+
+create_booking(
+  thema,
+  abdel,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/09/01 08:00',
+  '2019/08/30 09:00'
+)
+
 
 create_booking(
   mira,
@@ -439,6 +458,15 @@ create_booking(
   'elle tombe toujours en panne',
   '2019/08/30 08:00',
   '2019/08/30 09:00'
+)
+
+create_booking(
+  mira,
+  eric,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/29 18:00',
+  '2019/08/29 19:00'
 )
 
 # jacquie dispo à 10h00

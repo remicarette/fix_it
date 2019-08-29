@@ -5,9 +5,13 @@
 <%  array.each do |user|  %>
   <div class="card-pro">
     <div class="top">
-      <div class="avatar-pro"></div>
-      <div class="card-pro-name"> <%= user.first_name %> <%= user.last_name %></div>
-      <div class="btn-green text-center">Disponible demain à TO DO</div>
+      <div class="avatar-pro">
+        <%= image_tag(user.photo) %>
+      </div>
+      <div class="card-pro-name">
+        <%= user.first_name.capitalize %> <%= user.last_name.capitalize %>
+      </div>
+      <div class="btn-green text-center"><%= user.next_available_slot(user) %></div>
     </div>
     <div class="bottom text-center d-flex justify-content-around">
       <div class="stars">

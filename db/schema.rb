@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2019_08_28_162152) do
     t.bigint "user_id"
     t.string "error_code"
     t.string "description"
-    t.integer "status"
+    t.string "status"
     t.date "begin"
     t.date "end"
     t.datetime "created_at", null: false
