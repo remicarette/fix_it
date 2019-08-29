@@ -1,64 +1,92 @@
+SKILLS = ["Frisquet", "Viessmann", "Atlantic", "Weishaupt", "Vergne"];
 
-def create_user(password, first_name, last_name, phone, address, zip_code, city, user_type)
+
+def create_pro(first_name, last_name, phone, address, zip_code, city, photo, company)
+  User.create!(
+    email:        "#{first_name}@fix-it.com"
+    password:     'azerty',
+    first_name:   first_name,
+    last_name:    last_name,
+    phone:        phone,
+    address:      address,
+    zip_code:     zip_code,
+    city:         city,
+    user_type:    'pro',
+    photo:        photo,
+    company_name: company
+  )
+
+  SKILLS.each do |skill|
+    create_skill(User.last, skill)
+  end
+  User.last
+end
+
+def create_client(first_name, last_name, phone, address, zip_code, city, photo)
   remi = User.create!(
-    password: password,
-    first_name: first_name,
-    last_name: last_name,
-    phone: phone,
-    address: address,
-    zip_code: zip_code,
-    city: city,
-    user_type: user_type,
-    email: "#{first_name}@fix-it.com"
+    email:        "#{first_name}@fix-it.com"
+    password:     'azerty',
+    first_name:   first_name,
+    last_name:    last_name,
+    phone:        phone,
+    address:      address,
+    zip_code:     zip_code,
+    city:         city,
+    user_type:    'perso',
+    photo:        photo,
+    company_name: ''
   )
   User.last
 end
 
 def create_skill(user, brand)
   skill = Skill.create!(
-    user: user,
-    brand: brand
+    user:   user,
+    brand:  brand
   )
   Skill.last
 end
 
 def create_equipement(user, brand, model, status)
   Equipement.create!(
-    user: user,
-    brand: brand,
-    model: model,
+    user:   user,
+    brand:  brand,
+    model:  model,
     status: status
   )
   Equipement.last
 end
 
-def create_booking(equipement, pro, error_code, description, begin_string)
+def create_booking(equipement, pro, error_code, description, begin_string, end_string)
   Booking.create!(
-    equipement: equipement,
-    user: pro,
-    error_code: error_code,
-    description: description,
-    status: 0,
-    begin: DateTime.parse('2001/02/03 03:05')
+    equipement:   equipement,
+    user:         pro,
+    error_code:   error_code,
+    description:  description,
+    status:       0,
+    begin:        DateTime.parse(begin_string)
+    end:          DateTime.parse(end_string)
   )
   Booking.last
 end
 
+# '2001/02/03 03:05'
+
 def create_review(title, content, stars, booking)
   Review.create!(
-    title: title,
-    content: content,
-    stars: stars,
-    booking: booking
+    title:    title,
+    content:  content,
+    stars:    stars,
+    booking:  booking
   )
   Review.last
 end
 
 def create_message(sender, receiver, content)
   Message.create!(
-    sender: sender,
+    sender:   sender,
     receiver: receiver,
-    content: content
+    content:  content
   )
   Message.last
 end
@@ -73,76 +101,474 @@ User.destroy_all
 
 
 
-# CREATE USER ############################################
+# CREATE CLIENTS ############################################
 
-puts "create user"
+# def create_client(
+#   first_name,
+#   last_name,
+#   phone,
+#   address,
+#   zip_code,
+#   city,
+#   photo
+# )
 
-# def create_user(password, first_name, last_name, phone, address, zip_code, city, user_type)
+puts "create client"
+
+# CREATE 3 USERS
 
 remi = create_user(
-  'azerty',
   'remi',
   'carette',
   '0680782606',
   '2 rue de condé',
   '59000',
   'La madeleine',
-  'perso')
+  'https://ca.slack-edge.com/T02NE0241-UL79224P2-7a94c0d24580-48'
+)
 
-daniel = create_user(
+Create.user!(
+  email:        "moritz@fix-it.com"
+  password:     'qwertz',
+  first_name:   "moritz",
+  last_name:    "michalak",
+  phone:        "039230232",
+  address:      "15 boulevard de la liberté",
+  zip_code:     "59000",
+  city:         "Lille",
+  user_type:    'perso',
+  photo:        'https://ca.slack-edge.com/T02NE0241-UL7BFB5QQ-0a2dc0a5ae19-48',
+  company_name: ''
+)
+moritz = User.last
+
+renald = create_user(
   'azerty',
+  'renald',
+  'HB',
+  '0320000001',
+  '3 boulevard de la Liberté',
+  '59000',
+  'Lille',
+  'https://ca.slack-edge.com/T02NE0241-UL7AQBP5E-2d8af2da19e6-48'
+)
+
+puts "create pro"
+
+# CREATE 8 PRO
+
+# def create_pro(
+#   first_name,
+#   last_name,
+#   phone,
+#   address,
+#   zip_code,
+#   city,
+#   photo,
+#   company
+# )
+
+# create 6 pro on lille
+
+daniel = create_pro(
   'daniel',
   'haddad',
   '0320642581',
-  '3 les érables',
-  '59152',
-  'Gruson',
-  'pro')
+  '8 place Charles de Gaulle',
+  '59800',
+  'Lille',
+  'pro'
+)
 
-# CREATE SKILL ###########################################
-# def create_skill(user, brand)
+eric = create_pro(
+  'eric',
+  'Plombar',
+  '0320000000',
+  '27 rue des tours',
+  '59800',
+  'Lille',
+  'pro'
+)
 
-puts "Create skills"
+jacquie = create_pro(
+  'jacquie',
+  'cuivre',
+  '0320000000',
+  '2 rue de la grande chaussée',
+  '59800',
+  'Lille',
+  'pro'
+)
 
-create_skill(daniel, 'Chaffoteaux')
-create_skill(daniel, 'Saunier Duval')
-create_skill(daniel, 'Atlantic')
+michel = create_pro(
+  'michel',
+  'acier',
+  '0320000000',
+  '10 rue de la grande chaussée',
+  '59800',
+  'Lille',
+  'pro'
+)
+
+rodolphe = create_pro(
+  'rodolphe',
+  'gentil',
+  '0320000000',
+  '3 rue du Cure Saint-Etienne',
+  '59800',
+  'Lille',
+  'pro'
+)
+
+joseph = create_pro(
+  'joseph',
+  'messie',
+  '0320000000',
+  "2 rue de l'église",
+  '59160',
+  'Lille',
+  'pro'
+)
+
+# create 2 pro on Roubaix & dispo
+
+momo = create_pro(
+  'momo',
+  'epeule',
+  '0320000000',
+  "3 rue de l'epeule",
+  '59100',
+  'Roubaix',
+  'pro'
+)
+
+abdel = create_pro(
+  'abdel',
+  'alma',
+  '0320000000',
+  "30 rue de l'alma",
+  '59100',
+  'Roubaix',
+  'pro'
+)
 
 
-# CREATE EQUIPEMENTS ######################################
+# create 2 pro on Lille mais non dispo
 
-puts "create Equipement"
+jesus = create_pro(
+  'jesus',
+  'marie',
+  '0320000000',
+  '4 rue du Cure Saint-Etienne',
+  '59800',
+  'Lille',
+  'pro'
+)
+
+chirac = create_pro(
+  'jacques',
+  'chirac',
+  '0320000000',
+  "3 rue de l'église",
+  '59160',
+  'Lille',
+  'pro'
+)
+
+# create equipements for remi
+
+puts "create Equipement for remi"
 # def create_equipement(user, brand, model, status)
 
 mira = create_equipement(remi, 'Chaffoteaux', 'Mira C Green', 'panne')
 thema_plus = create_equipement(remi, 'Saunier Duval', 'ThemaPlus Condens', 'panne')
 
 
-# CREATE BOOKINGS ######################################
+puts "create booking for abdel to be full tomorrow"
+# def create_booking(equipement, pro, error_code, description, begin_string, end_string)
 
-puts "create bookings"
-# def create_booking(equipement, pro, error_code, description, status, start)
+create_booking(
+  mira,
+  abdel,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 08:00'
+  '2019/08/30 09:00'
+)
 
-create_booking(mira, daniel, "108", "Ma chaudière ne démarre plus", Date.today)
+create_booking(
+  mira,
+  abdel,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 09:00'
+  '2019/08/30 10:00'
+)
 
-# CREATE REVIEWS ######################################
+create_booking(
+  mira,
+  abdel,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 10:00'
+  '2019/08/30 11:00'
+)
 
-puts "Create review"
+create_booking(
+  mira,
+  abdel,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 11:00'
+  '2019/08/30 12:00'
+)
 
-# def create_review(title, content, stars, booking)
+create_booking(
+  mira,
+  abdel,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 13:00'
+  '2019/08/30 14:00'
+)
 
-create_review("Titre de la review", "Contenu de la review", 5, Booking.last)
+create_booking(
+  mira,
+  abdel,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 14:00'
+  '2019/08/30 15:00'
+)
 
+create_booking(
+  mira,
+  abdel,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 15:00'
+  '2019/08/30 16:00'
+)
+
+puts "create booking for chirac to be full tomorrow"
+# def create_booking(equipement, pro, error_code, description, begin_string)
+
+create_booking(
+  mira,
+  chirac,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 08:00'
+  '2019/08/30 09:00'
+)
+
+create_booking(
+  mira,
+  chirac,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 09:00'
+  '2019/08/30 10:00'
+)
+
+create_booking(
+  mira,
+  chirac,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 10:00'
+  '2019/08/30 11:00'
+)
+
+create_booking(
+  mira,
+  chirac,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 11:00'
+  '2019/08/30 12:00'
+)
+
+create_booking(
+  mira,
+  chirac,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 13:00'
+  '2019/08/30 14:00'
+)
+
+create_booking(
+  mira,
+  chirac,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 14:00'
+  '2019/08/30 15:00'
+)
+
+create_booking(
+  mira,
+  chirac,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 15:00'
+  '2019/08/30 16:00'
+)
+
+
+# create bookings for tomorrow
+
+# daniel dispo tout le temps
+# eric dispo à 9h00
+
+create_booking(
+  mira,
+  eric,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 08:00'
+  '2019/08/30 09:00'
+)
+
+# jacquie dispo à 10h00
+
+create_booking(
+  mira,
+  jacquie,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 08:00'
+  '2019/08/30 09:00'
+)
+
+create_booking(
+  mira,
+  jacquie,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 09:00'
+  '2019/08/30 10:00'
+)
+
+# michel dispo à 11h00
+
+create_booking(
+  mira,
+  michel,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 08:00'
+  '2019/08/30 09:00'
+)
+
+create_booking(
+  mira,
+  michel,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 09:00'
+  '2019/08/30 10:00'
+)
+
+create_booking(
+  mira,
+  michel,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 10:00'
+  '2019/08/30 11:00'
+)
+
+# rodolphe dispo à 12h00
+
+create_booking(
+  mira,
+  rodolphe,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 08:00'
+  '2019/08/30 09:00'
+)
+
+create_booking(
+  mira,
+  rodolphe,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 09:00'
+  '2019/08/30 10:00'
+)
+
+create_booking(
+  mira,
+  rodolphe,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 10:00'
+  '2019/08/30 11:00'
+)
+
+create_booking(
+  mira,
+  rodolphe,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 11:00'
+  '2019/08/30 12:00'
+)
+
+# joseph dispo à 14h00
+
+create_booking(
+  mira,
+  joseph,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 08:00'
+  '2019/08/30 09:00'
+)
+
+create_booking(
+  mira,
+  joseph,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 09:00'
+  '2019/08/30 10:00'
+)
+
+create_booking(
+  mira,
+  joseph,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 10:00'
+  '2019/08/30 11:00'
+)
+
+create_booking(
+  mira,
+  joseph,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 11:00'
+  '2019/08/30 12:00'
+)
+
+create_booking(
+  mira,
+  joseph,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 13:00'
+  '2019/08/30 14:00'
+)
 
 puts "Create messages"
 
-# p daniel
-# p remi
-# def create_message(sender, receiver, content)
 create_message(daniel, remi, "Je quitte mon rendez et arrive dans 10 min")
 create_message(remi, daniel, "C'est noté, je préviens ma femme")
-
-
 
 puts "#{User.count} users created"
 puts "#{Skill.count} skills created"
@@ -150,7 +576,5 @@ puts "#{Equipement.count} equipements created"
 puts "#{Booking.count} bookings created"
 puts "#{Review.count} reviews created"
 puts "#{Message.count} messages created"
-
-p "#{Booking.last.id}"
 
 
