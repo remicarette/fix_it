@@ -11,7 +11,14 @@
       <div class="card-pro-name">
         <%= user.first_name.capitalize %> <%= user.last_name.capitalize %>
       </div>
-      <div class="btn-green text-center"><%= user.next_available_slot(user) %></div>
+      <div class="btn-green text-center">
+
+        <% booked_out = []
+        user.bookings.each do |booking|
+          booked_out << booking.begin.hour
+        end %>
+
+        <%= booked_out %><%= user.next_available_slot(user) %></div>
     </div>
     <div class="bottom text-center d-flex justify-content-around">
       <div class="stars">

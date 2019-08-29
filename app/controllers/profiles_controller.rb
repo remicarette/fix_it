@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+
   def index
     if params[:zip_code].present?
       users_zip = User.all.where(zip_code: params[:zip_code])

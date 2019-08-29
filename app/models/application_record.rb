@@ -28,7 +28,7 @@ class ApplicationRecord < ActiveRecord::Base
     end
     booked_out = []
     pro.bookings.each do |booking|
-      booked_out << booking.begin
+      booked_out << "#{booking.begin.date} #{booking.begin.hour}:00"
     end
     booked_out.each do |booked|
       @availability_ty.delete(booked)
