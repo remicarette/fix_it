@@ -1,7 +1,8 @@
 class ProfilesController < ApplicationController
   def index
     if params[:query].present?
-      raise
+      zip_code = params[:query][:zip_code]
+      brand = params[:query][:brand]
       sql_query = "zip_code ILIKE :query OR model ILIKE :query"
       @User = User.where(sql_query, query: "%#{params[:query]}%")
     else
