@@ -5,6 +5,8 @@
   flex-direction: column;
   justify-content: flex-end;
   padding: 5px 15px;
+  overflow-y: scroll;
+
 
   .send {
     display: flex;
