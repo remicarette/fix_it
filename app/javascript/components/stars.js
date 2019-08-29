@@ -6,8 +6,11 @@ const getStars = () => {
   const star4 = document.getElementById('star4');
   const star5 = document.getElementById('star5');
 
-
-  return [star1, star2, star3, star4, star5];
+  if (star1 === null) {
+    return []
+  } else {
+    return [star1, star2, star3, star4, star5];
+  }
 }
 
 const getInputRating = () => {
