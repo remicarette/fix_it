@@ -1,9 +1,16 @@
 class ProfilesController < ApplicationController
   def index
-    @users = User.all
+    if params[:query].present?
+      zip_code = params[:query][:zip_code]
+      brand = params[:query][:brand]
+      sql_query = "zip_code ILIKE :query OR model ILIKE :query"
+      @User = User.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @user = User.all
+    end
   end
 
   def show
+    @user = User.find(params[:id])
   end
-
 end
