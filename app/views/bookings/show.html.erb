@@ -2,8 +2,8 @@
   <div class="row">
     <div class="col-12">
       <!-- TITLE -->
-      <div id="title" class="text-center my-3">
-        <h1><%= @booking.progress %></h1>
+      <div id="title" class="text-center mt-3">
+        <h2><%= @booking.progress %></h2>
       </div>
       <!-- PROGRESS BAR -->
       <%= render 'progress_bar', status: @booking.status %>
@@ -19,9 +19,11 @@
         <%= render 'bookings/chatbox', messages: @messages, user_pro: @user, message: @message%>
       </div>
     <% else %>
-      <div class="col-8">
-         <%= render 'reviews/review_form', review: @review, booking: @booking %>
-      </div>
+      <% if @booking.reviews.size < 1 %>
+        <div class="col-8">
+           <%= render 'reviews/review_form', review: @review, booking: @booking %>
+        </div>
+      <% end %>
     <% end %>
 
   </div>

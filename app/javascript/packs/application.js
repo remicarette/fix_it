@@ -1,6 +1,6 @@
 import "bootstrap";
 import { getChatbox } from '../components/refreshPage';
-import { getStars } from '../components/stars';
+import { updateStars } from '../components/stars';
 
-getStars();
+updateStars();
 getChatbox();

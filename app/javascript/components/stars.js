@@ -7,43 +7,79 @@ const getStars = () => {
   const star5 = document.getElementById('star5');
 
 
-  const stars = [star1, star2, star3, star4, star5];
-
-  stars.forEach((star, index) => {
-    star.addEventListener('mouseover', (event) => {
-      event.target.classList.toggle('far');
-      event.target.classList.toggle('fas');
-    });
-  });
-
-  // star1.addEventListener('mouseover', (event) => {
-  //   event.target.classList.toggle('far')
-  //   event.target.classList.toggle('fas')
-  //   if (star2.classList[2] === "fas") {
-  //     star2.classList.remove("fas")
-  //     star2.classList.add('far')
-  //   }
-  //   if (star3.classList[3] == "fas") {
-  //     star2.classList.remove("fas")
-  //     star2.classList.add('far')
-  //   }
-
-  // });
-
-  // star2.addEventListener('mouseover', (event) => {
-  //   event.target.classList.toggle('far')
-  //   event.target.classList.toggle('fas')
-  //   star1.classList.remove('far')
-  //   star1.classList.add('fas')
-  // });
-
-  if (star1 !== null ) {
-    console.log(star1);
-    console.log(star2);
-    console.log(star3);
-    console.log(star4);
-    console.log(star5);
-  }
+  return [star1, star2, star3, star4, star5];
 }
 
-export { getStars }
+const getInputRating = () => {
+  return document.getElementById('review_stars')
+}
+
+const updateStars = () => {
+  const stars = getStars();
+  const input_star = getInputRating();
+  stars.forEach((star, index) => {
+    star.addEventListener('mouseover', (event) => {
+      if (isSwitchOff(event.target)) {
+        switchOn(event.target)
+        var counter = index;
+        while (counter > 0) {
+          counter -= 1
+          if (isSwitchOff(stars[counter])) {
+            switchOn(stars[counter])
+          }
+        }
+        counter = index;
+        while(counter < 4) {
+          counter += 1
+          if (isSwitchOn(stars[counter])) {
+            switchOff(stars[counter])
+          }
+        }
+      } else {
+        switchOff(event.target);
+        var counter = index;
+        while(counter < 4) {
+          counter += 1
+          if (isSwitchOn(stars[counter])) {
+            switchOff(stars[counter])
+          }
+        }
+      }
+    });
+
+    star.addEventListener('mouseout', (event) => {
+      updateReviewInput(stars, index, input_star);
+    });
+
+  });
+}
+
+const switchOn = (element) => {
+  element.classList.remove('far'); // allumer
+  element.classList.add('fas'); // alumer
+}
+
+const switchOff = (element) => {
+  element.classList.add('far');
+  element.classList.remove('fas');
+}
+
+const isSwitchOff = (element) => {
+  return element.classList[2] === 'far'
+}
+
+const isSwitchOn = (element) => {
+  return element.classList[2] === 'fas'
+}
+
+const updateReviewInput = (stars, index, input) => {
+  var rating = 0;
+  stars.forEach( (star) => {
+    if(isSwitchOn(star)) {
+      rating += 1;
+    }
+  });
+  input.value = rating;
+}
+
+export { updateStars }

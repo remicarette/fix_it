@@ -1,5 +1,4 @@
 <% icons = ["fa-paper-plane plane", "fa-check-circle circle-green", "fa-calendar-check calendar", "fa-truck truck"] %>
-<%= status %>
 <div id="progress-bar" class="d-flex justify-content-center align-items-center">
   <% icons.each_with_index do |icon, index| %>
     <i class="fas <%= "fa-color" if status >= index %> <%= icon %>"></i>
