@@ -8,7 +8,7 @@
     </div>
   </div>
 
-  <div id="messages" class="messages pb-2">
+  <div id="messages" class="messages pb-2 overflow-auto">
     <% messages.each do |message| %>
       <div class="message <%= message.sender == current_user ? "send pt-2" : "receive"%>">
         <div class="<%= message.sender == current_user ? "message-sender" :  "message-receiver" %>"><%= message.content %></div>
