@@ -10,7 +10,7 @@
 
     <div class= "banner-form col-12  col-sm-12 col-md-6">
       <div class="w-78 mx-auto mt-20"><p class="p-form-home">Où est votre problème?</p>
-        <%= simple_form_for "query", url: profiles_path, method: :get do |f| %>
+        <%= simple_form_for "", url: profiles_path, method: :get do |f| %>
           <%= f.input :zip_code,
                       as: :string,
                       required: true,
