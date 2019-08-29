@@ -1,9 +1,9 @@
-SKILLS = ["Frisquet", "Viessmann", "Atlantic", "Weishaupt", "Vergne"];
+SKILLS = ["Frisquet", "Viessmann", "Atlantic", "Weishaupt", "Vergne"]
 
 
 def create_pro(first_name, last_name, phone, address, zip_code, city, photo, company)
   User.create!(
-    email:        "#{first_name}@fix-it.com"
+    email:        "#{first_name}@fix-it.com",
     password:     'azerty',
     first_name:   first_name,
     last_name:    last_name,
@@ -15,8 +15,7 @@ def create_pro(first_name, last_name, phone, address, zip_code, city, photo, com
     photo:        photo,
     company_name: company
   )
-
-  SKILLS.each do |skill|
+  SKILLS.each do |skill|
     create_skill(User.last, skill)
   end
   User.last
@@ -24,7 +23,7 @@ end
 
 def create_client(first_name, last_name, phone, address, zip_code, city, photo)
   remi = User.create!(
-    email:        "#{first_name}@fix-it.com"
+    email:        "#{first_name}@fix-it.com",
     password:     'azerty',
     first_name:   first_name,
     last_name:    last_name,
@@ -64,7 +63,7 @@ def create_booking(equipement, pro, error_code, description, begin_string, end_s
     error_code:   error_code,
     description:  description,
     status:       0,
-    begin:        DateTime.parse(begin_string)
+    begin:        DateTime.parse(begin_string),
     end:          DateTime.parse(end_string)
   )
   Booking.last
@@ -117,7 +116,7 @@ puts "create client"
 
 # CREATE 3 USERS
 
-remi = create_user(
+remi = create_client(
   'remi',
   'carette',
   '0680782606',
@@ -127,12 +126,12 @@ remi = create_user(
   'https://ca.slack-edge.com/T02NE0241-UL79224P2-7a94c0d24580-48'
 )
 
-Create.user!(
-  email:        "moritz@fix-it.com"
+User.create!(
+  email:        "moritz@fix-it.com",
   password:     'qwertz',
   first_name:   "moritz",
   last_name:    "michalak",
-  phone:        "039230232",
+  phone:        "0392302320",
   address:      "15 boulevard de la liberté",
   zip_code:     "59000",
   city:         "Lille",
@@ -142,8 +141,7 @@ Create.user!(
 )
 moritz = User.last
 
-renald = create_user(
-  'azerty',
+renald = create_client(
   'renald',
   'HB',
   '0320000001',
@@ -170,6 +168,8 @@ puts "create pro"
 
 # create 6 pro on lille
 
+
+
 daniel = create_pro(
   'daniel',
   'haddad',
@@ -177,6 +177,7 @@ daniel = create_pro(
   '8 place Charles de Gaulle',
   '59800',
   'Lille',
+  'https://www.baincapital.com/sites/default/files/team/Dan-Haddad.jpg',
   'pro'
 )
 
@@ -187,6 +188,7 @@ eric = create_pro(
   '27 rue des tours',
   '59800',
   'Lille',
+  'https://pbs.twimg.com/profile_images/858515649898872833/2nEb4ERQ_400x400.jpg',
   'pro'
 )
 
@@ -197,6 +199,7 @@ jacquie = create_pro(
   '2 rue de la grande chaussée',
   '59800',
   'Lille',
+  'http://www.lenecrologue.com/upload/obituary_img/resized/200x250_888124.jpg',
   'pro'
 )
 
@@ -207,6 +210,7 @@ michel = create_pro(
   '10 rue de la grande chaussée',
   '59800',
   'Lille',
+  'https://pbs.twimg.com/profile_images/988193701062160386/zl805vRv_400x400.jpg',
   'pro'
 )
 
@@ -217,6 +221,7 @@ rodolphe = create_pro(
   '3 rue du Cure Saint-Etienne',
   '59800',
   'Lille',
+  'https://s3-media4.fl.yelpcdn.com/bphoto/t8u_XdK6Wfqye3Qkn5-IVA/ls.jpg',
   'pro'
 )
 
@@ -227,6 +232,7 @@ joseph = create_pro(
   "2 rue de l'église",
   '59160',
   'Lille',
+  'https://uvmmedicineblog.files.wordpress.com/2014/04/haddad_daniel.jpg',
   'pro'
 )
 
@@ -239,6 +245,7 @@ momo = create_pro(
   "3 rue de l'epeule",
   '59100',
   'Roubaix',
+  'https://pbs.twimg.com/profile_images/638204126589906944/eMvaLiON_400x400.jpg',
   'pro'
 )
 
@@ -249,6 +256,7 @@ abdel = create_pro(
   "30 rue de l'alma",
   '59100',
   'Roubaix',
+  'https://static.wixstatic.com/media/bb0f2f_249e3c968ae04148bfeec13e31b58262~mv2_d_1500_1500_s_2.jpg/v1/fill/w_200,h_200,al_c,q_80,usm_0.66_1.00_0.01/bb0f2f_249e3c968ae04148bfeec13e31b58262~mv2_d_1500_1500_s_2.jpg',
   'pro'
 )
 
@@ -262,6 +270,7 @@ jesus = create_pro(
   '4 rue du Cure Saint-Etienne',
   '59800',
   'Lille',
+  'http://www.adventistemagazine.com/wp-content/uploads/2018/10/jesus-christ9.jpg',
   'pro'
 )
 
@@ -272,6 +281,7 @@ chirac = create_pro(
   "3 rue de l'église",
   '59160',
   'Lille',
+  'https://voi.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fvoi.2F2018.2F12.2F21.2Ffdc42be7-8b69-4820-8dbf-53ace4f3ea7f.2Ejpeg/2048x1152/quality/80/jacques-chirac-son-combat-contre-la-maladie-raconte-par-son-petit-fils-martin-rey-chirac.jpeg',
   'pro'
 )
 
@@ -292,7 +302,7 @@ create_booking(
   abdel,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 08:00'
+  '2019/08/30 08:00',
   '2019/08/30 09:00'
 )
 
@@ -301,7 +311,7 @@ create_booking(
   abdel,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 09:00'
+  '2019/08/30 09:00',
   '2019/08/30 10:00'
 )
 
@@ -310,7 +320,7 @@ create_booking(
   abdel,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 10:00'
+  '2019/08/30 10:00',
   '2019/08/30 11:00'
 )
 
@@ -319,7 +329,7 @@ create_booking(
   abdel,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 11:00'
+  '2019/08/30 11:00',
   '2019/08/30 12:00'
 )
 
@@ -328,7 +338,7 @@ create_booking(
   abdel,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 13:00'
+  '2019/08/30 13:00',
   '2019/08/30 14:00'
 )
 
@@ -337,7 +347,7 @@ create_booking(
   abdel,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 14:00'
+  '2019/08/30 14:00',
   '2019/08/30 15:00'
 )
 
@@ -346,7 +356,7 @@ create_booking(
   abdel,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 15:00'
+  '2019/08/30 15:00',
   '2019/08/30 16:00'
 )
 
@@ -358,7 +368,7 @@ create_booking(
   chirac,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 08:00'
+  '2019/08/30 08:00',
   '2019/08/30 09:00'
 )
 
@@ -367,7 +377,7 @@ create_booking(
   chirac,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 09:00'
+  '2019/08/30 09:00',
   '2019/08/30 10:00'
 )
 
@@ -376,7 +386,7 @@ create_booking(
   chirac,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 10:00'
+  '2019/08/30 10:00',
   '2019/08/30 11:00'
 )
 
@@ -385,7 +395,7 @@ create_booking(
   chirac,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 11:00'
+  '2019/08/30 11:00',
   '2019/08/30 12:00'
 )
 
@@ -394,7 +404,7 @@ create_booking(
   chirac,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 13:00'
+  '2019/08/30 13:00',
   '2019/08/30 14:00'
 )
 
@@ -403,7 +413,7 @@ create_booking(
   chirac,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 14:00'
+  '2019/08/30 14:00',
   '2019/08/30 15:00'
 )
 
@@ -412,7 +422,7 @@ create_booking(
   chirac,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 15:00'
+  '2019/08/30 15:00',
   '2019/08/30 16:00'
 )
 
@@ -427,7 +437,7 @@ create_booking(
   eric,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 08:00'
+  '2019/08/30 08:00',
   '2019/08/30 09:00'
 )
 
@@ -438,7 +448,7 @@ create_booking(
   jacquie,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 08:00'
+  '2019/08/30 08:00',
   '2019/08/30 09:00'
 )
 
@@ -447,7 +457,7 @@ create_booking(
   jacquie,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 09:00'
+  '2019/08/30 09:00',
   '2019/08/30 10:00'
 )
 
@@ -458,7 +468,7 @@ create_booking(
   michel,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 08:00'
+  '2019/08/30 08:00',
   '2019/08/30 09:00'
 )
 
@@ -467,7 +477,7 @@ create_booking(
   michel,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 09:00'
+  '2019/08/30 09:00',
   '2019/08/30 10:00'
 )
 
@@ -476,7 +486,7 @@ create_booking(
   michel,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 10:00'
+  '2019/08/30 10:00',
   '2019/08/30 11:00'
 )
 
@@ -487,7 +497,7 @@ create_booking(
   rodolphe,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 08:00'
+  '2019/08/30 08:00',
   '2019/08/30 09:00'
 )
 
@@ -496,7 +506,7 @@ create_booking(
   rodolphe,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 09:00'
+  '2019/08/30 09:00',
   '2019/08/30 10:00'
 )
 
@@ -505,7 +515,7 @@ create_booking(
   rodolphe,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 10:00'
+  '2019/08/30 10:00',
   '2019/08/30 11:00'
 )
 
@@ -514,7 +524,7 @@ create_booking(
   rodolphe,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 11:00'
+  '2019/08/30 11:00',
   '2019/08/30 12:00'
 )
 
@@ -525,7 +535,7 @@ create_booking(
   joseph,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 08:00'
+  '2019/08/30 08:00',
   '2019/08/30 09:00'
 )
 
@@ -534,7 +544,7 @@ create_booking(
   joseph,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 09:00'
+  '2019/08/30 09:00',
   '2019/08/30 10:00'
 )
 
@@ -543,7 +553,7 @@ create_booking(
   joseph,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 10:00'
+  '2019/08/30 10:00',
   '2019/08/30 11:00'
 )
 
@@ -552,7 +562,7 @@ create_booking(
   joseph,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 11:00'
+  '2019/08/30 11:00',
   '2019/08/30 12:00'
 )
 
@@ -561,7 +571,7 @@ create_booking(
   joseph,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/30 13:00'
+  '2019/08/30 13:00',
   '2019/08/30 14:00'
 )
 
