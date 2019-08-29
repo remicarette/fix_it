@@ -6,11 +6,11 @@
         <h3><%= @booking.progress %></h1>
       </div>
       <!-- PROGRESS BAR -->
-      <%= render 'progress_bar', status: @booking.status %>
+      <%= render 'bookings/progress_bar', status: @booking.status %>
     </div>
     <div class="col-4">
       <!-- CARD INFO BOOKING -->
-      <%= render 'card_info' %>
+      <%= render 'bookings/card_info' %>
     </div>
 
     <% if @booking.status < 4 %>
@@ -19,25 +19,16 @@
         <%= render 'bookings/chatbox', messages: @messages, user_pro: @user, message: @message%>
       </div>
     <% else %>
-      <div class="col-8">
-         <%= render 'reviews/review_form', review: @review, booking: @booking %>
-      </div>
-    <% end %>
-
-
-    <div>
-      <div class="container">
-        <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-          <h2>Flatpickr Demo</h2>
-
-          <%= simple_form_for :search, method: "get" do |f| %>
-            <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-            <%= f.button :submit, "Go", class: "btn btn-primary" %>
-          <% end %>
+      <% if @booking.reviews.size < 1 %>
+        <div class="col-8">
+           <%= render 'reviews/review_form', review: @review, booking: @booking %>
         </div>
-      </div>
-    </div>
-
+      <% else %>
+        <div class="col-8">
+           <%= render 'bookings/thanks', booking: @booking %>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
 

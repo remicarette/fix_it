@@ -1,1 +1,21 @@
-REVIEW
+<div class="review-card">
+  <div class="review-title text-center">
+    <h4>Merci de votre confiance pour nous aider à progresser, laissez nous un commentaire</h4>
+  </div>
+  <%= simple_form_for([booking, review], html: { class: "w-100"}) do |f| %>
+
+    <%= f.input :title,   input_html: { class: "input-review w-100" }%>
+    <%= f.input :content, input_html: { class: "input-review" } %>
+    <%= f.input :stars,   input_html: { class: "d-none" }, label:false %>
+    <div class="my-2">
+      <% ['star1', 'star2', 'star3', 'star4', 'star5'].each do |id| %>
+        <i class="fa-star star-green far" id="<%= id %>"></i>
+      <% end %>
+    </div>
+    <div class="my-4 d-flex justify-content-center">
+      <%= f.submit "Ajouter votre avis", class: "btn-green" %>
+    </div>
+  <% end %>
+
+</div>
+
