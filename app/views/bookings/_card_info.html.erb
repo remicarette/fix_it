@@ -3,7 +3,7 @@
 
     <!-- AVATAR -->
     <div class="">
-      <%= image_tag @booking.pro.photo, alt: "alttext", class:"avatar-pro" %>
+      <%= image_tag @booking.pro.photo, alt: "alttext", class: "avatar-pro-dashboard" %>
     </div>
 
     <!-- PRO FULL NAME -->
@@ -25,7 +25,7 @@
 
     <!-- BOOKING -->
     <div class="card-info-item rdv text-center">
-      Rendez vous le <%= l(@booking.begin) %> <%# @booking.begin, format: '%d/%m/%Y %k:%M' %>
+      Rendez vous le <%= @booking.begin.strftime("%d/%m/%Y à %R") %> <%# @booking.begin, format: '%d/%m/%Y %k:%M' %>
     </div>
   </div>
 </div>

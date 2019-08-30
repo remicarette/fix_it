@@ -12,7 +12,22 @@ class BookingsController < ApplicationController
   end
 
   def create
+    @booking = Booking.new(booking_params)
+    @pro = User.find(params[:user_id])
+
+    @booking.equipement = Equipement.find(params[:booking][:equipement])
+    @booking.begin = DateTime.parse(params[:booking][:begin])
+    @booking.user = @pro
+    if @booking.save
+      redirect_to booking_path(@booking)
+    else
+      render profile_path(@pro)
+    end
   end
 
+  private
 
+  def booking_params
+    params.require(:booking).permit(:description, :status, :error_code)
+  end
 end
