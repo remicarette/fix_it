@@ -21,17 +21,15 @@
 
 .banner-form {
   display:          flex;
+  font-family:      'Roboto';
   color:            $green-fix-it;
   font:             28px bold;
   justify-content:  center;
   align-items:      center;
   background-image: asset-url('homeform.png');
-  position:         absolute;
   background-size:  cover;
-  left:             115px;
-  top:              64px;
-  width:            483px;
-  height:           539px;
+  width:            400px;
+  height:           500px;
   padding-bottom:   10px;
-  padding-top:      40px;
+  padding-top:      55px;
 }
