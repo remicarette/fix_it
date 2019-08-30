@@ -173,7 +173,7 @@ daniel = create_pro(
   'haddad',
   '0320642581',
   '8 place Charles de Gaulle',
-  '59800',
+  '59110',
   'Lille',
   'https://www.baincapital.com/sites/default/files/team/Dan-Haddad.jpg',
   'pro'
@@ -294,6 +294,29 @@ thema = create_equipement(moritz, 'Saunier Duval', 'ThemaPlus Condens', 'panne')
 
 puts "create booking for abdel to be full tomorrow"
 # def create_booking(equipement, pro, error_code, description, begin_string, end_string)
+
+
+# booking pour chirac
+
+# booking pour jesus
+
+create_booking(
+  thema,
+  jesus,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/29 18:00',
+  '2019/08/29 19:00'
+)
+
+# rodolphe gentil
+
+# michel acier
+
+# jacques cuivre
+
+# eric plombar
+
 
 
 create_booking(
