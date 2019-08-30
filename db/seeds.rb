@@ -168,8 +168,6 @@ puts "create pro"
 
 # create 6 pro on lille
 
-
-
 daniel = create_pro(
   'daniel',
   'haddad',
@@ -279,7 +277,7 @@ chirac = create_pro(
   'chirac',
   '0320000000',
   "3 rue de l'église",
-  '59160',
+  '59800',
   'Lille',
   'https://voi.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2Fvoi.2F2018.2F12.2F21.2Ffdc42be7-8b69-4820-8dbf-53ace4f3ea7f.2Ejpeg/2048x1152/quality/80/jacques-chirac-son-combat-contre-la-maladie-raconte-par-son-petit-fils-martin-rey-chirac.jpeg',
   'pro'
