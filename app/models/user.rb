@@ -31,11 +31,29 @@ class User < ApplicationRecord
     "#{self.first_name.downcase.capitalize} #{self.last_name.downcase.capitalize}"
   end
 
+  def average_stars_pro
+    amount = self.reviews.count
+    stars_pro = 0
+    if amount != 0
+      self.reviews.each do |review|
+        stars_pro += review.stars
+      end
+      average_stars = stars_pro / amount
+      return average_stars
+    else
+      return 0
+    end
+  end
+
+  # def availability(date)
+  # end
+
   def availability_today
     Time.now.hour > 7 ? h = Time.now.hour + 1 : h = 7
     shifts_today = (h..20).to_a
     booked_today = self.bookings.select do |booking|
       booking.begin.day == Time.now.day
+      # booking.begin.day == Date.today.day
     end
     booked_today.each do |booking|
       shifts_today.delete(booking.begin.hour)
@@ -44,32 +62,32 @@ class User < ApplicationRecord
   end
 
   def availability_tomorrow
-    shifts_tomorrow = (7..20).to_a
+    shifts = (7..20).to_a
     booked_tomorrow = self.bookings.select do |booking|
       booking.begin.day == Date.tomorrow.day
     end
     booked_tomorrow.each do |booking|
-      shifts_tomorrow.delete(booking.begin.hour)
-      booking.begin.hour + 24
+      shifts.delete(booking.begin.hour)
+      booking.begin.hour
+    end
+    shifts_tomorrow = []
+    shifts.each do |dispo|
+      shifts_tomorrow << dispo + 24
     end
     return shifts_tomorrow
   end
 
    def first_free_slot
-    if self.availability_today == []
-      return self.availability_tomorrow.first
-    else
-      return self.availability_today.first
-    end
+    self.availability_today == [] ? self.availability_tomorrow.first : self.availability_today.first
   end
 
-  def first_free_slot_for_sorting
-    if self.availability_today == []
-      return self.availability_tomorrow.first - 24
-    else
-      return self.availability_today.first
-    end
-  end
+  # def first_free_slot_for_sorting
+  #   if self.availability_today == []
+  #     return self.availability_tomorrow.first
+  #   else
+  #     return self.availability_today.first
+  #   end
+  # end
 end
   # def next_available_slot(pro)
   #   ty = Date.today
