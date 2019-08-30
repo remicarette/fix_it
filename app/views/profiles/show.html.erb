@@ -4,15 +4,21 @@
       <h1>Hallo!</h1>
     </div>
     <div class="col-5">
-      <div class="booking-form">
+      <div class="booking-form mt-5">
         <%= simple_form_for [@pro, @booking] do |f| %>
-          <%= f.input :equipement, collection: @equipements %>
-          <%= f.input :description %>
-          <%= f.input :status, value:0%>
-          <%= f.input :error_code, value:0%>
-          <%= f.input :begin, collection: @pro.availabilities_choices, label_method: :first, value_method: :second %>
+          <div>Votre équipement</div>
+          <%= f.input :equipement, label: false, collection: @equipements, input_html: { class: "input-review w-100 mb-3" } %>
+          <div>Description du problème</div>
+          <%= f.input :description, label:false,  input_html: { class: "input-review w-100 mb-3" } %>
+          <%= f.input :status,      label: false, input_html: { class: "d-none", value: 0 }%>
+          <%= f.input :error_code,  label: false, input_html: { class: "d-none", value: "test" } %>
+          <div>Choississez votre créneau : </div>
+          <%= f.input :begin,       label: false, input_html: { class: "input-review w-100 mb-3" },
+                      collection: @pro.availabilities_choices, label_method: :first, value_method: :second %>
           <%# f.input :begin, collection: [ ["Aujourd hui à 11h", "value pour simple_form_for"], ["Aujourd hui à 12h", "value pour simple_form_for"]], label_method: :first, value_method: :second %>
-          <%= f.submit %>
+          <div class="d-flex justify-content-center">
+            <%= f.submit "Réserver #{@pro.full_name}", class: "btn-green" %>
+          </div>
         <% end %>
       </div>
     </div>
