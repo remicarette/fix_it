@@ -30,7 +30,7 @@ class User < ApplicationRecord
   def full_name
     "#{first_name.downcase.capitalize} #{last_name.downcase.capitalize}"
   end
-  
+
   def average_stars_pro
     amount = self.reviews.count
     stars_pro = 0
@@ -78,15 +78,15 @@ class User < ApplicationRecord
     return shifts_tomorrow
   end
 
-   def first_free_slot
-    self.availability_today == [] ? self.availability_tomorrow.first : self.availability_today.first
+  def first_free_slot
+    availability_today == [] ? availability_tomorrow.first : availability_today.first
   end
-end
 
   def availabilities_choices
     collection = []
     availabilities = availability_today + availability_tomorrow
-    availabilities.each do |number| 
+
+    availabilities.each do |number|
       if number < 24
         collection << ["Aujourd'hui à #{number}h", "#{Time.now.year}/#{Time.now.month}/#{Time.now.month} #{number}:00"]
       else
