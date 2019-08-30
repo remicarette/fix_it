@@ -296,18 +296,85 @@ puts "create booking for abdel to be full tomorrow"
 # def create_booking(equipement, pro, error_code, description, begin_string, end_string)
 
 
-# booking pour chirac
+# booking pour chirac dispo aujourdhui
 
-# booking pour jesus
+create_booking(
+  thema,
+  chirac,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 08:00',
+  '2019/08/30 09:00'
+)
+
+
+
+
+# booking pour jesus dispo aujourdhui 20h
 
 create_booking(
   thema,
   jesus,
   'error 404',
   'elle tombe toujours en panne',
-  '2019/08/29 18:00',
-  '2019/08/29 19:00'
+  '2019/08/30 15:00',
+  '2019/08/30 16:00'
 )
+
+create_booking(
+  thema,
+  jesus,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 16:00',
+  '2019/08/30 17:00'
+)
+
+create_booking(
+  thema,
+  jesus,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 15:00',
+  '2019/08/30 16:00'
+)
+
+create_booking(
+  thema,
+  jesus,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 16:00',
+  '2019/08/30 17:00'
+)
+
+create_booking(
+  thema,
+  jesus,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 17:00',
+  '2019/08/30 18:00'
+)
+
+create_booking(
+  thema,
+  jesus,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 18:00',
+  '2019/08/30 19:00'
+)
+
+create_booking(
+  thema,
+  jesus,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 19:00',
+  '2019/08/30 20:00'
+)
+
 
 # rodolphe gentil
 
@@ -412,70 +479,6 @@ create_booking(
 
 puts "create booking for chirac to be full tomorrow"
 # def create_booking(equipement, pro, error_code, description, begin_string)
-
-
-create_booking(
-  mira,
-  chirac,
-  'error 404',
-  'elle tombe toujours en panne',
-  '2019/08/30 09:00',
-  '2019/08/30 10:00'
-)
-
-create_booking(
-  mira,
-  chirac,
-  'error 404',
-  'elle tombe toujours en panne',
-  '2019/08/30 08:00',
-  '2019/08/30 09:00'
-)
-
-create_booking(
-  mira,
-  chirac,
-  'error 404',
-  'elle tombe toujours en panne',
-  '2019/08/30 10:00',
-  '2019/08/30 11:00'
-)
-
-create_booking(
-  mira,
-  chirac,
-  'error 404',
-  'elle tombe toujours en panne',
-  '2019/08/30 11:00',
-  '2019/08/30 12:00'
-)
-
-create_booking(
-  mira,
-  chirac,
-  'error 404',
-  'elle tombe toujours en panne',
-  '2019/08/30 13:00',
-  '2019/08/30 14:00'
-)
-
-create_booking(
-  mira,
-  chirac,
-  'error 404',
-  'elle tombe toujours en panne',
-  '2019/08/30 14:00',
-  '2019/08/30 15:00'
-)
-
-create_booking(
-  mira,
-  chirac,
-  'error 404',
-  'elle tombe toujours en panne',
-  '2019/08/30 15:00',
-  '2019/08/30 16:00'
-)
 
 
 # create bookings for tomorrow
