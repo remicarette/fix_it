@@ -392,14 +392,6 @@ create_booking(
 puts "create booking for chirac to be full tomorrow"
 # def create_booking(equipement, pro, error_code, description, begin_string)
 
-create_booking(
-  mira,
-  chirac,
-  'error 404',
-  'elle tombe toujours en panne',
-  '2019/08/30 08:00',
-  '2019/08/30 09:00'
-)
 
 create_booking(
   mira,
@@ -408,6 +400,15 @@ create_booking(
   'elle tombe toujours en panne',
   '2019/08/30 09:00',
   '2019/08/30 10:00'
+)
+
+create_booking(
+  mira,
+  chirac,
+  'error 404',
+  'elle tombe toujours en panne',
+  '2019/08/30 08:00',
+  '2019/08/30 09:00'
 )
 
 create_booking(
