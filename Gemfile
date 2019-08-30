@@ -17,6 +17,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'rails-i18n'
 gem 'geocoder'
+gem 'administrate'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
