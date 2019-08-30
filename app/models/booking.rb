@@ -31,7 +31,7 @@ class Booking < ApplicationRecord
     when 1
       "L'entreprise a pris en charge votre demande"
     when 2
-      "Le rendez-vous est validé le #{self.begin}"
+      "Le rendez-vous est validé le #{self.begin.strftime('%d/%m/%Y à %R') }"
     when 3
       "Le technicien est en route"
     when 4
