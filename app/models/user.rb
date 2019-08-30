@@ -90,7 +90,7 @@ class User < ApplicationRecord
       if number < 24
         collection << ["Aujourd'hui à #{number}h", "#{Time.now.year}/#{Time.now.month}/#{Time.now.day} #{number}:00"]
       else
-        collection << ["Demain à #{number - 24}h", "#{Date.tomorrow.year}/#{Date.tomorrow.month}/#{Date.tomorrow.day} #{number}:00"]
+        collection << ["Demain à #{number - 24}h", "#{Date.tomorrow.year}/#{Date.tomorrow.month}/#{Date.tomorrow.day} #{number -24 }:00"]
       end
     end
     return collection
