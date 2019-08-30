@@ -1,1 +1,44 @@
 
+<div class="container">
+  <div class="row">
+    <div class="col-7">
+
+    </div>
+    <div class="col-5">
+      <div class="booking-form">
+        <%= simple_form_for [@pro, @booking] do |f| %>
+          <%= f.input :equipement, collection: @equipements %>
+          <%= f.input :description %>
+          <%= f.input :status %>
+          <%= f.input :begin, collection: @pro.availabilities_choices, label_method: :first, value_method: :second %>
+          <%# f.input :begin, collection: [ ["Aujourd hui à 11h", "value pour simple_form_for"], ["Aujourd hui à 12h", "value pour simple_form_for"]], label_method: :first, value_method: :second %>
+          <%= f.input :end %>
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<%
+
+
+
+%>
+
+<!--   create_table "bookings", force: :cascade do |t|
+    t.bigint "equipement_id"
+    t.bigint "user_id"
+    t.string "error_code"
+    t.string "description"
+    t.integer "status"
+    t.datetime "begin"
+    t.datetime "end"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["equipement_id"], name: "index_bookings_on_equipement_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+ -->

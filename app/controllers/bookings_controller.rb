@@ -11,4 +11,9 @@ class BookingsController < ApplicationController
     @messages = conversation.sort_by { |message| message.created_at }
   end
 
+  def create
+    raise
+  end
+
+
 end
