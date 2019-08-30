@@ -131,7 +131,7 @@ def create_full_booking_before_with_reviews_and_notation(equipement, pro, stars)
   create_review("Super plombier !", "Je vous le recommande", stars, b)
 
   b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 09:00','2019/08/28 10:00')
-  create_review("Pro", "Le boulot est fait ! je vous le recommande", jacques-chirac-son-combat-contre-la-maladie-raconte-par-son-petit-fils-martin-rey-chirac, b)
+  create_review("Pro", "Le boulot est fait ! je vous le recommande", stars, b)
 
   b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 10:00','2019/08/28 11:00')
   create_review("Travail impeccable", "Bravo !", stars, b)
