@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
 
   def index
     if params[:zip_code].present?
-      users_zip = User.all.where(zip_code: params[:zip_code])
+      users_zip = User.where(zip_code: params[:zip_code])
       if params[:model].present?
         users_brands = []
         users_zip.each do |user|

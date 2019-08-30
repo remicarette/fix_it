@@ -15,6 +15,7 @@
         Disponible <%= user.availability_today == [] ? "demain" : "aujourd'hui" %> à <%= user.first_free_slot % 24 %> h
       <% end %>
     </div>
+
     <div class="bottom text-center d-flex justify-content-around">
       <div class="stars">
         <% average_stars = user.average_stars_pro %>
@@ -39,6 +40,7 @@
           <%= user.bookings.size%>
         </p>
       </div>
+
     </div>
   </div>
 <% end %>
