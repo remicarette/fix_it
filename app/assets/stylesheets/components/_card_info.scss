@@ -11,6 +11,7 @@
     padding-left: 40px;
     padding-right: 40px;
     font-size: 20px;
+    font-color: $green-fix-it;
   }
 
   .card-info-item {
@@ -41,4 +42,8 @@
   width: 75%;
   margin: 0 40px;
   border-bottom: 2px solid $green-fix-it;
+}
+
+#title h3 {
+  font-color: $green-fix-it !important;
 }

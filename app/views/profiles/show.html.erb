@@ -1,1 +1,19 @@
-
+<div class="container">
+  <div class="row">
+    <div class="col-7">
+      <h1>Hallo!</h1>
+    </div>
+    <div class="col-5">
+      <div class="booking-form">
+        <%= simple_form_for [@pro, @booking] do |f| %>
+          <%= f.input :equipement, collection: @equipements %>
+          <%= f.input :description %>
+          <%= f.input :status, value:0%>
+          <%= f.input :begin, collection: @pro.availabilities_choices, label_method: :first, value_method: :second %>
+          <%# f.input :begin, collection: [ ["Aujourd hui à 11h", "value pour simple_form_for"], ["Aujourd hui à 12h", "value pour simple_form_for"]], label_method: :first, value_method: :second %>
+          <%= f.submit %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,9 +1,9 @@
 <!-- HOME  SCREEN-->
-<div class="banner">
+<div class="banner-home">
   <div class="container-fluid">
-      <div class="row p-155">
- <!-- SEARCH FORM-->
-      <div class= "banner-form col-lg-5 p-150 ml-auto">
+     <div class="row p-155">
+        <!-- SEARCH FORM-->
+        <div class= "banner-form col-lg-5 p-150 ml-auto">
           <div><p class="p-form-home">Où est votre problème?</p>
             <%= simple_form_for "query", url: profiles_path, method: :get do |f| %>
               <%= f.input :zip_code,
@@ -22,8 +22,7 @@
             <% end %>
           </div>
         </div>
-
-      <!-- TITLE -->
+    <!-- TITLE -->
     <div class= "col-lg-7 ml-auto">
       <h1 class="title-banner">Pour les urgences, un dépannage serein, avec un rendez-vous sous 24 heures.</h1>
     </div>

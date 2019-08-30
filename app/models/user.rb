@@ -4,12 +4,17 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  # geocode
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
+  # relations
   has_many :skills, dependent: :destroy
   has_many :equipements, dependent: :destroy
-
   has_many :bookings, dependent: :destroy
   has_many :reviews, through: :bookings
 
+  # validations
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :phone, presence: true, length: { minimum: 10 }
@@ -23,24 +28,71 @@ class User < ApplicationRecord
   end
 
   def full_name
-    "#{self.first_name.downcase.capitalize} #{self.last_name.downcase.capitalize}"
+    "#{first_name.downcase.capitalize} #{last_name.downcase.capitalize}"
+  end
+
+  def average_stars_pro
+    amount = self.reviews.count
+    stars_pro = 0
+    if amount != 0
+      self.reviews.each do |review|
+        stars_pro += review.stars
+      end
+      average_stars = stars_pro / amount
+      return average_stars
+    else
+      return 0
+    end
+  end
+
+  # def availability(date)
+    # for refactoring
+  # end
+
+  def availability_today
+    Time.now.hour > 7 ? h = Time.now.hour + 1 : h = 7
+    shifts_today = (h..20).to_a
+    booked_today = self.bookings.select do |booking|
+      booking.begin.day == Time.now.day
+      # booking.begin.day == Date.today.day
+    end
+    booked_today.each do |booking|
+      shifts_today.delete(booking.begin.hour)
+    end
+    return shifts_today
+  end
+
+  def availability_tomorrow
+    shifts = (7..20).to_a
+    booked_tomorrow = self.bookings.select do |booking|
+      booking.begin.day == Date.tomorrow.day
+    end
+    booked_tomorrow.each do |booking|
+      shifts.delete(booking.begin.hour)
+      booking.begin.hour
+    end
+    shifts_tomorrow = []
+    shifts.each do |dispo|
+      shifts_tomorrow << dispo + 24
+    end
+    return shifts_tomorrow
+  end
+
+  def first_free_slot
+    availability_today == [] ? availability_tomorrow.first : availability_today.first
+  end
+
+  def availabilities_choices
+    collection = []
+    availabilities = availability_today + availability_tomorrow
+
+    availabilities.each do |number|
+      if number < 24
+        collection << ["Aujourd'hui à #{number}h", "#{Time.now.year}/#{Time.now.month}/#{Time.now.month} #{number}:00"]
+      else
+        collection << ["Demain à #{number - 24}h", "#{Date.tomorrow.year}/#{Time.now.month}/#{Time.now.month} #{number}:00"]
+      end
+    end
+    return collection
   end
 end
-
-  # create_table "users", force: :cascade do |t|
-  #   t.string "email", default: "", null: false
-  #   t.string "encrypted_password", default: "", null: false
-  #   t.string "reset_password_token"
-  #   t.datetime "reset_password_sent_at"
-  #   t.datetime "remember_created_at"
-  #   t.datetime "created_at", null: false
-  #   t.datetime "updated_at", null: false
-  #   t.string "first_name"
-  #   t.string "last_name"
-  #   t.string "phone"
-  #   t.string "address"
-  #   t.string "zip_code"
-  #   t.string "city"
-  #   t.string "user_type"
-  #   t.index ["email"], name: "index_users_on_email", unique: true
-  #   t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

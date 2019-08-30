@@ -62,6 +62,15 @@ input {
   color: $green-fix-it;
 }
 
+
+.input-review {
+  color: $green-fix-it;
+
+  &:focus {
+    color: $green-fix-it;
+  }
+}
+
 .input-chat {
   display: flex;
   flex-grow: 3;

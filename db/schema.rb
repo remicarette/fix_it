@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_28_162152) do
+ActiveRecord::Schema.define(version: 2019_08_29_135908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,9 +20,9 @@ ActiveRecord::Schema.define(version: 2019_08_28_162152) do
     t.bigint "user_id"
     t.string "error_code"
     t.string "description"
-    t.integer "status"
-    t.date "begin"
-    t.date "end"
+    t.string "status"
+    t.datetime "begin"
+    t.datetime "end"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["equipement_id"], name: "index_bookings_on_equipement_id"
@@ -84,6 +84,8 @@ ActiveRecord::Schema.define(version: 2019_08_28_162152) do
     t.string "user_type"
     t.string "photo"
     t.string "company_name"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
