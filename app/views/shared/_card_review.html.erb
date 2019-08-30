@@ -6,13 +6,13 @@
     <% full = review.stars.to_i %>
     <% empty = (5 - full).to_i %>
     <div class="review-descr">
-      <p><%= review.booking.user.first_name.capitalize %> wrote on <%= review.convert_date(review.created_at) %>:</p>
+      <p><%= review.booking.equipement.user.first_name.capitalize %> wrote on <%= review.convert_date(review.created_at) %>:</p>
     </div>
     <div class="review-avatar">
-      <%= image_tag(review.booking.user.photo)%>
+      <%= image_tag(review.booking.equipement.user.photo)%>
     </div>
     <div class="review-content">
-      <%= review.content %>
+      <%= review.description %>
     </div>
     <div class="review-stars">
       <%full.times do %>
