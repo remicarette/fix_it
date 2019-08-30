@@ -5,7 +5,7 @@
         <!-- SEARCH FORM-->
         <div class= "banner-form col-lg-5 p-150 ml-auto">
           <div><p class="p-form-home">Où est votre problème?</p>
-            <%= simple_form_for "query", url: profiles_path, method: :get do |f| %>
+            <%= simple_form_for "", url: profiles_path, method: :get do |f| %>
               <%= f.input :zip_code,
                           as: :string,
                           required: true,
