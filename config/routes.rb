@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :user, only: [] do
     resources :messages, only: :create
+    resources :bookings, only: :create
   end
 
   # INDEX PRO => "/profiles"
