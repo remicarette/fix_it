@@ -151,7 +151,7 @@ def create_full_booking_before_with_reviews_and_notation(equipement, pro, stars)
   b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 15:00','2019/08/28 16:00')
   create_review("Youpi ! ", "Merci !", stars, b)
 
-  b = create_bookiseng(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 16:00','2019/08/28 17:00')
+  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 16:00','2019/08/28 17:00')
   create_review("Super plombier !", "Je vous le recommande", stars, b)
 
   b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 17:00','2019/08/28 18:00')
