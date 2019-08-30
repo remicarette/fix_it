@@ -3,7 +3,7 @@
     <div class="container">
       <h1>Nos meilleures entreprises près de <%= params[:zip_code] %> </h1>
       <div class="cards">
-          <%= render"shared/card_pro", array: @users.sort_by{|user| user.first_free_slot}.sort_by{|user| user.average_stars_pro} %>
+          <%= render"shared/card_pro", array: @users.sort_by{|user| user.first_free_slot}.sort_by{|user| user.average_stars_pro}.reverse %>
       </div>
     </div>
   </div>
