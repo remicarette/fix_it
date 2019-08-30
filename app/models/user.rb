@@ -32,11 +32,11 @@ class User < ApplicationRecord
   end
 
   def availability_today
-    Time.now.hour > 7 ? h = Time.now.hour : h = 7
-    shifts_today = (h..18).to_a
-    booked_today = self.bookings.select { |booking|
+    Time.now.hour > 7 ? h = Time.now.hour + 1 : h = 7
+    shifts_today = (h..20).to_a
+    booked_today = self.bookings.select do |booking|
       booking.begin.day == Time.now.day
-    }
+    end
     booked_today.each do |booking|
       shifts_today.delete(booking.begin.hour)
     end
@@ -44,20 +44,28 @@ class User < ApplicationRecord
   end
 
   def availability_tomorrow
-    h = 7
-    shifts_tomorrow = (h..18).to_a
-    booked_tomorrow = self.bookings.select { |booking|
+    shifts_tomorrow = (7..20).to_a
+    booked_tomorrow = self.bookings.select do |booking|
       booking.begin.day == Date.tomorrow.day
-    }
+    end
     booked_tomorrow.each do |booking|
       shifts_tomorrow.delete(booking.begin.hour)
+      booking.begin.hour + 24
     end
     return shifts_tomorrow
   end
 
-  def first_free_slot
+   def first_free_slot
     if self.availability_today == []
       return self.availability_tomorrow.first
+    else
+      return self.availability_today.first
+    end
+  end
+
+  def first_free_slot_for_sorting
+    if self.availability_today == []
+      return self.availability_tomorrow.first - 24
     else
       return self.availability_today.first
     end

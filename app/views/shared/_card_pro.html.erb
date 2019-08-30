@@ -9,13 +9,14 @@
         <%= image_tag(user.photo) %>
       </div>
       <div class="card-pro-name">
-        <%= user.first_name.capitalize %> <%= user.last_name.capitalize %>
+        <%= user.full_name %>
       </div>
       <div class="btn-green text-center">
         Disponible
         <%= user.availability_today == [] ? "demain" : "aujourd'hui" %>
         à
         <%= user.first_free_slot %>
+        h
       </div>
     </div>
     <div class="bottom text-center d-flex justify-content-around">
