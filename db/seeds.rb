@@ -63,7 +63,7 @@ def create_booking(equipement, pro, error_code, description, begin_string, end_s
     error_code:   error_code,
     description:  description,
     status:       0,
-    begin:        DateTime.parse(begin_string),
+    begin:         (begin_string),
     end:          DateTime.parse(end_string)
   )
   Booking.last

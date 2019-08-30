@@ -8,10 +8,9 @@
         <%= simple_form_for [@pro, @booking] do |f| %>
           <%= f.input :equipement, collection: @equipements %>
           <%= f.input :description %>
-          <%= f.input :status %>
+          <%= f.input :status, value:0%>
           <%= f.input :begin, collection: @pro.availabilities_choices, label_method: :first, value_method: :second %>
           <%# f.input :begin, collection: [ ["Aujourd hui à 11h", "value pour simple_form_for"], ["Aujourd hui à 12h", "value pour simple_form_for"]], label_method: :first, value_method: :second %>
-          <%= f.input :end %>
           <%= f.submit %>
         <% end %>
       </div>
