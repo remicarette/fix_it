@@ -22,6 +22,8 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
+    @pro = User.find(params[:id])
+    @equipements = Equipement.where(user: current_user)
+    @booking = Booking.new
   end
 end
