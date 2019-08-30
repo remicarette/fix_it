@@ -216,15 +216,40 @@ puts "create client"
 
 # CREATE 3 USERS
 
-remi = create_client(
-  'remi',
-  'carette',
-  '0680782606',
-  '2 rue de condé',
-  '59000',
-  'La madeleine',
-  'https://ca.slack-edge.com/T02NE0241-UL79224P2-7a94c0d24580-48'
-)
+users = [ ]
+
+users << remi = create_client('remi','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UL79224P2-7a94c0d24580-48')
+# users << moritz = create_client('moritz','michalak','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UL7BFB5QQ-0a2dc0a5ae19-48')
+# users << fx = create_client('fx','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-U04QWL5QD-b0caace14645-48')
+# users << marmouz = create_client('marmouz','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UL96Z3JUX-62eb1e8abb98-72')
+# users << nico = create_client('nounours','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UL7JFQ0R3-3696ceb54c45-48')
+# users << pab = create_client('Pierre Antoine','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UL0U0N3NV-f7cb9889f0c7-48')
+
+# users << simon = create_client('simon','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UL7B9TJRW-8ac16206f4ef-48')
+# users << alex = create_client('Alexandre','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-U8PB5EDA7-77484b5916bb-48')
+# users << richetin = create_client('richetin','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UL12X27UZ-d1d5d66ec638-48')
+# users << jean = create_client('Jean','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UKVSSU5NE-c9a10bc9c700-48')
+# users << lea = create_client('Léa','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-U6317MLEN-589a70b497ad-48')
+# users << pauline = create_client('pauline','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UHPSUU48H-1133cb05d3eb-48')
+
+
+
+# users << zuza = create_client('zuza','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UBGQ0BJN5-3050831c17e3-48')
+# users << saunier = create_client('Sebastien','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-U02NE0247-e4421ea8648d-48')
+# users << james = create_client('james','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UKPL7B534-a850a2c242f2-48')
+# users << edouard = create_client('edouard','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UF9B65UP8-7d1fb4b6b2ab-48')
+# users << martin = create_client('martin','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-U4A8MS264-73769aabb729-48')
+# users << carl = create_client('Carl','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UHRGG9RRS-836bce4715df-48')
+
+# users << lisa = create_client('Lisa','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UD41T1DQC-c8ddc1161b50-48')
+
+# users << nico = create_client('nicolas','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UA2RBL0E5-074dba9f9557-48')
+# users << tristan = create_client('tristan','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UHSBPN26T-30dd301382cc-48')
+
+
+
+
+
 
 User.create!(
   email:        "moritz@fix-it.com",
@@ -399,17 +424,53 @@ create_full_booking_before_with_reviews_and_notation(thema, jesus, 3)
 create_full_booking_before_with_reviews_and_notation(thema, jesus, 2)
 create_full_booking_before_with_reviews_and_notation(thema, jesus, 4)
 
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/30 13:00','2019/08/30 14:00')
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/30 14:00','2019/08/30 15:00')
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/30 15:00','2019/08/30 16:00')
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/30 16:00','2019/08/30 17:00')
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/30 17:00','2019/08/30 18:00')
+
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 07:00','2019/08/31 08:00')
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 08:00','2019/08/31 08:00')
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 09:00','2019/08/31 08:00')
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 10:00','2019/08/31 08:00')
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 11:00','2019/08/31 08:00')
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 12:00','2019/08/31 08:00')
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 13:00','2019/08/31 08:00')
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 14:00','2019/08/31 08:00')
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 15:00','2019/08/31 08:00')
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 16:00','2019/08/31 08:00')
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 18:00','2019/08/31 08:00')
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 19:00','2019/08/31 08:00')
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 20:00','2019/08/31 08:00')
+
 create_full_booking_before_with_reviews_and_notation(thema, chirac, 4)
 create_full_booking_before_with_reviews_and_notation(thema, chirac, 4)
 create_full_booking_before_with_reviews_and_notation(thema, chirac, 4)
 
+create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/08/30 13:00','2019/08/31 14:00')
+create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/08/30 14:00','2019/08/31 15:00')
+create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/08/30 15:00','2019/08/31 16:00')
+create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/08/30 16:00','2019/08/31 17:00')
+create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/08/30 17:00','2019/08/31 18:00')
 
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 07:00','2019/08/31 08:00')
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 08:00','2019/08/31 08:00')
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 09:00','2019/08/31 08:00')
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 11:00','2019/08/31 08:00')
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 12:00','2019/08/31 08:00')
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 13:00','2019/08/31 08:00')
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 15:00','2019/08/31 08:00')
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 16:00','2019/08/31 08:00')
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 18:00','2019/08/31 08:00')
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 19:00','2019/08/31 08:00')
+create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 20:00','2019/08/31 08:00')
 
 # rodolphe gentil
 
 create_full_booking_today(thema,rodolphe)
-create_full_booking_before_with_reviews(thema, eric)
-create_full_booking_before_with_reviews(thema, eric)
+create_full_booking_before_with_reviews(thema, rodolphe)
+create_full_booking_before_with_reviews(thema, rodolphe)
 
 
 # michel acier
@@ -444,8 +505,6 @@ create_review("Peu mieux faire", "Retard, le technicien est énervé mais c'est 
 create_full_booking_before_with_reviews(thema, eric)
 create_full_booking_before_with_reviews(thema, eric)
 create_full_booking_before_with_reviews(thema, eric)
-
-
 
 puts "Create messages"
 

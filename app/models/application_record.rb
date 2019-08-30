@@ -13,5 +13,4 @@ class ApplicationRecord < ActiveRecord::Base
     return [full_stars, half_stars, empty_stars]
   end
 
-
 end

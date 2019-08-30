@@ -1,0 +1,56 @@
+.card-pro-show {
+  margin-top: 50px;
+  color:            white;
+  background-color: white;
+  font-weight:      bold;
+  text-shadow:      1px 1px 3px rgba(0,0,0,0.2);
+  border-radius:    5px;
+  box-shadow:       0 0 15px rgba(0,0,0,0.2);
+  .top-show {
+    height:         320px;
+    display:        flex;
+    flex-direction: column;
+    position:       relative;
+    align-items:    center;
+  }
+  .bottom-show {
+    height:         60px;
+  }
+}
+
+.top-show .name-pro-show {
+  font-size: 24px;
+  color: #2F4F4F;
+  margin-top: 80px;
+}
+
+.top-show .infos-pro {
+  margin-top: 20px;
+  .city-pro {
+    font-size: 24px;
+    font-weight: lighter;
+    color: #2F4F4F;
+  }
+  .stars {
+    font-size: 20px;
+    font-weight: lighter;
+    color: #E6BE2E;
+  }
+}
+
+.top-show .btn-orange {
+  margin-top: 40px;
+  max-width: 65%;
+  font-size: 18px;
+}
+
+.top-show .avatar-pro img {
+  position: absolute;
+  top: -40px;
+  left: 10%;
+  right: 40%;
+  width: 100px;
+  height: 100px;
+}
+
+
