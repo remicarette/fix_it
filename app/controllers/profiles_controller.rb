@@ -1,12 +1,23 @@
 class ProfilesController < ApplicationController
+
   def index
-    if params[:query].present?
-      zip_code = params[:query][:zip_code]
-      brand = params[:query][:brand]
-      sql_query = "zip_code ILIKE :query OR model ILIKE :query"
-      @User = User.where(sql_query, query: "%#{params[:query]}%")
+    if params[:zip_code].present?
+      users_zip = User.all.where(zip_code: params[:zip_code])
+      if params[:model].present?
+        users_brands = []
+        users_zip.each do |user|
+          @brands = []
+          user.skills.each do |skill|
+            @brands << skill.brand
+          end
+          users_brands << user if @brands.include? params[:model]
+        end
+        users_brands.nil? ? @users = users_zip.where(user_type: 'pro') : @users = users_brands
+      else
+        @users = users_zip.where(user_type: 'pro')
+      end
     else
-      @user = User.all
+      redirect_to root_path, alert: "Please type in a zip code!"
     end
   end
 

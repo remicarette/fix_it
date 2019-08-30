@@ -30,6 +30,58 @@ class User < ApplicationRecord
   def full_name
     "#{first_name.downcase.capitalize} #{last_name.downcase.capitalize}"
   end
+  
+  def average_stars_pro
+    amount = self.reviews.count
+    stars_pro = 0
+    if amount != 0
+      self.reviews.each do |review|
+        stars_pro += review.stars
+      end
+      average_stars = stars_pro / amount
+      return average_stars
+    else
+      return 0
+    end
+  end
+
+  # def availability(date)
+    # for refactoring
+  # end
+
+  def availability_today
+    Time.now.hour > 7 ? h = Time.now.hour + 1 : h = 7
+    shifts_today = (h..20).to_a
+    booked_today = self.bookings.select do |booking|
+      booking.begin.day == Time.now.day
+      # booking.begin.day == Date.today.day
+    end
+    booked_today.each do |booking|
+      shifts_today.delete(booking.begin.hour)
+    end
+    return shifts_today
+  end
+
+  def availability_tomorrow
+    shifts = (7..20).to_a
+    booked_tomorrow = self.bookings.select do |booking|
+      booking.begin.day == Date.tomorrow.day
+    end
+    booked_tomorrow.each do |booking|
+      shifts.delete(booking.begin.hour)
+      booking.begin.hour
+    end
+    shifts_tomorrow = []
+    shifts.each do |dispo|
+      shifts_tomorrow << dispo + 24
+    end
+    return shifts_tomorrow
+  end
+
+   def first_free_slot
+    self.availability_today == [] ? self.availability_tomorrow.first : self.availability_today.first
+  end
+end
 
   def availabilities_choices
     collection = []

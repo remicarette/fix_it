@@ -2,26 +2,29 @@
 <%empty_stars = "<i class='far fa-star'></i>"%>
 <%half_stars = "<i class='fas fa-star-half-alt'></i>"%>
 
-<%  array.where("user_type = 'pro'").each do |user|  %>
+<%  array.each do |user|  %>
   <div class="card-pro">
     <div class="top">
-      <div class="avatar-pro"></div>
-      <div class="card-pro-name"> <%= user.first_name %> <%= user.last_name %></div>
-      <div class="btn-green text-center">Disponible demain à TO DO</div>
+      <div class="avatar-pro">
+        <%= image_tag(user.photo) %>
+      </div>
+      <div class="card-pro-name">
+        <%= user.full_name %>
+      </div>
+      <%= link_to profile_path(user) , class: "btn-green text-center" do %>
+        Disponible <%= user.availability_today == [] ? "demain" : "aujourd'hui" %> à <%= user.first_free_slot % 24 %> h
+      <% end %>
     </div>
     <div class="bottom text-center d-flex justify-content-around">
       <div class="stars">
-        <% average_stars_pro = 0 %>
-        <% user.reviews.each do |review| %>
-            <%  average_stars_pro += review.stars %>
-        <% end %>
-        <% user.show_stars(average_stars_pro)[0].times do %>
+        <% average_stars = user.average_stars_pro %>
+        <% user.show_stars(average_stars)[0].times do %>
           <%= full_stars.html_safe %>
         <% end %>
-        <% user.show_stars(average_stars_pro)[1].times do %>
+        <% user.show_stars(average_stars)[1].times do %>
           <%= half_stars.html_safe %>
         <% end %>
-        <% user.show_stars(average_stars_pro)[2].times do %>
+        <% user.show_stars(average_stars)[2].times do %>
           <%= empty_stars.html_safe %>
         <% end %>
         <p style="text-align:center;">
@@ -33,7 +36,7 @@
       <div class="card-pro-number-bookings">
         RDV:
         <p style="text-align:center;">
-          <%= user.bookings.size %>
+          <%= user.bookings.size%>
         </p>
       </div>
     </div>
