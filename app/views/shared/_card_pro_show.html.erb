@@ -1,0 +1,36 @@
+<%full_stars = "<i class='fas fa-star'></i>"%>
+<%empty_stars = "<i class='far fa-star'></i>"%>
+<%half_stars = "<i class='fas fa-star-half-alt'></i>"%>
+<% symbol_city = "<i class='fas fa-map-marker-alt'></i>" %>
+
+
+    <div class="top-show">
+      <div class="avatar-pro">
+        <%= image_tag(@pro.photo) %>
+      </div>
+      <div class="name-pro-show text-center">
+        <%= @pro.full_name %>
+      </div>
+      <div class="infos-pro text-center d-flex justify-content-around w-100">
+        <div class="city-pro">
+          <%= symbol_city.html_safe %> <%= @pro.city %>
+        </div>
+
+        <div class="stars">
+          <% avg = @pro.average_stars_pro %>
+          <% @pro.show_stars(avg)[0].times do %>
+            <%= full_stars.html_safe %>
+          <% end %>
+          <% @pro.show_stars(avg)[1].times do %>
+            <%= half_stars.html_safe %>
+          <% end %>
+          <% @pro.show_stars(avg)[2].times do %>
+            <%= empty_stars.html_safe %>
+          <% end %>
+        </div>
+      </div>
+      <div class="btn-orange text-center">
+        Disponible <%= @pro.availability_today == [] ? "demain" : "aujourd'hui" %> à <%= @pro.first_free_slot % 24 %> h
+      </div>
+    </div>
+

@@ -1,8 +1,15 @@
 <div class="container">
   <div class="row">
+
     <div class="col-7">
-      <h1>Hallo!</h1>
+        <div class="card-pro-show col-10">
+          <%= render"shared/card_pro_show" %>
+        </div>
+        <div class="all-reviews col-10">
+          <%= render"shared/card_review", array: @pro.reviews.sort_by{|review| review.stars}.reverse %>
+        </div>
     </div>
+
     <div class="col-5">
       <div class="booking-form mt-5">
         <%= simple_form_for [@pro, @booking] do |f| %>
@@ -22,5 +29,6 @@
         <% end %>
       </div>
     </div>
+
   </div>
 </div>
