@@ -1,12 +1,13 @@
 
 .banner-home {
-  background-image:    asset-url('banner-2.png');
-  background-size:     cover;
-  background-position: center;
-  padding:             0 0 200px 0;
-  width:               60vw;
-  height:              100vh;
-  position: absolute;
+  background-image:     asset-url('banner-3.svg');
+  background-size:      cover;
+  background-position:  center;
+  width:                790px;
+  height:               600px;
+  position:             absolute;
+  bottom:               20px;
+  right:                20px;
 }
 
 .banner {
