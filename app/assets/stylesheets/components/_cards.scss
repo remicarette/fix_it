@@ -18,7 +18,7 @@
     flex-direction: column;
     position: relative;
     align-items: center;
-    background-color: $red-fix-it;
+    // background-color: $red-fix-it;
     margin-bottom: 30px;
     padding-bottom: 20px;
     border-radius: 20px 20px 0 0;
@@ -37,8 +37,8 @@
 }
 
 .top .card-pro-name {
-  font-size: 24px;
-  color: #2F4F4F;
+  font-size:  24px;
+  color:      white;
   margin-top: 100px;
 }
 

@@ -6,7 +6,7 @@
 <div class="col-12 col-sm-6 col-lg-4">
   <div class="card-pro">
     <div class="pro">
-      <div class="top">
+      <div class="top <%= user.availability_today == [] ? "bg-orange" : "bg-red" %>">
         <div class="avatar-pro">
           <%= image_tag(user.photo) %>
         </div>

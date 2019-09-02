@@ -2,7 +2,7 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: #85CDCA 6px solid;
+  border: #85CDCA  6px solid;
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 
@@ -30,4 +30,12 @@
   height: 150px;
   border-radius: 50%;
   border: #BDBDBD 1px solid;
+}
+
+.bg-red {
+  background-color: $red-fix-it;
+}
+
+.bg-orange {
+  background-color: $orange-fix-it;
 }
