@@ -294,8 +294,8 @@ puts "create pro"
 # create 6 pro on lille
 
 daniel = create_pro(
-  'daniel',
-  'haddad',
+  'Paul',
+  'Van Haver',
   '0320642581',
   '8 place Charles de Gaulle',
   '59110',
@@ -305,8 +305,8 @@ daniel = create_pro(
 )
 
 eric = create_pro(
-  'eric',
-  'Plombar',
+  'Nordin',
+  'Hateur',
   '0320000000',
   '27 rue des tours',
   '59800',
@@ -327,13 +327,13 @@ jacquie = create_pro(
 )
 
 michel = create_pro(
-  'Michel',
-  'Dezing',
+  'Michèle',
+  'Tomthé',
   '0320000000',
   '10 rue de la grande chaussée',
   '59800',
   'Lille',
-  'https://pbs.twimg.com/profile_images/988193701062160386/zl805vRv_400x400.jpg',
+  'https://images.unsplash.com/photo-1565794955623-d5baeab355a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80',
   'pro'
 )
 
