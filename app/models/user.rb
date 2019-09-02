@@ -38,11 +38,13 @@ class User < ApplicationRecord
       self.reviews.each do |review|
         stars_pro += review.stars
       end
-      average_stars = stars_pro / amount
-      return average_stars
+      average_stars = stars_pro.fdiv(amount)
+      return round_to_half(average_stars)
     else
       return 0
     end
+
+
   end
 
   # def availability(date)

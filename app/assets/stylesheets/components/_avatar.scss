@@ -2,8 +2,9 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: #52A490 6px solid;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  border: $blue-fix-it  6px solid;
+  // box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.36) !important;
   object-fit: cover;
 }
 
@@ -11,7 +12,7 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: #52A490 6px solid;
+  border: $blue-fix-it 6px solid;
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
   position: absolute;
   top: -80px;
@@ -20,10 +21,10 @@
 }
 
 .avatar-perso {
-  width: 66px;
-  height: 65px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  border: #52A490 4px solid;
+  border: white 3px solid;
 }
 
 .avatar-entreprise {
@@ -31,4 +32,12 @@
   height: 150px;
   border-radius: 50%;
   border: #BDBDBD 1px solid;
+}
+
+.bg-red {
+  background-color: $red-fix-it;
+}
+
+.bg-orange {
+  background-color: $orange-fix-it;
 }

@@ -1,6 +1,7 @@
 .navbar-fix-it {
   justify-content: space-between;
-  background: $green-fix-it;
+  background: $blue-fix-it;
+  // overflow: auto;
 }
 
 .navbar-light .navbar-brand {
@@ -23,5 +24,8 @@
     color: white;
     opacity: 0.9
   }
+}
 
+.transparent {
+  background-color: rgba(0,0,0,0.0);
 }

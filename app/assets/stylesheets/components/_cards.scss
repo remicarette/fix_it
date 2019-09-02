@@ -1,70 +1,70 @@
-.cards {
-  display:                grid;
-  grid-template-columns:  1fr 1fr 1fr;
-  grid-row-gap:           100px;
-  grid-column-gap:        16px;
-  margin-top:             150px;
-  margin-bottom:          100px;
-}
-
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
-  .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
 
 .card-pro {
-  color:           white;
-  background-color:white;
-  font-weight:     bold;
-  text-shadow:     1px 1px 3px rgba(0,0,0,0.2);
-  border-radius:   5px;
-  box-shadow:      0 0 15px rgba(0,0,0,0.2);
-  position:        relative;
-  .top {
-    height:          320px;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    align-items: center;
+  color:            white;
+  background-color: white;
+  font-weight:      bold;
+  border-radius:    20px;
+  margin-top:       90px;
+  width:            300px;
+  margin-bottom:    30px;
+
+  box-shadow:       0 16px 40px rgba(0,0,0,0.24) !important;
+  &:hover {
+    box-shadow:     0 16px 40px rgba(0,0,0,0.36) !important;
   }
+
+  .top {
+    display:        flex;
+    flex-direction: column;
+    position:       relative;
+    align-items:    center;
+    margin-bottom:  30px;
+    padding-bottom: 20px;
+    border-radius:  20px 20px 0 0;
+
+    .lightning {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      font-size: 40px;
+      animation: animationlight 4s linear alternate infinite;
+    }
+  }
+
+  @keyframes animationlight {
+    from {
+      color: $blue-fix-it;
+    }
+
+    50% {
+      color: white;
+    }
+
+    to {
+      color: $blue-fix-it;
+    }
+  }
+
+  .lightning {
+      font-size: 30px;
+  }
+
+
   .bottom {
-    height:          60px;
+    // height:          60px;
+    border-top: 2px solid $blue-fix-it;
+  }
+
+
+  .btn-red {
+    width: 100%;
+    font-size: 16px;
   }
 }
 
 .top .card-pro-name {
-  font-size: 24px;
-  color: #2F4F4F;
+  font-size:  24px;
+  color:      white;
   margin-top: 100px;
 }
 
