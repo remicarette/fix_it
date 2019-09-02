@@ -424,6 +424,7 @@ create_full_booking_before_with_reviews_and_notation(thema, jesus, 3)
 create_full_booking_before_with_reviews_and_notation(thema, jesus, 2)
 create_full_booking_before_with_reviews_and_notation(thema, jesus, 4)
 
+
 create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/30 13:00','2019/08/30 14:00')
 create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/30 14:00','2019/08/30 15:00')
 create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/30 15:00','2019/08/30 16:00')
@@ -447,6 +448,7 @@ create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/3
 create_full_booking_before_with_reviews_and_notation(thema, chirac, 4)
 create_full_booking_before_with_reviews_and_notation(thema, chirac, 4)
 create_full_booking_before_with_reviews_and_notation(thema, chirac, 4)
+
 
 create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/08/31 13:00','2019/08/31 14:00')
 create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/08/31 14:00','2019/08/31 15:00')
