@@ -20,16 +20,19 @@
                           as: :string,
                           required: false,
                           label: false,
-                          placeholder: "",
+                          placeholder: "59000",
                           input_html: { class: "text-center input-home mb-4" } %>
 
               <p class="p-form-home">Quel est votre modèle?</p>
               <%= f.input :model,
                           required: false,
                           label: false,
+                          placeholder: "Chaffoteaux",
                           collection: ["Frisquet", "Viessmann", "Atlantic", "Weishaupt", "Vergne"],
                           input_html: { class: "input-home mb-4" } %>
-              <%= submit_tag "Trouver votre pro", name: nil, class: "btn-red mt-2" %>
+              <div class="d-flex justify-content-center w-100">
+                <%= submit_tag "Trouver votre pro", name: nil, class: "btn-red mt-2" %>
+              </div>
             <% end %>
           </div>
         </div>
