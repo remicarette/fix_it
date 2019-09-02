@@ -2,7 +2,7 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: #52A490 6px solid;
+  border: $blue-fix-it 6px solid;
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 
@@ -10,7 +10,7 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
-  border: #52A490 6px solid;
+  border: $blue-fix-it 6px solid;
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
   position: absolute;
   top: -80px;
@@ -19,10 +19,10 @@
 }
 
 .avatar-perso {
-  width: 66px;
-  height: 65px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  border: #52A490 4px solid;
+  border: white 3px solid;
 }
 
 .avatar-entreprise {

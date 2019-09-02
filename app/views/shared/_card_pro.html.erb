@@ -1,9 +1,10 @@
-<%full_stars = "<i class='fas fa-star'></i>"%>
-<%empty_stars = "<i class='far fa-star'></i>"%>
-<%half_stars = "<i class='fas fa-star-half-alt'></i>"%>
+<% full_stars = "<i class='fas fa-star'></i>" %>
+<% empty_stars = "<i class='far fa-star'></i>" %>
+<% half_stars = "<i class='fas fa-star-half-alt'></i>" %>
 
 <%  array.each do |user|  %>
-  <div class="card-pro">
+<div class="col-12 col-sm-6 col-lg-4">
+  <div class="-pro">
     <div class="top">
       <div class="avatar-pro">
         <%= image_tag(user.photo) %>
@@ -43,4 +44,5 @@
 
     </div>
   </div>
+</div>
 <% end %>

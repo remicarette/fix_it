@@ -1,12 +1,13 @@
 
 .banner-home {
-  background-image:    asset-url('reparateur.png');
-  background-size:     cover;
-  background-position: center;
-  padding:             0 0 200px 0;
-  margin-bottom:       20px;
-  height:              100vh;
-  position:            relative;
+  background-image:     asset-url('banner-3.svg');
+  background-size:      cover;
+  background-position:  center;
+  width:                790px;
+  height:               600px;
+  position:             absolute;
+  bottom:               20px;
+  right:                20px;
 }
 
 .banner {
