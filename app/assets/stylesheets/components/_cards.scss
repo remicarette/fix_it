@@ -3,24 +3,34 @@
   color:           white;
   background-color:white;
   font-weight:     bold;
-  border-radius:   5px;
-  width: 90%;
+  border-radius:   20px;
   margin-top: 90px;
+  width: 300px;
 
-  box-shadow: 0px 0px 15px rgba(20,20,20, 0.2);
+  box-shadow:       0 16px 40px rgba(0,0,0,0.12) !important;
   &:hover {
-    box-shadow: 0px 0px 15px rgba(20,20,20,0.3);
+    box-shadow:     0 16px 40px rgba(0,0,0,0.36) !important;
   }
 
   .top {
-    height:          320px;
+    // height:          320px;
     display: flex;
     flex-direction: column;
     position: relative;
     align-items: center;
+    background-color: $red-fix-it;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-radius: 20px 20px 0 0;
   }
   .bottom {
     height:          60px;
+  }
+
+
+  .btn-red {
+    width: 100%;
+    font-size: 16px;
   }
 
 
