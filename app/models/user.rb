@@ -5,8 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   # geocode
-  geocoded_by :address
-  after_validation :geocode, if: :will_save_change_to_address?
+  geocoded_by :fulladdress
+  after_validation :geocode, on: [:create, :update ]
 
   # relations
   has_many :skills, dependent: :destroy
@@ -22,6 +22,15 @@ class User < ApplicationRecord
   validates :zip_code, presence: true, length: { is: 5 }
   validates :city, presence: true, length: { minimum: 3 }
   validates :user_type, presence: true, inclusion: { in: %W(pro perso) }
+
+
+  # def will_save_change_to_fulladress?
+  #   self.fulladdress != fulladdress
+  # end
+
+  def fulladdress
+    [address, city, zip_code].compact.join(', ')
+  end
 
   def bookings_as_client
     self.equipements.map { |equipment| equipment.bookings}.flatten

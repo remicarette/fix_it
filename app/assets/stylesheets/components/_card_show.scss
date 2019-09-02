@@ -4,27 +4,23 @@
   background-color: white;
   font-weight:      bold;
   text-shadow:      1px 1px 3px rgba(0,0,0,0.2);
-  border-radius:    5px;
+  border-radius:    15px;
   box-shadow:       0 0 15px rgba(0,0,0,0.2);
-  .top-show {
-    height:         320px;
-    display:        flex;
-    flex-direction: column;
-    position:       relative;
-    align-items:    center;
-  }
-  .bottom-show {
-    height:         60px;
-  }
+  height:         320px;
+  display:        flex;
+  flex-direction: column;
+  position:       relative;
+  align-items:    center;
+  width: 90%;
 }
 
-.top-show .name-pro-show {
+.name-pro-show {
   font-size: 24px;
   color: #2F4F4F;
   margin-top: 80px;
 }
 
-.top-show .infos-pro {
+.infos-pro {
   margin-top: 20px;
   .city-pro {
     font-size: 24px;
@@ -38,13 +34,12 @@
   }
 }
 
-.top-show .btn-orange {
+.card-pro-show .btn-orange {
   margin-top: 40px;
-  max-width: 65%;
   font-size: 18px;
 }
 
-.top-show .avatar-pro img {
+ .avatar-pro img {
   position: absolute;
   top: -40px;
   left: 10%;
