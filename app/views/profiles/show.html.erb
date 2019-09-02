@@ -11,7 +11,7 @@
     </div>
 
     <div class="col-5">
-      <div class="booking-form mt-5 position-fixed">
+      <div class="booking-form-show mt-5 position-fixed">
         <%= simple_form_for [@pro, @booking] do |f| %>
           <div>Votre équipement</div>
           <%= f.input :equipement, label: false, collection: @equipements, input_html: { class: "input-review w-100 mb-3" } %>
