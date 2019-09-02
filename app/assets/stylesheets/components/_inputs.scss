@@ -3,20 +3,16 @@ input {
   padding-top: 30px;
 }
 
-
 .input-home {
   background-color: white;
-  border: 1.5px solid $green-fix-it;
-  border-radius: 5px;
-  text-align: center;
-  display: flex;
-  justify-content: center;
+  border: 2px solid $blue-fix-it;
+  border-radius: 15px !important;
   font-weight: bold;
-  font-size: 24px;
-  color: $green-fix-it;
-  margin-top: 20px;
-  text-decoration: none;
+  font-size: 20px;
+  color: $blue-fix-it;
+  margin-bottom: 20px;
   outline: none;
+  width: 100%;
 }
 
 .input-show-form {

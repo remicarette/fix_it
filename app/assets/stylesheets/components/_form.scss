@@ -8,13 +8,13 @@ textarea.form-control {
   display:flex;
   width: 100%;
   box-shadow: 0px 5px 10px rgba(0,0,0, 0.3);
-  color: $green-fix-it;
+  color: $blue-fix-it;
   resize: none;
   border-radius: 5px;
 
 
   &:focus {
-    color: $green-fix-it;
+    color: $blue-fix-it;
     box-shadow: 0px 5px 10px rgba(0,0,0, 0.4);
   }
 
@@ -24,7 +24,7 @@ textarea.form-control {
 
 .form-control:focus {
   outline: none !important;
-  border-color: $green-fix-it !important;
+  border-color: $blue-fix-it !important;
   box-shadow: none;
 }
 

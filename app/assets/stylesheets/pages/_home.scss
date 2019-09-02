@@ -8,30 +8,10 @@
 }
 
 .p-form-home{
-  font-family: 'Roboto', sans-serif;
-  padding-left: 10px;
-  margin-left: 10px;
-  margin-top: 20px;
-}
-
-.input:hover {
-  background-color: white;
-  color: $green-fix-it;
-  border: solid 3px $green-fix-it;
-  border-radius: 5px;
-  box-shadow: 0px 10px 15px rgba(230,230,230, 1);
-  text-decoration: none;
-  outline: none;
-}
-
-.styled-select {
-  display: flex;
-  width: 326.59px;
-  height: 50px;
-  background: asset-url('down-arrow.png') no-repeat 98% 45%;
-  overflow: hidden;
-  border: 3px solid $green-fix-it;
-  font-family: 'Roboto';
-  font-size: 16px;
-  -webkit-appearance: none;
+  margin: 0;
+  font-size: 20px;
+  text-align: center;
+  color: $blue-fix-it;
+  padding-bottom: 2px;
+  font-weight: bold;
 }
