@@ -1,7 +1,19 @@
 .booking-form {
-  background-color: white;
-  border-radius: 15px;
-  border: 2px solid rgba(255,255,255, 1);
-  box-shadow: 0px 10px 15px rgba(230,230,230, 1);
-  padding: 20px 40px;
+  background-color: #ffffff;
+  border-radius:    4px;
+  padding:          32px;
+  margin-left:      40px;
+  margin-right:     40px;
+  color:            #3B455A;
+
+  width:            441px !important;
+
+  box-shadow:       0 16px 40px rgba(0,0,0,0.12) !important;
+  &:hover {
+    box-shadow:     0 16px 40px rgba(0,0,0,0.14) !important;
+  }
+
+  h3 {
+    color: #3B455A;
+  }
 }

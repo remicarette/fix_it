@@ -1,29 +1,44 @@
 <!-- HOME  SCREEN-->
-<div class="banner-home">
+<div class="banner-home"></div>
   <div class="container-fluid">
-     <div class="row p-155">
-        <!-- SEARCH FORM-->
-        <div class= "banner-form col-lg-5 p-150 ml-auto">
-          <div><p class="p-form-home">Où est votre problème?</p>
+    <div class="row">
+      <div class="col-12">
+        <div class="text-center">
+          <h1>Vous ne trouverez pas plus rapide pour vous dépanner !</h1>
+        </div>
+      </div>
+      <div class="col-12 col-lg-6">
+        <div class="col-12 col-sm-12 col-md-10 col-lg-10">
+
+          <div class="booking-form">
+            <div class="mb-5">
+              <h3 class="text-center">Trouver votre pro disponible dès maintenant</h3>
+            </div>
             <%= simple_form_for "", url: profiles_path, method: :get do |f| %>
+              <p class="p-form-home">Où est votre problème?</p>
               <%= f.input :zip_code,
                           as: :string,
                           required: false,
                           label: false,
-                          placeholder: "59180",
-                          input_html: { class: "input input-home" } %><p class="p-form-home">Quel est votre modèle?</p>
+                          placeholder: "59000",
+                          input_html: { class: "text-center input-home mb-4" } %>
+
+              <p class="p-form-home">Quel est votre modèle?</p>
               <%= f.input :model,
                           required: false,
                           label: false,
+                          placeholder: "Chaffoteaux",
                           collection: ["Frisquet", "Viessmann", "Atlantic", "Weishaupt", "Vergne"],
-                          input_html: { class: "input input-home styled-select" } %>
-              <%= submit_tag "Trouver votre professionnel", name: nil, class: "btn-green input-home" %>
+                          input_html: { class: "input-home mb-4" } %>
+              <div class="d-flex justify-content-center w-100">
+                <%= submit_tag "Trouver votre pro", name: nil, class: "btn-red mt-2" %>
+              </div>
             <% end %>
           </div>
         </div>
-    <!-- TITLE -->
-    <div class= "col-lg-7 ml-auto">
-      <h1 class="title-banner">Pour les urgences, un dépannage serein, avec un rendez-vous sous 24 heures.</h1>
+      </div>
     </div>
   </div>
-</div>
+
+
+

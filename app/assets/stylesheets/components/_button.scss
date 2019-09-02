@@ -1,24 +1,30 @@
-.btn-green {
+
+.btn-red {
   padding: 10px 20px;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 16px;
   color: white !important;
-  border-radius: 5px;
-  background-color: $green-fix-it !important;
-  box-shadow: 0px 10px 15px rgba(230,230,230, 1);
+  border-radius: 10px;
+  background-color: $red-fix-it !important;
+  border: 3px solid $red-fix-it;
+  text-decoration: none;
+  outline: none;
+  width: 100%;
+  margin-left: 6.5%;
+  margin-right: 6.5%;
+}
+
+.btn-red:hover {
+  background-color: $red-fix-it !important;
+  opacity: 0.9;
+  color: white !important;
+  border: solid 3px $red-fix-it;
+  border-radius: 10px;
   text-decoration: none;
   outline: none;
 }
 
-.btn-green:hover {
-  background-color: white !important;
-  color: $green-fix-it !important;
-  border: solid 3px $green-fix-it;
-  border-radius: 5px;
-  box-shadow: 0px 10px 15px rgba(230,230,230, 1);
-  text-decoration: none;
-  outline: none;
-}
+#D34E4E
 
 .btn-orange {
   padding: 10px 20px;
