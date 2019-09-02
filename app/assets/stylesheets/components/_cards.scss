@@ -1,30 +1,58 @@
 
 .card-pro {
-  color:           white;
-  background-color:white;
-  font-weight:     bold;
-  border-radius:   20px;
-  margin-top: 90px;
-  width: 300px;
+  color:            white;
+  background-color: white;
+  font-weight:      bold;
+  border-radius:    20px;
+  margin-top:       90px;
+  width:            300px;
+  margin-bottom:    30px;
 
-  box-shadow:       0 16px 40px rgba(0,0,0,0.12) !important;
+  box-shadow:       0 16px 40px rgba(0,0,0,0.24) !important;
   &:hover {
     box-shadow:     0 16px 40px rgba(0,0,0,0.36) !important;
   }
 
   .top {
-    // height:          320px;
-    display: flex;
+    display:        flex;
     flex-direction: column;
-    position: relative;
-    align-items: center;
-    // background-color: $red-fix-it;
-    margin-bottom: 30px;
+    position:       relative;
+    align-items:    center;
+    margin-bottom:  30px;
     padding-bottom: 20px;
-    border-radius: 20px 20px 0 0;
+    border-radius:  20px 20px 0 0;
+
+    .lightning {
+      position: absolute;
+      top: 25px;
+      right: 25px;
+      font-size: 40px;
+      animation: animationlight 4s linear alternate infinite;
+    }
   }
+
+  @keyframes animationlight {
+    from {
+      color: $blue-fix-it;
+    }
+
+    50% {
+      color: white;
+    }
+
+    to {
+      color: $blue-fix-it;
+    }
+  }
+
+  .lightning {
+      font-size: 30px;
+  }
+
+
   .bottom {
-    height:          60px;
+    // height:          60px;
+    border-top: 2px solid $blue-fix-it;
   }
 
 
@@ -32,8 +60,6 @@
     width: 100%;
     font-size: 16px;
   }
-
-
 }
 
 .top .card-pro-name {

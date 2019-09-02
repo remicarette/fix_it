@@ -6,7 +6,10 @@
 <div class="col-12 col-sm-6 col-lg-4">
   <div class="card-pro">
     <div class="pro">
-      <div class="top <%= user.availability_today == [] ? "bg-orange" : "bg-red" %>">
+      <div class="top border-bottom <%= user.availability_today == [] ? "bg-orange" : "bg-red" %>">
+
+        <%= user.availability_today == [] ? "" : raw('<div class="lightning"><i class="fas fa-shipping-fast"></i></div>') %>
+
         <div class="avatar-pro">
           <%= image_tag(user.photo) %>
         </div>
@@ -17,35 +20,41 @@
 
       <div class="d-flex justify-content-center my-5 px-2">
         <%= link_to profile_path(user) , class: "btn-red text-center" do %>
-          Disponible <%= user.availability_today == [] ? "demain" : "aujourd'hui" %> à <%= user.first_free_slot % 24 %> h
+          <div class="d-flex align-items-center justify-content-around">
+            <%= user.availability_today == [] ? "" : raw('<div><i class="fas fa-shipping-fast lightning"></i></div>') %>
+            <div>Disponible <br/><%= user.availability_today == [] ? "demain" : "aujourd'hui" %> à <%= user.first_free_slot % 24 %> h</div>
+          </div>
+
         <% end %>
       </div>
 
-      <div class="bottom text-center d-flex justify-content-around">
-        <div class="stars">
-          <% average_stars = user.average_stars_pro %>
-          <% user.show_stars(average_stars)[0].times do %>
-            <%= full_stars.html_safe %>
-          <% end %>
-          <% user.show_stars(average_stars)[1].times do %>
-            <%= half_stars.html_safe %>
-          <% end %>
-          <% user.show_stars(average_stars)[2].times do %>
-            <%= empty_stars.html_safe %>
-          <% end %>
-          <p style="text-align:center;">
-            <% amount_reviews = user.reviews.size %>
-            <%= amount_reviews %> Avis
-          </p>
+      <div class="bottom text-center d-flex justify-content-around pt-3">
+        <div class="col-6">
+          <div class="stars">
+            <% average_stars = user.average_stars_pro %>
+            <% user.show_stars(average_stars)[0].times do %>
+              <%= full_stars.html_safe %>
+            <% end %>
+            <% user.show_stars(average_stars)[1].times do %>
+              <%= half_stars.html_safe %>
+            <% end %>
+            <% user.show_stars(average_stars)[2].times do %>
+              <%= empty_stars.html_safe %>
+            <% end %>
+            <p style="text-align:center;">
+              <% amount_reviews = user.reviews.size %>
+              <%= amount_reviews %> Avis
+            </p>
+          </div>
         </div>
-        <div class="separating-line-card-pro"></div>
-        <div class="card-pro-number-bookings">
-          RDV:
-          <p style="text-align:center;">
-            <%= user.bookings.size%>
-          </p>
+        <div class="col-6">
+          <div class="card-pro-number-bookings border-left">
+            RDV:
+            <p style="text-align:center;">
+              <%= user.bookings.size%>
+            </p>
+          </div>
         </div>
-
       </div>
     </div>
   </div>
