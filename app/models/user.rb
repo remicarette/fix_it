@@ -56,7 +56,6 @@ class User < ApplicationRecord
     shifts_today = (h..20).to_a
     booked_today = self.bookings.select do |booking|
       booking.begin.day == Time.now.day
-      # booking.begin.day == Date.today.day
     end
     booked_today.each do |booking|
       shifts_today.delete(booking.begin.hour)
