@@ -6,8 +6,12 @@
           <%= render"shared/card_pro_show" %>
         </div>
         <div class="all-reviews">
-          <%= render"shared/card_review", array: @pro.reviews.sort_by{|review| review.created_at}.reverse %>
+          <%= render"shared/card_review", array: @pro.reviews.sort_by{|review| review.created_at}.reverse.last(2) %>
+          <div class="display_btn_reviews display">
+            <%= render"shared/card_review", array: @pro.reviews.sort_by{|review| review.created_at}.reverse[3..-1] %>
+          </div>
         </div>
+        <button id="more-button-review" class="btn-red btn-all-reviews"> Plus d'avis </button>
     </div>
 
     <div class="col-5">

@@ -1,7 +1,8 @@
 <%full_stars = "<i class='fas fa-star'></i>"%>
 <%empty_stars = "<i class='far fa-star'></i>"%>
 
-<% array.each do |review|  %>
+
+  <% array.each do |review|  %>
   <div class="card-review p-2">
     <% full = review.stars.to_i %>
     <% empty = (5 - full).to_i %>
@@ -29,3 +30,4 @@
     <br>
   </div>
 <% end %>
+

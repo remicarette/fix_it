@@ -35,7 +35,7 @@
   background-color: $orange-fix-it;
   box-shadow: 0px 10px 15px rgba(230,230,230, 1);
   text-decoration: none;
-  ouline: none;
+  outline: none;
 }
 
 .btn-orange:hover {
@@ -123,4 +123,10 @@
   margin-left: 6.5%;
   margin-right: 6.5%;
 
+}
+
+.btn-all-reviews{
+  margin-top: 10px;
+  width: 90%;
+  margin-left: 0;
 }
