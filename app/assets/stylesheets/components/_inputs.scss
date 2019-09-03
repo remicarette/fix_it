@@ -60,6 +60,9 @@ input {
 
 .input-review {
   color: $green-fix-it;
+  height: 28px;
+  border-radius: 4px;
+  border-color: #aaa;
 
   &:focus {
     color: $green-fix-it;
