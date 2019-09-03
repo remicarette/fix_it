@@ -22,7 +22,7 @@
           <div>Choississez votre créneau : </div>
           <%= f.input :begin,
                       label: false,
-                      input_html: { class: "input-review w-100 m-3 select2'" },
+                      input_html: { class: "input-review w-100 m-3 select2" },
                       collection: @pro.availabilities_choices, label_method: :first, value_method: :second %>
           <%# f.input :begin, collection: [ ["Aujourd hui à 11h", "value pour simple_form_for"], ["Aujourd hui à 12h", "value pour simple_form_for"]], label_method: :first, value_method: :second %>
           <div class="d-flex justify-content-center">
