@@ -13,11 +13,11 @@
 // COLORS ANIMATIONS
 
 .fa-color-fixed {
-  color: $orange-fix-it;
+  color: $red-fix-it;
 }
 
 .fa-color {
-  animation: colorChange 1s linear;
+  animation: colorChange 1.5s linear;
   // color: $orange-fix-it;
 }
 
@@ -27,12 +27,12 @@
 }
 
 .fa-color1 {
-  animation: colorChange 3.0s;
+  animation: colorChange 3.5s;
   // color: $orange-fix-it;
 }
 
 .fa-color2 {
-  animation: colorChange 3.5s;
+  animation: colorChange 4s;
   // color: $orange-fix-it;
 }
 
@@ -42,7 +42,7 @@
   }
 
   to {
-    color: $orange-fix-it;
+    color: $red-fix-it;
   }
 }
 
