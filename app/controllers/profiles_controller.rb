@@ -20,13 +20,13 @@ class ProfilesController < ApplicationController
       else
         @users = users_zip.where(user_type: 'pro')
         if @users == []
-          redirect_to root_path, alert: "Desolé, pour l'instant il n'y a pas de depanneurs disponible dans cette region."
+          redirect_to root_path, alert: "Désolé, pour l'instant il n'y a pas de dépanneurs disponibles dans cette région."
         else
           @users
         end
       end
     else
-      redirect_to root_path, alert: "SVP, mettez un code postal."
+      redirect_to root_path, alert: "Veuillez indiquer un code postal, s'il vous plaît."
     end
   end
 

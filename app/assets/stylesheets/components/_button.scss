@@ -35,7 +35,7 @@
   background-color: $orange-fix-it;
   box-shadow: 0px 10px 15px rgba(230,230,230, 1);
   text-decoration: none;
-  ouline: none;
+  outline: none;
 }
 
 .btn-orange:hover {
@@ -132,4 +132,26 @@
   border: 1px solid #EBB044;
   margin-top: 40px;
   margin-left: 15px;
+}
+
+.btn-blue {
+  padding: 10px 20px;
+  font-weight: bold;
+  font-size: 16px;
+  color: white !important;
+  border-radius: 10px;
+  background-color: #84cdca !important;
+  border: 3px solid #84cdca;
+  text-decoration: none;
+  outline: none;
+  width: 100%;
+  margin-left: 6.5%;
+  margin-right: 6.5%;
+
+}
+
+.btn-all-reviews{
+  margin-top: 10px;
+  width: 90%;
+  margin-left: 0;
 }

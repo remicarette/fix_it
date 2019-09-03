@@ -2,31 +2,35 @@
   <div class="row">
 
     <div class="col-7">
-        <div class="card-pro-show">
+        <div class="card-pro-show d-flex justify-content-center">
           <%= render"shared/card_pro_show" %>
         </div>
         <div class="all-reviews">
-          <%= render"shared/card_review", array: @pro.reviews.sort_by{|review| review.created_at}.reverse %>
+          <%= render"shared/card_review", array: @pro.reviews.sort_by{|review| review.created_at}.reverse.last(2) %>
+          <div class="display_btn_reviews display">
+            <%= render"shared/card_review", array: @pro.reviews.sort_by{|review| review.created_at}.reverse[3..-1] %>
+          </div>
         </div>
+        <button id="more-button-review" class="btn-red btn-all-reviews"> Plus d'avis </button>
     </div>
 
     <div class="col-5">
       <div class="booking-form-show mt-5 position-fixed">
         <%= simple_form_for [@pro, @booking] do |f| %>
           <div>Votre équipement</div>
-          <%= f.input :equipement, label: false, collection: @equipements, input_html: { class: "input-review w-100 m-3 select2" } %>
-          <div>Description du problème</div>
-          <%= f.input :description, label:false,  input_html: { class: "input-review w-100 mb-3" } %>
+          <%= f.input :equipement, label: false, collection: @equipements, input_html: { class: "input-review w-100 mt-3 select2" } %>
+          <div class="mt-3">Description du problème</div>
+          <%= f.input :description, label: false, input_html: { class: "input-review w-100 mb-3" } %>
           <%= f.input :status,      label: false, input_html: { class: "d-none", value: 0 }%>
           <%= f.input :error_code,  label: false, input_html: { class: "d-none", value: "test" } %>
-          <div>Choississez votre créneau : </div>
+          <div>Choississez votre créneau</div>
           <%= f.input :begin,
                       label: false,
-                      input_html: { class: "input-review w-100 m-3 select2" },
+                      input_html: { class: "input-review w-100 mt-3 select2" },
                       collection: @pro.availabilities_choices, label_method: :first, value_method: :second %>
           <%# f.input :begin, collection: [ ["Aujourd hui à 11h", "value pour simple_form_for"], ["Aujourd hui à 12h", "value pour simple_form_for"]], label_method: :first, value_method: :second %>
-          <div class="d-flex justify-content-center">
-            <%= f.submit "Réserver #{@pro.full_name}", class: "btn-green" %>
+          <div class="d-flex mt-3 justify-content-center">
+            <%= f.submit "Réserver #{@pro.full_name}", class: "btn-red"  %>
           </div>
         <% end %>
       </div>

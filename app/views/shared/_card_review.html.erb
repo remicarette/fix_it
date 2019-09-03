@@ -1,7 +1,8 @@
 <%full_stars = "<i class='fas fa-star'></i>"%>
 <%empty_stars = "<i class='far fa-star'></i>"%>
 
-<% array.each do |review|  %>
+
+  <% array.each do |review|  %>
   <div class="card-review p-2">
     <% full = review.stars.to_i %>
     <% empty = (5 - full).to_i %>
@@ -10,7 +11,7 @@
         <%= image_tag(review.booking.equipement.user.photo)%>
       </div>
       <div class="review-descr ml-2 mt-2">
-        <p><%= review.booking.equipement.user.first_name.capitalize %> a ecrit le <%= review.convert_date(review.created_at) %>:</p>
+        <p><%= review.booking.equipement.user.first_name.capitalize %> a écrit le <%= review.convert_date(review.created_at) %> :</p>
       </div>
     </div>
 
@@ -29,3 +30,4 @@
     <br>
   </div>
 <% end %>
+

@@ -6,6 +6,7 @@
   border-radius: 15px;
   margin-right: 100px;
   width: 90%;
+  box-shadow:       0 16px 40px rgba(0,0,0,0.12) !important;
 }
 
 .all-reviews .card-review {
@@ -41,4 +42,8 @@
   font-size: 12px;
   color: #E6BE2E;
   text-center: center;
+}
+
+.display_btn_reviews{
+  display: none;
 }

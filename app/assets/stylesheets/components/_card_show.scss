@@ -1,56 +1,66 @@
 .card-pro-show {
+  width: 90%;
+
+}
+
+.card-pro-show .right {
   margin-top: 50px;
   color:            white;
   background-color: white;
   font-weight:      bold;
   text-shadow:      1px 1px 3px rgba(0,0,0,0.2);
-  border-radius:    15px;
-  box-shadow:       0 0 15px rgba(0,0,0,0.2);
-  height:         320px;
+  border-radius:    0px 15px 15px 0px;
+  box-shadow:       0 16px 40px rgba(0,0,0,0.12) !important;
+  min-height:         280px;
   display:        flex;
   flex-direction: column;
   position:       relative;
   align-items:    center;
-  width: 90%;
+  width: 80%;
 }
 
 .name-pro-show {
-  font-size: 24px;
-  color: #2F4F4F;
-  margin-top: 80px;
+  font-size: 28px;
+  color: $red-fix-it;
+  margin-top: 30px;
+}
+
+.card-pro-show .left {
+  margin-top: 50px;
+  min-height:         280px;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: center;
+  margin-left: 0;
+  border-radius: 15px 0 0 15px;
 }
 
 .infos-pro {
-  margin-top: 20px;
+  margin-top: 40px;
   .city-pro {
     font-size: 24px;
     font-weight: lighter;
-    color: #2F4F4F;
+    color: #3B455A;
   }
   .stars {
     font-size: 20px;
     font-weight: lighter;
     color: #FCD133;
   }
+  .stars p {
+    color: #3B455A;
+    font-size: 18px;
+  }
 }
 
-.card-pro-show .btn-orange {
-  margin-top: 40px;
+.card-pro-show .btn-blue  {
+  margin-top: 15px;
   font-size: 18px;
+  width: 75%;
+  margin-bottom: 15px;
 }
 
- .avatar-pro-show img {
-  position: absolute;
-  top: -40px;
-  left: 10%;
-  right: 40%;
-  width: 100px;
-  height: 100px;
-   border-radius: 50%;
-  border: $blue-fix-it  6px solid;
-  // box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.36) !important;
-  object-fit: cover;
-}
 
 
