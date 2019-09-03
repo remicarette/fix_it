@@ -120,14 +120,12 @@
   margin-left: 10px;
 }
 
-.checkbox-btn:hover {
+.checkbox-btn:checked {
   height: 5px;
   width: 20%;
   border-radius: 15px;
-  color: #EBB044 !important;
-  background-color: #aaf8e5;
+  background-color: #3b455a;
   border: 1px solid #EBB044;
-  -webkit-appearance: none;
   margin-top: 40px;
-  margin-left: 10px;
+  margin-left: 15px;
 }
