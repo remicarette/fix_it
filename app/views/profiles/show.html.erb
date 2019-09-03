@@ -24,7 +24,7 @@
                       collection: @pro.availabilities_choices, label_method: :first, value_method: :second %>
           <%# f.input :begin, collection: [ ["Aujourd hui à 11h", "value pour simple_form_for"], ["Aujourd hui à 12h", "value pour simple_form_for"]], label_method: :first, value_method: :second %>
           <div class="d-flex justify-content-center">
-            <%= f.submit "Réserver #{@pro.full_name}", class: "btn-green" %>
+            <%= f.submit "Réserver #{@pro.full_name}", class: "btn-red"  %>
           </div>
         <% end %>
       </div>
