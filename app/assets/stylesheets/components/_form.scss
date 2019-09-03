@@ -7,24 +7,26 @@ textarea.form-control {
   height: 40px;
   display:flex;
   width: 100%;
-  box-shadow: 0px 5px 10px rgba(0,0,0, 0.3);
-  color: $blue-fix-it;
+  box-shadow: 0px 5px 5px rgba(0,0,0, 0.1);
+  color: $orange-fix-it;
   resize: none;
   border-radius: 5px;
 
 
   &:focus {
-    color: $blue-fix-it;
-    box-shadow: 0px 5px 10px rgba(0,0,0, 0.4);
+    color: $orange-fix-it;
+    box-shadow: 0px 5px 5px rgba(0,0,0, 0.12);
   }
 
 }
 
-
+.border-blue {
+  border-color: $blue-fix-it !important;
+}
 
 .form-control:focus {
   outline: none !important;
-  border-color: $blue-fix-it !important;
+  border-color: $orange-fix-it !important;
   box-shadow: none;
 }
 

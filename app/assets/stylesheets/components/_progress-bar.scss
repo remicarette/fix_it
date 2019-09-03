@@ -1,33 +1,65 @@
 #progress-bar {
-  font-size: 70px;
-  color: #CBCBCB;
-  margin-bottom: 55px;
+  font-size: 35px;
+  color: white;
+  margin-bottom: 35px;
+  transition: all 1s ease-out;
+
 
   .minus {
-    font-size: 40px;
+    font-size: 21px;
     margin: 0 10px;
   }
 
+  .fa-color-fixed {
+    color: $orange-fix-it;
+  }
+
   .fa-color {
-    color: $green-fix-it;
+    animation: colorChange 1s linear;
+    // color: $orange-fix-it;
+  }
+
+  .fa-color0 {
+    animation: colorChange 2.5s;
+    // color: $orange-fix-it;
+  }
+
+  .fa-color1 {
+    animation: colorChange 3.0s;
+    // color: $orange-fix-it;
+  }
+
+  .fa-color2 {
+    animation: colorChange 3.5s;
+    // color: $orange-fix-it;
   }
 
 }
 
+
+@keyframes colorChange {
+  from {
+    color: white;
+  }
+
+  to {
+    color: $orange-fix-it;
+  }
+}
 // Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
+// @media (min-width: 576px) {
 
-  #progress-bar {
-    font-size: 30px;
+//   #progress-bar {
+//     font-size: 30px;
 
-    .minus {
-      font-size: 10px;
-    }
+//     .minus {
+//       font-size: 10px;
+//     }
 
 
-  }
+//   }
 
-}
+// }
 
 // // Medium devices (tablets, 768px and up)
 // @media (min-width: 768px) { ... }
@@ -36,14 +68,14 @@
 // @media (min-width: 992px) { ... }
 
 // Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  #progress-bar {
-    font-size: 70px;
+// @media (min-width: 1200px) {
+//   #progress-bar {
+//     font-size: 70px;
 
-    .minus {
-      font-size: 40px;
-    }
+//     .minus {
+//       font-size: 40px;
+//     }
 
 
-  }
- }
+//   }
+//  }
