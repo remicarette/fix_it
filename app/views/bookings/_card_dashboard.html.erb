@@ -1,0 +1,50 @@
+<div class="dashboard">
+  <div class="card-pro pb-4">
+    <div class="pro">
+      <div class="top border-bottom bg-orange %>">
+        <div class="avatar-pro">
+          <%= image_tag(pro.photo) %>
+        </div>
+        <div class="card-pro-name">
+          <%= pro.full_name %>
+        </div>
+      </div>
+
+      <div class="card-content">
+        <div class="row">
+          <div class="col-3 pl-5 d-flex justify-content-center align-items-center">
+            <%= image_tag "email.svg", alt: "chaudiere", style: "width: 40px;" %>
+          </div>
+          <div class="col-9 d-flex justify-content-start align-items-center">
+            <%= booking.pro.email %>
+          </div>
+          <div class="col-3 d-flex justify-content-center align-items-center mt-3 pl-5">
+            <%= image_tag "phone.svg", alt: "chaudiere", style: "width: 40px;" %>
+          </div>
+          <div class="col-9 d-flex justify-content-start align-items-center mt-3">
+            <%= booking.pro.phone %>
+          </div>
+          <div class="w-100 border-bottom mx-4 mb-2 mt-3   border-blue"></div>
+
+          <div class="col-12 text-center">
+            Vos informations
+          </div>
+          <div class="w-100 border-bottom mx-4 pb-2 mb-3 border-blue"></div>
+
+          <div class="col-3 pl-5 d-flex justify-content-center align-items-center">
+            <%= image_tag "boiler.png", alt: "chaudiere", style: "width: 50px;" %>
+          </div>
+          <div class="col-9 d-flex justify-content-start align-items-center">
+            <%= booking.equipement.model %>
+          </div>
+          <div class="col-3 pt-3 pl-5 d-flex justify-content-center align-items-center">
+            <%= image_tag "calendar-60.svg", alt: "rendez", style: "width: 40px;" %>
+          </div>
+          <div class="col-9 pt-4 d-flex justify-content-start align-items-center">
+            <%= booking.begin.strftime("%d/%m/%Y à %R") %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

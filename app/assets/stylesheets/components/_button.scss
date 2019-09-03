@@ -87,12 +87,16 @@
   margin-right: 20px;
 
   border-radius: 5px;
-  box-shadow: 0px 5px 10px rgba(0,0,0, 0.3);
+  box-shadow: 0px 5px 10px rgba(0,0,0, 0.12);
 
   background-image: asset-url("send.svg");
   background-size: 32px;
   background-repeat: no-repeat;
   background-position: center;
+
+  &:hover {
+    box-shadow: 0px 5px 10px rgba(0,0,0, 0.15);
+  }
 }
 
 .btn-resume {
