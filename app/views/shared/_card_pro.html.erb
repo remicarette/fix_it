@@ -6,7 +6,7 @@
 <div class="col-12 col-sm-6 col-lg-4">
   <div class="card-pro">
     <div class="pro">
-      <div class="top border-bottom <%= user.availability_today == [] ? "bg-orange" : "bg-red" %>">
+      <div class="top border-bottom <%= user.availability_today == [] ? "bg-tomorrow" : "bg-today" %>">
 
         <%= user.availability_today == [] ? "" : raw('<div class="lightning"><i class="fas fa-shipping-fast"></i></div>') %>
 

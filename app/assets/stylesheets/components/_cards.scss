@@ -1,5 +1,6 @@
 
 
+
 .card-pro {
   color:            white;
   background-color: white;
@@ -110,3 +111,76 @@
   border-right: 1px solid $green-fix-it;
   height: 50px;
 }
+
+
+.dashboard .card-pro .top {
+  margin-top: 70px;
+}
+
+
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .dashboard {
+    .card-pro {
+      margin-top: 70px;
+
+    }
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) {
+// }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  #progress-bar {
+  font-size: 32px;
+  color: white;
+  margin-bottom: 35px;
+  transition: all 1s ease-out;
+
+    .minus {
+      font-size: 14px;
+      margin: 0 5px;
+    }
+
+    .like {
+      padding-bottom: 5px;
+    }
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+
+  #progress-bar {
+  font-size: 35px;
+  color: white;
+  margin-bottom: 35px;
+  transition: all 1s ease-out;
+
+
+    .minus {
+      font-size: 21px;
+      margin: 0 10px;
+    }
+
+    .like {
+      padding-bottom: 5px;
+    }
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
