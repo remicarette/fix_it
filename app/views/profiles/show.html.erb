@@ -6,12 +6,12 @@
           <%= render"shared/card_pro_show" %>
         </div>
         <div class="all-reviews">
-          <%= render"shared/card_review", array: @pro.reviews.sort_by{|review| review.created_at}.reverse.last(2) %>
+          <%= render"shared/card_review", array: @pro.reviews.sort_by{|review| review.created_at}.reverse.first(2) %>
           <div class="display_btn_reviews display">
             <%= render"shared/card_review", array: @pro.reviews.sort_by{|review| review.created_at}.reverse[3..-1] %>
           </div>
         </div>
-        <button id="more-button-review" class="btn-red btn-all-reviews"> Plus d'avis </button>
+        <button id="more-button-review" class="btn-red btn-all-reviews mb-3"> Plus d'avis </button>
     </div>
 
     <div class="col-5">
@@ -29,7 +29,7 @@
                       input_html: { class: "input-review w-100 mt-3 select2" },
                       collection: @pro.availabilities_choices, label_method: :first, value_method: :second %>
           <%# f.input :begin, collection: [ ["Aujourd hui à 11h", "value pour simple_form_for"], ["Aujourd hui à 12h", "value pour simple_form_for"]], label_method: :first, value_method: :second %>
-          <div class="d-flex mt-3 justify-content-center">
+          <div class="d-flex mt-4 justify-content-center">
             <%= f.submit "Réserver #{@pro.full_name}", class: "btn-red"  %>
           </div>
         <% end %>
