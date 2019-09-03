@@ -20,7 +20,9 @@ textarea.form-control {
 
 }
 
-
+.border-blue {
+  border-color: $blue-fix-it !important;
+}
 
 .form-control:focus {
   outline: none !important;

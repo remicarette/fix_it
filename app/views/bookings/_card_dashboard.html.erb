@@ -1,52 +1,34 @@
-
-<div class="card-pro">
-  <div class="pro">
-    <div class="top border-bottom bg-orange %>">
-      <div class="avatar-pro">
-        <%= image_tag(pro.photo) %>
-      </div>
-      <div class="card-pro-name">
-        <%= pro.full_name %>
-      </div>
-    </div>
-
-    <div class="card-content">
-      <div class="row">
-        <div class="col-12 text-center border-bottom mx-3 px-0">
-          vos infos
+<div class="dashboard">
+  <div class="card-pro pb-4">
+    <div class="pro">
+      <div class="top border-bottom bg-orange %>">
+        <div class="avatar-pro">
+          <%= image_tag(pro.photo) %>
         </div>
-        <div class="col-3 pl-5 d-flex justify-content-center align-items-center">
-          <%= image_tag "boiler.png", alt: "chaudiere", style: "width: 50px;" %>
-        </div>
-        <div class="col-9 d-flex justify-content-start align-items-center">
-          <%= booking.equipement.model %>
-        </div>
-        <div class="col-3 pt-3 pl-5 d-flex justify-content-center align-items-center">
-          <%= image_tag "calendar-60.svg", alt: "rendez", style: "width: 40px;" %>
-        </div>
-        <div class="col-9 pt-4 d-flex justify-content-start align-items-center">
-          <%= booking.begin.strftime("%d/%m/%Y à %R") %>
-        </div>
-        <div class="col-3 pt-3 pl-5 d-flex justify-content-center align-items-center">
-          <%= image_tag "calendar-60.svg", alt: "rendez", style: "width: 40px;" %>
-        </div>
-        <div class="col-9 pt-4 d-flex justify-content-start align-items-center">
-          <%= booking.begin.strftime("%d/%m/%Y à %R") %>
+        <div class="card-pro-name">
+          <%= pro.full_name %>
         </div>
       </div>
-    </div>
 
+      <div class="card-content">
+        <div class="row">
+          <div class="col-12 text-center">
+            Vos informations
+          </div>
+          <div class="w-100 border-bottom mx-4 pb-2 mb-3 border-blue"></div>
 
-    <div class="bottom text-center d-flex justify-content-around pt-3">
-      <div class="col-6">
-        hello
-      </div>
-      <div class="col-6">
-        <div class="card-pro-number-bookings border-left">
-          RDV:
-          <p style="text-align:center;">
-            <%= pro.bookings.size%>
-          </p>
+          <div class="col-3 pl-5 d-flex justify-content-center align-items-center">
+            <%= image_tag "boiler.png", alt: "chaudiere", style: "width: 50px;" %>
+          </div>
+          <div class="col-9 d-flex justify-content-start align-items-center">
+            <%= booking.equipement.model %>
+          </div>
+          <div class="col-3 pt-3 pl-5 d-flex justify-content-center align-items-center">
+            <%= image_tag "calendar-60.svg", alt: "rendez", style: "width: 40px;" %>
+          </div>
+          <div class="col-9 pt-4 d-flex justify-content-start align-items-center">
+            <%= booking.begin.strftime("%d/%m/%Y à %R") %>
+          </div>
         </div>
       </div>
     </div>
