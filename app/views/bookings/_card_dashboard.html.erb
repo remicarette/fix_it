@@ -12,6 +12,20 @@
 
       <div class="card-content">
         <div class="row">
+          <div class="col-3 pl-5 d-flex justify-content-center align-items-center">
+            <%= image_tag "email.svg", alt: "chaudiere", style: "width: 40px;" %>
+          </div>
+          <div class="col-9 d-flex justify-content-start align-items-center">
+            <%= booking.pro.email %>
+          </div>
+          <div class="col-3 d-flex justify-content-center align-items-center mt-3 pl-5">
+            <%= image_tag "phone.svg", alt: "chaudiere", style: "width: 40px;" %>
+          </div>
+          <div class="col-9 d-flex justify-content-start align-items-center mt-3">
+            <%= booking.pro.phone %>
+          </div>
+          <div class="w-100 border-bottom mx-4 mb-2 mt-3   border-blue"></div>
+
           <div class="col-12 text-center">
             Vos informations
           </div>
