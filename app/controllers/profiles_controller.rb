@@ -2,7 +2,11 @@ class ProfilesController < ApplicationController
 
   def index
     if params[:zip_code].present?
-      users_zip = User.where(zip_code: params[:zip_code])
+      @results_geo = Geocoder.search(params[:zip_code]).first
+      latitude = @results_geo.latitude
+      longitude = @results_geo.longitude
+      users_zip = User.near([latitude, longitude], 15)
+      # users_zip = User.where(zip_code: params[:zip_code])
       if params[:model].present?
         users_brands = []
         users_zip.each do |user|
@@ -15,9 +19,14 @@ class ProfilesController < ApplicationController
         users_brands.nil? ? @users = users_zip.where(user_type: 'pro') : @users = users_brands
       else
         @users = users_zip.where(user_type: 'pro')
+        if @users == []
+          redirect_to root_path, alert: "Desolé, pour l'instant il n'y a pas de depanneurs disponible dans cette region."
+        else
+          @users
+        end
       end
     else
-      redirect_to root_path, alert: "Please type in a zip code!"
+      redirect_to root_path, alert: "SVP, mettez un code postal."
     end
   end
 
@@ -26,4 +35,4 @@ class ProfilesController < ApplicationController
     @equipements = Equipement.where(user: current_user)
     @booking = Booking.new
   end
-end
+end# give all users 10km around "59000"
