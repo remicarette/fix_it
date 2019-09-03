@@ -32,20 +32,20 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-8 offset-4">
+    <div class="col-lg-8 offset-lg-4 col-12">
         <div id="title" class="text-center my-3">
           <h3><%= @booking.progress %></h3>
         </div>
     </div>
 
-    <div class="col-4">
+    <div class="col-lg-4 col-md-12 col-12 d-flex justify-content-center">
       <%= render 'bookings/card_dashboard', pro: @booking.pro, booking: @booking  %>
     </div>
-    <div class="col-8">
-      <div class="col-12">
+    <div class="col-lg-8 col-12">
+      <div class="col-lg-12">
         <%= render 'bookings/progress_bar', status: @booking.status %>
       </div>
-      <div class="col-12">
+      <div class="col-lg-12 col-12">
        <% if @booking.status < 4 %>
               <!-- CHATBOX  -->
               <%= render 'bookings/chatbox', messages: @messages, user_pro: @user, message: @message%>

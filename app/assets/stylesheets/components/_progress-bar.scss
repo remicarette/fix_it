@@ -1,41 +1,40 @@
-#progress-bar {
-  font-size: 35px;
-  color: white;
-  margin-bottom: 35px;
-  transition: all 1s ease-out;
 
 
-  .minus {
-    font-size: 21px;
-    margin: 0 10px;
-  }
+//    #################   WARNING   ################
+//    ##                                          ##
+//    ##         RESPONSIVE PROGRESS BAR          ##
+//    ##              BEFORE UPDATING             ##
+//    ##     CHECK THE FORMAT YOU WANT TO UPDATE  ##
+//    ##                                          ##
+//    ##############################################
 
-  .fa-color-fixed {
-    color: $orange-fix-it;
-  }
 
-  .fa-color {
-    animation: colorChange 1s linear;
-    // color: $orange-fix-it;
-  }
 
-  .fa-color0 {
-    animation: colorChange 2.5s;
-    // color: $orange-fix-it;
-  }
+// COLORS ANIMATIONS
 
-  .fa-color1 {
-    animation: colorChange 3.0s;
-    // color: $orange-fix-it;
-  }
-
-  .fa-color2 {
-    animation: colorChange 3.5s;
-    // color: $orange-fix-it;
-  }
-
+.fa-color-fixed {
+  color: $orange-fix-it;
 }
 
+.fa-color {
+  animation: colorChange 1s linear;
+  // color: $orange-fix-it;
+}
+
+.fa-color0 {
+  animation: colorChange 2.5s;
+  // color: $orange-fix-it;
+}
+
+.fa-color1 {
+  animation: colorChange 3.0s;
+  // color: $orange-fix-it;
+}
+
+.fa-color2 {
+  animation: colorChange 3.5s;
+  // color: $orange-fix-it;
+}
 
 @keyframes colorChange {
   from {
@@ -46,36 +45,88 @@
     color: $orange-fix-it;
   }
 }
+
+// RESPONSIVE DESIGN
+
+// Extra small devices (portrait phones, less than 576px)
+
+#progress-bar {
+  font-size: 32px;
+  color: white;
+  margin-bottom: 35px;
+  transition: all 1s ease-out;
+
+
+  .minus {
+    font-size: 14px;
+    margin: 0 5px;
+  }
+
+  .like {
+    padding-bottom: 8px;
+  }
+}
+
 // Small devices (landscape phones, 576px and up)
-// @media (min-width: 576px) {
+@media (min-width: 576px) {
+  #progress-bar {
+  font-size: 32px;
+  color: white;
+  margin-bottom: 35px;
+  transition: all 1s ease-out;
 
-//   #progress-bar {
-//     font-size: 30px;
+    .minus {
+      font-size: 14px;
+      margin: 0 5px;
+    }
 
-//     .minus {
-//       font-size: 10px;
-//     }
+    .like {
+      padding-bottom: 5px;
+    }
+  }
+}
 
-
-//   }
-
+// Medium devices (tablets, 768px and up)
+// @media (min-width: 768px) {
 // }
 
-// // Medium devices (tablets, 768px and up)
-// @media (min-width: 768px) { ... }
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  #progress-bar {
+  font-size: 32px;
+  color: white;
+  margin-bottom: 35px;
+  transition: all 1s ease-out;
 
-// // Large devices (desktops, 992px and up)
-// @media (min-width: 992px) { ... }
+    .minus {
+      font-size: 14px;
+      margin: 0 5px;
+    }
+
+    .like {
+      padding-bottom: 5px;
+    }
+  }
+}
 
 // Extra large devices (large desktops, 1200px and up)
-// @media (min-width: 1200px) {
-//   #progress-bar {
-//     font-size: 70px;
+@media (min-width: 1200px) {
 
-//     .minus {
-//       font-size: 40px;
-//     }
+  #progress-bar {
+  font-size: 35px;
+  color: white;
+  margin-bottom: 35px;
+  transition: all 1s ease-out;
 
 
-//   }
-//  }
+    .minus {
+      font-size: 21px;
+      margin: 0 10px;
+    }
+
+    .like {
+      padding-bottom: 5px;
+    }
+  }
+
+}
