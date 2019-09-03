@@ -35,7 +35,7 @@ class Booking < ApplicationRecord
     when 3
       "Le technicien est en route"
     when 4
-      "L'intervention est terminée"
+      "Merci de votre confiance !"
     end
   end
 

@@ -1,36 +1,66 @@
-<div class="container">
+<!-- <div class="container">
   <div class="row">
-    <div class="col-12">
-      <!-- TITLE -->
+    <div class="col-8 offset-4">
       <div id="title" class="text-center my-3">
-        <h3><%= @booking.progress %></h1>
+        <h3><%= @booking.progress %></h3>
       </div>
-      <!-- PROGRESS BAR -->
-      <%= render 'bookings/progress_bar', status: @booking.status %>
+    </div>
+    <div class="col-8 offset-4">
+      <%# render 'bookings/progress_bar', status: @booking.status %>
     </div>
     <div class="col-4">
-      <!-- CARD INFO BOOKING -->
-      <%= render 'bookings/card_dashboard', pro: @booking.pro, booking: @booking  %>
+      <%# render 'bookings/card_dashboard', pro: @booking.pro, booking: @booking  %>
     </div>
 
-    <% if @booking.status < 4 %>
+    <%# if @booking.status < 4 %>
       <div class="col-8">
-        <!-- CHATBOX  -->
-        <%= render 'bookings/chatbox', messages: @messages, user_pro: @user, message: @message%>
+        <%# render 'bookings/chatbox', messages: @messages, user_pro: @user, message: @message%>
       </div>
-    <% else %>
-      <% if @booking.reviews.size < 1 %>
+    <%# else %>
+      <%# if @booking.reviews.size < 1 %>
         <div class="col-8">
-           <%= render 'reviews/review_form', review: @review, booking: @booking %>
+           <%# render 'reviews/review_form', review: @review, booking: @booking %>
         </div>
-      <% else %>
+      <%# else %>
         <div class="col-8">
-           <%= render 'bookings/thanks', booking: @booking %>
+           <%# render 'bookings/thanks', booking: @booking %>
         </div>
-      <% end %>
-    <% end %>
+      <%# end %>
+    <%# end %>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-4">
+        <div id="title" class="text-center my-3">
+          <h3><%= @booking.progress %></h3>
+        </div>
+    </div>
+
+    <div class="col-4">
+      <%= render 'bookings/card_dashboard', pro: @booking.pro, booking: @booking  %>
+    </div>
+    <div class="col-8">
+      <div class="col-12">
+        <%= render 'bookings/progress_bar', status: @booking.status %>
+      </div>
+      <div class="col-12">
+       <% if @booking.status < 4 %>
+              <!-- CHATBOX  -->
+              <%= render 'bookings/chatbox', messages: @messages, user_pro: @user, message: @message%>
+          <% else %>
+            <% if @booking.reviews.size < 1 %>
+                 <%= render 'reviews/review_form', review: @review, booking: @booking %>
+            <% else %>
+                 <%= render 'bookings/thanks', booking: @booking %>
+            <% end %>
+          <% end %>
+      </div>
+    </div>
+
+    </div>
   </div>
 </div>
-
 
 
