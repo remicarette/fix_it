@@ -1,29 +1,12 @@
 class ProfilesController < ApplicationController
-
   def index
     if params[:zip_code].present?
-      @results_geo = Geocoder.search(params[:zip_code]).first
-      latitude = @results_geo.latitude
-      longitude = @results_geo.longitude
-      users_zip = User.near([latitude, longitude], 15)
-      # users_zip = User.where(zip_code: params[:zip_code])
-      if params[:model].present?
-        users_brands = []
-        users_zip.each do |user|
-          @brands = []
-          user.skills.each do |skill|
-            @brands << skill.brand
-          end
-          users_brands << user if @brands.include? params[:model]
-        end
-        users_brands.nil? ? @users = users_zip.where(user_type: 'pro') : @users = users_brands
+      @geo = Geocoder.search(params[:zip_code]).first
+      users = User.near([@geo.latitude, @geo.longitude], 15).where(user_type: 'pro')
+      if users == []
+        redirect_to root_path, alert: "Désolé, pour l'instant il n'y a pas de dépanneurs disponibles dans cette région."
       else
-        @users = users_zip.where(user_type: 'pro')
-        if @users == []
-          redirect_to root_path, alert: "Désolé, pour l'instant il n'y a pas de dépanneurs disponibles dans cette région."
-        else
-          @users
-        end
+        @users = brand_method(users)
       end
     else
       redirect_to root_path, alert: "Veuillez indiquer un code postal, s'il vous plaît."
@@ -35,4 +18,27 @@ class ProfilesController < ApplicationController
     @equipements = Equipement.where(user: current_user)
     @booking = Booking.new
   end
-end# give all users 10km around "59000"
+
+  private
+
+  def brand_method(users)
+    if params[:model].present?
+      users_brands = []
+      users.map do |user|
+        brands = []
+        user.skills.each do |skill|
+          brands << skill.brand
+        end
+        users_brands << user if brands.include? params[:model]
+      end
+      if users_brands == []
+        redirect_to root_path, alert: "Désolé, pour l'instant il n'y a pas de dépanneurs disponibles qui conaissent la marque indiquée."
+      else
+        sort_users = users_brands
+      end
+    else
+      sort_users = users
+    end
+    return sort_users
+  end
+end

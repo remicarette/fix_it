@@ -1,42 +1,75 @@
-<%full_stars = "<i class='fas fa-star'></i>"%>
+<%full_stars = "<i class='  fas fa-star'></i>"%>
 <%empty_stars = "<i class='far fa-star'></i>"%>
 <%half_stars = "<i class='fas fa-star-half-alt'></i>"%>
-<% symbol_city = "<i class='fas fa-map-marker-alt'></i>" %>
+<%symbol_city = "<i class='fas fa-map-marker-alt'></i>"%>
+<%symbol_team = "<i class='fas fa-users'></i>"%>
+<%symbol_rdv = "<i class='fas fa-toolbox'></i>"%>
+<%symbol_phone = "<i class='fas fa-mobile-alt'></i>"%>
 
-  <div class="left bg-red">
-  </div>
-  <div class="right">
-    <div class="avatar-pro-show">
-      <%= image_tag(@pro.photo) %>
+  <div class="left col-2">
+    <div class="symbol-city">
+      <%= symbol_city.html_safe %>
     </div>
+    <div class="symbol-team" >
+      <%= symbol_team.html_safe %>
+    </div>
+    <div class="symbol-rdv" >
+      <%= symbol_rdv.html_safe %>
+    </div>
+    <div class="symbol-phone" >
+      <%= symbol_phone.html_safe %>
+    </div>
+  </div>
+
+  <div class="right col-10">
     <div class="name-pro-show text-center">
       <%= @pro.full_name %>
     </div>
-    <div class="infos-pro text-center d-flex justify-content-around w-100">
-      <div class="city-pro">
-        <%= symbol_city.html_safe %> <%= @pro.city %>
+    <div class="company-name-show">
+      <%= @pro.company_name %>
+    </div>
+    <div class="white-part-show row">
+      <div class="right-left col-7">
+        <div class="city-name text-align-left">
+          <%= @pro.city %>
+        </div>
+        <div>
+          <div class="team-size text-align-left" >
+            <%= 60 %> salariés
+          </div>
+          <div class="amount-rdv text-align-left" >
+            <%= @pro.bookings.count %> interventions
+          </div>
+        </div>
+         <div class="phone-number-show text-align-left" >
+          <%= @pro.phone %>
+        </div>
       </div>
 
-      <div class="stars">
-        <% avg = @pro.average_stars_pro %>
-        <% @pro.show_stars(avg)[0].times do %>
-          <%= full_stars.html_safe %>
-        <% end %>
-        <% @pro.show_stars(avg)[1].times do %>
-          <%= half_stars.html_safe %>
-        <% end %>
-        <% @pro.show_stars(avg)[2].times do %>
-          <%= empty_stars.html_safe %>
-        <% end %>
-        <p style="text-align:center;">
-          <% amount_reviews = @pro.reviews.size %>
-          <%= amount_reviews %> Avis
-        </p>
+      <div class="right-right col-5" style="text-align:center;">
+        <div class="stars">
+          <% avg = @pro.average_stars_pro %>
+          <% @pro.show_stars(avg)[0].times do %>
+            <%= full_stars.html_safe %>
+          <% end %>
+          <% @pro.show_stars(avg)[1].times do %>
+            <%= half_stars.html_safe %>
+          <% end %>
+          <% @pro.show_stars(avg)[2].times do %>
+            <%= empty_stars.html_safe %>
+          <% end %>
+          <p>
+            <%= @pro.reviews.size %> Avis
+          </p>
+        </div>
       </div>
     </div>
+
+    <div class="avatar-pro-show">
+      <%= image_tag(@pro.photo) %>
+    </div>
+
     <div class="btn-blue text-center">
       Disponible <%= @pro.availability_today == [] ? "demain" : "aujourd'hui" %> à <%= @pro.first_free_slot % 24 %> h
     </div>
   </div>
-
-

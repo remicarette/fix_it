@@ -1,6 +1,9 @@
 .card-pro-show {
-  width: 90%;
+  width: 100%;
+}
 
+#more-button-review {
+  width: 100%;
 }
 
 .card-pro-show .right {
@@ -22,7 +25,7 @@
 .name-pro-show {
   font-size: 28px;
   color: $red-fix-it;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .card-pro-show .left {
@@ -33,25 +36,84 @@
   flex-direction: column;
   position: relative;
   align-items: center;
-  margin-left: 0;
+
   border-radius: 15px 0 0 15px;
+  background-color: $red-fix-it;
 }
 
-.infos-pro {
-  margin-top: 40px;
-  .city-pro {
-    font-size: 24px;
-    font-weight: lighter;
-    color: #3B455A;
-  }
+.symbol-city {
+  font-size: 32px;
+  color: white;
+  margin-top: 90px;
+}
+
+.symbol-team {
+  font-size: 32px;
+  color: white;
+  margin-top: 10px;
+}
+
+.symbol-rdv {
+  font-size: 32px;
+  color: white;
+  margin-top: 10px;
+}
+
+.symbol-phone {
+  font-size: 32px;
+  color: white;
+  margin-top: 10px;
+}
+
+.city-name {
+  font-size: 32px;
+  color: #3B455A;
+  margin-top: 4px;
+  width: 90%;
+  font-weight: lighter;
+}
+
+.team-size {
+  margin-top: 10px;
+  font-size: 32px;
+  color: #3B455A;
+  width: 90%;
+  font-weight: lighter;
+
+}
+
+.amount-rdv {
+  margin-top: 10px;
+  font-size: 32px;
+  color: #3B455A;
+  width: 90%;
+  font-weight: lighter;
+}
+
+.phone-number-show {
+  margin-top: 10px;
+  font-size: 32px;
+  color: #3B455A;
+  width: 90%;
+  font-weight: lighter;
+}
+
+.company-name-show {
+  font-size: 16px;
+  color: $red-fix-it;
+}
+
+.right-right {
+  margin-top: 90px;
   .stars {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: lighter;
     color: #FCD133;
+    width: 100%;
   }
   .stars p {
     color: #3B455A;
-    font-size: 18px;
+    font-size: 22px;
   }
 }
 
@@ -60,6 +122,10 @@
   font-size: 18px;
   width: 75%;
   margin-bottom: 15px;
+}
+
+.white-part-show {
+  width: 100%;
 }
 
 
