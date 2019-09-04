@@ -20,4 +20,17 @@ class Pro::BookingsController < ApplicationController
       redirect_to root_path
     end
   end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.status += 1
+    redirect_to pro_booking_path(@booking) if @booking.save
+  end
+
+  def reset
+    @booking = Booking.find(params[:id])
+    @booking.status = 0
+    redirect_to pro_booking_path(@booking) if @booking.save
+  end
+
 end

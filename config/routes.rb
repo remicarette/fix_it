@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   namespace :pro do
     resources :bookings, only: [:index, :show, :update]
+    patch 'bookings/:id/reset', to:'bookings#reset', as: "booking_reset"
   end
 
   devise_for :users

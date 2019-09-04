@@ -8,7 +8,18 @@
           <p><%= @booking.client.phone %></p>
           <p><%= @booking.client.email %></p>
           <p><%= "#{@booking.client.address} #{@booking.client.zip_code} #{@booking.client.city}" %></p>
-          <p><%=  %></p>
+          <p><%= "Status : #{@booking.booking_status}" %></p>
+          <% if @booking.status < 4 %>
+            <%= link_to "Change status to #{@booking.next_status}", pro_booking_path(@booking),
+                  class: "btn btn-warning w-100 mb-4",
+                  method: :patch  %>
+          <% end %>
+          <% if @booking.status > 0 %>
+            <%= link_to "Reset status #{@booking.next_status}", pro_booking_reset_path(@booking),
+                  class: "btn btn-danger w-100",
+                  method: :patch,
+                  confirm: 'Are you sure?' %>
+          <% end %>
         </div>
       </div>
     </div>
