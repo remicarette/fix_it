@@ -90,34 +90,34 @@ def create_full_booking_before_with_reviews(equipement, pro)
   b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 08:00','2019/08/28 09:00')
   create_review("Super plombier !", "Je vous le recommande", rand(3..5), b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 09:00','2019/08/28 10:00')
+  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 09:00','2019/08/29 10:00')
   create_review("Pro", "Le boulot est fait ! je vous le recommande", rand(3..5), b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 10:00','2019/08/28 11:00')
+  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 10:00','2019/08/27 11:00')
   create_review("Travail impeccable", "Bravo !", rand(3..5), b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 11:00','2019/08/28 12:00')
+  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 11:00','2019/08/30 12:00')
   create_review("Good job", "Nice job", rand(3..5), b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 12:00','2019/08/28 12:00')
+  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 12:00','2019/08/25 12:00')
   create_review("A fuire !", "Plus jamais", rand(1..3), b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 13:00','2019/08/28 14:00')
+  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 13:00','2019/09/02 14:00')
   create_review("Top !", "Rien à dire", rand(3..5), b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 14:00','2019/08/28 15:00')
+  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 14:00','2019/08/21 15:00')
   create_review("Super !!!! Merci !", "Mon nouveau plombier de famille", rand(3..5), b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 15:00','2019/08/28 16:00')
+  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 15:00','2019/09/03 16:00')
   create_review("Youpi ! ", "Merci !", rand(3..5), b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 16:00','2019/08/28 17:00')
+  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 16:00','2019/08/02 17:00')
   create_review("Super plombier !", "Je vous le recommande", rand(3..5), b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 17:00','2019/08/28 18:00')
+  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 17:00','2019/08/01 18:00')
   create_review("Super plombier !", "Je vous le recommande", rand(3..5), b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 18:00','2019/08/28 19:00')
+  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 18:00','2019/09/03 19:00')
   create_review("Super plombier !", "Je vous le recommande", rand(3..5), b)
 
   b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 19:00','2019/08/28 20:00')
