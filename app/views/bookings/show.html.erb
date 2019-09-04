@@ -69,8 +69,20 @@
       { channel: 'ChatChannel', booking_id: <%= @booking.id %> },
       { received: (data) => {
 
-        console.log(data)
+        msg = JSON.parse(data["message"])
+        message = msg.content
+        sender = data["sender"]
+        messages = document.getElementById('messages')
 
+        input = document.getElementById('message_content');
+
+        if (sender === "perso") {
+          messages.insertAdjacentHTML("beforeend", `<div class='send pt-2'><div class='message-sender'>${message}</div></div>`);
+          input.value = "";
+        }
+        else {
+          messages.insertAdjacentHTML("beforeend", `<div class='receive pt-2'><div class='message-receiver'>${message}</div></div>`);
+        }
       }
     })
   </script>

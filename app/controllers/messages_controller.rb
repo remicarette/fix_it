@@ -1,7 +1,6 @@
 class MessagesController < ApplicationController
 
   def create
-
     @booking = Booking.find(params[:booking])
 
     @message = Message.new(message_params)
@@ -10,19 +9,15 @@ class MessagesController < ApplicationController
     if @message.save
 
       # ACTION CABLE
-
       ActionCable.server.broadcast("booking_channel_#{@booking.id}", {
-        message: @message.to_json })
+        message: @message.to_json, sender: @message.sender.user_type })
 
       # CONVERSATION
-
       @messages = @message.conversation
-      # conversation = Message.where(sender: current_user, receiver: @message.receiver) + Message.where(sender: @message.receiver, receiver: current_user)
-      # @messages = conversation.sort_by { |message| message.created_at }
 
       respond_to do |format|
         format.html { redirect_to booking_path(@booking) }
-        format.js
+        # format.js
       end
     else
       @friend   = User.find(params[:user_id])
