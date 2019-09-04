@@ -10,6 +10,9 @@
                     } %>
     </div>
     <div class="col-1 form-group">
+      <div class="d-none">
+        <%= text_field_tag(:booking, @booking.id, class: "d-none") %>
+      </div>
       <%= f.submit "", class: "btn-chat", id: 'commit' %>
     </div>
   </div>

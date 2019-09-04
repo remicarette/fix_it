@@ -37,3 +37,11 @@
   </div>
 </div>
 
+<% content_for :after_js do %>
+  <script>
+    App['booking_channel_<%= @booking.id %>'] = App.cable.subscriptions.create(
+      { channel: 'ChatChannel', booking_id: <%= @booking.id %> },
+      { received: (data) => { console.log(data) }
+    })
+  </script>
+<% end %>
