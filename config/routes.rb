@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   namespace :pro do
     resources :bookings, only: [:index, :show, :update]
     patch 'bookings/:id/reset', to:'bookings#reset', as: "booking_reset"
-    delete 'bookings/:id/delete_message', to:'messages#destroy', as: "destroy_messages"
+    delete 'bookings/:id/delete_message', to:'messages#destroy_all', as: "destroy_messages"
   end
 
   devise_for :users
