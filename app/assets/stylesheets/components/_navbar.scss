@@ -1,11 +1,11 @@
 .navbar-fix-it {
   justify-content: space-between;
-  background: $blue-fix-it;
+  background: $blue-background;
   // overflow: auto;
 }
 
 .navbar-light .navbar-brand {
-  color: white;
+  color: $green-card;
 }
 
 .navbar-fix-it .navbar-collapse {
@@ -14,11 +14,11 @@
 
 .navbar-fix-it .navbar-brand img {
   width: 40px;
-  color: white;
+  color: $green-card;
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: white;
+  color: $green-card;
 
   &:hover {
     color: white;

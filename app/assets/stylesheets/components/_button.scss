@@ -100,17 +100,38 @@
 }
 
 .btn-resume {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 10px 20px;
   font-weight: bold;
-  font-size: 24px;
-  color: white;
-  width: 211px;
-  height: 64px;
-  border-radius: 5px;
-  background-color: #52A490;
-  box-shadow: 0px 10px 15px rgba(230,230,230, 1);
+  font-size: 16px;
+  color: white !important;
+  border-radius: 10px;
+  background-color: $red-fix-it !important;
+  border: 3px solid $red-fix-it;
+  text-decoration: none;
+  outline: none;
+  width: 100%;
+}
+
+.checkbox-btn {
+  height: 5px;
+  width: 20%;
+  border-radius: 15px;
+  color: #EBB044 !important;
+  background-color: #EBB044;
+  border: 1px solid #EBB044;
+  -webkit-appearance: none;
+  margin-top: 40px;
+  margin-left: 10px;
+}
+
+.checkbox-btn:checked {
+  height: 5px;
+  width: 20%;
+  border-radius: 15px;
+  background-color: #3b455a;
+  border: 1px solid #EBB044;
+  margin-top: 40px;
+  margin-left: 15px;
 }
 
 .btn-blue {
