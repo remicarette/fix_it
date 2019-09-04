@@ -1,5 +1,5 @@
 <div id="chatbox">
-  <div class="title d-flex justify-content-center align-items-center bg-orange text-white border-bottom">
+  <div class="title d-flex justify-content-center align-items-center bg-card text-white border-bottom">
       Chat with <%= user_pro.full_name %>
   </div>
 
@@ -11,7 +11,7 @@
     <% end %>
   </div>
 
-  <div class="chat">
+  <div class="chat bg-card">
     <%= render 'bookings/form_chat', user_pro: user_pro, message: message %>
   </div>
 </div>

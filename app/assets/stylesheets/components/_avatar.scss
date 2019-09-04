@@ -48,10 +48,14 @@
   border: #BDBDBD 1px solid;
 }
 
-.bg-red {
+.bg-today {
   background-color: $red-fix-it;
 }
 
-.bg-orange {
-  background-color: $orange-fix-it;
+.bg-tomorrow {
+  background-color: $green-card;
+}
+
+.bg-card {
+  background-color: $green-card;
 }
