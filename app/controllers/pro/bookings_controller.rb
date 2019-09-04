@@ -10,7 +10,12 @@ class Pro::BookingsController < ApplicationController
 
   def show
     if current_user.user_type == "pro"
-      @booking = Booking.where(params[:id])
+      @booking = Booking.find(params[:id])
+      @user = @booking.client
+
+      conversation = Message.where(sender: current_user, receiver: @user) + Message.where(sender: @user, receiver: current_user)
+      @messages = conversation.sort_by { |message| message.created_at }
+      @message = Message.new
     else
       redirect_to root_path
     end

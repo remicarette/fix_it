@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="text-center"><%= @booking.client.full_name %></h5>
+          <p><%= @booking.client.phone %></p>
+          <p><%= @booking.client.email %></p>
+          <p><%= "#{@booking.client.address} #{@booking.client.zip_code} #{@booking.client.city}" %></p>
+          <p><%=  %></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-8">
+      <!-- CHAT -->
+        <%= render 'bookings/chatbox',
+              messages: @messages,
+              user_pro: @booking.client,
+              message:  @message %>
+    </div>
+  </div>
+</div>
+
+<% console %>
