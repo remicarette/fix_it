@@ -24,6 +24,10 @@ class Booking < ApplicationRecord
     BOOKING_STATUS[self.status]
   end
 
+  def next_status
+    BOOKING_STATUS[self.status + 1]
+  end
+
   def progress
     case self.status
     when 0

@@ -1,10 +1,16 @@
-<%= simple_form_for([user_pro, message], remote: true, html: { class: "w-100"}) do |f| %>
+<%= simple_form_for([user_pro, message], remote: true, html: { class: "w-100", name: "new_message"}) do |f| %>
   <div class="form-row">
     <div class="col-11 form-group">
-      <%= f.input :content, html: { class: "input-chat"}, label: false, autofocus: true %>
+      <%= f.input   :content,
+                    label: false,
+                    autofocus: true,
+                    as: :string,
+                    html: {
+                      class: "input-chat"
+                    } %>
     </div>
     <div class="col-1 form-group">
-      <%= f.submit "", class: "btn-chat" %>
+      <%= f.submit "", class: "btn-chat", id: 'commit' %>
     </div>
   </div>
 <% end %>

@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12"><h1>All bookings</h1></div>
+    <% @bookings.each do |booking| %>
+      <div class="col-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5><%= booking.client.full_name %></h5>
+            <p><%= booking.begin.strftime("%d/%m/%Y à %R") %></p>
+            <p><%= "#{booking.equipement.brand} #{booking.equipement.model}" %></p>
+            <p><%= booking.begin.strftime("%d/%m/%Y à %R") %></p>
+            <%= link_to "show booking", pro_booking_path(booking) , class: "btn btn-primary w-100"%>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

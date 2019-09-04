@@ -23,7 +23,6 @@ class User < ApplicationRecord
   validates :city, presence: true, length: { minimum: 3 }
   validates :user_type, presence: true, inclusion: { in: %W(pro perso) }
 
-
   # def will_save_change_to_fulladress?
   #   self.fulladdress != fulladdress
   # end
@@ -59,6 +58,10 @@ class User < ApplicationRecord
   # def availability(date)
     # for refactoring
   # end
+
+  def pro?
+    self.user_type == "pro"
+  end
 
   def availability_today
     Time.now.hour > 7 ? h = Time.now.hour + 1 : h = 7
