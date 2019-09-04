@@ -1,4 +1,4 @@
-SKILLS = ["Frisquet", "Viessmann", "Atlantic", "Weishaupt", "Vergne"]
+SKILLS = ["Frisquet", "Viessmann", "Chaffoteaux", "Atlantic", "Weishaupt", "Vergne"]
 
 
 def create_pro(first_name, last_name, phone, address, zip_code, city, photo, company)
@@ -97,7 +97,7 @@ def create_full_booking_before_with_reviews(equipement, pro)
   create_review("Travail impeccable", "Bravo !", rand(3..5), b)
 
   b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 11:00','2019/08/28 12:00')
-  create_review("Good job", "Blow job", rand(3..5), b)
+  create_review("Good job", "Nice job", rand(3..5), b)
 
   b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 12:00','2019/08/28 12:00')
   create_review("A fuire !", "Plus jamais", rand(1..3), b)
@@ -137,7 +137,7 @@ def create_full_booking_before_with_reviews_and_notation(equipement, pro, stars)
   create_review("Travail impeccable", "Bravo !", stars, b)
 
   b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 11:00','2019/08/28 12:00')
-  create_review("Good job", "Blow job", stars, b)
+  create_review("Good job", "Nice job", stars, b)
 
   b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 12:00','2019/08/28 12:00')
   create_review("A fuire !", "Plus jamais", stars, b)
@@ -219,7 +219,7 @@ puts "create client"
 users = [ ]
 
 users << remi = create_client('remi','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UL79224P2-7a94c0d24580-48')
-# users << moritz = create_client('moritz','michalak','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UL7BFB5QQ-0a2dc0a5ae19-48')
+users << moritz = create_client('moritz','michalak','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UL7BFB5QQ-0a2dc0a5ae19-48')
 # users << fx = create_client('fx','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-U04QWL5QD-b0caace14645-48')
 # users << marmouz = create_client('marmouz','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UL96Z3JUX-62eb1e8abb98-72')
 # users << nico = create_client('nounours','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UL7JFQ0R3-3696ceb54c45-48')
