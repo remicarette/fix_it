@@ -16,10 +16,18 @@
         <li class="nav-item active d-flex align-items-center">
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
+        <% if current_user.pro? %>
+          <li class="nav-item active d-flex align-items-center">
+            |
+          </li>
+          <li class="nav-item active d-flex align-items-center">
+            <%= link_to "Bookings", pro_bookings_path, class: "nav-link" %>
+          </li>
+        <% end %>
         <li class="nav-item dropdown">
           <%= image_tag current_user.photo, class: "avatar-perso dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <% unless current_user.bookings_as_client.nil? %>
+            <% unless current_user.bookings_as_client == [] %>
               <%= link_to "Last booking", booking_path(current_user.bookings_as_client.last), class: "dropdown-item" %>
             <% end %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
