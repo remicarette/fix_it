@@ -1,4 +1,4 @@
-SKILLS = ["Frisquet", "Viessmann", "Chaffoteaux", "Atlantic", "Weishaupt", "Vergne"]
+SKILLS = [ "Saunier Duval", "Frisquet", "Viessmann", "Chaffoteaux", "Atlantic", "Weishaupt", "Vergne"]
 
 
 def create_pro(first_name, last_name, phone, address, zip_code, city, photo, company)
@@ -86,84 +86,89 @@ def create_full_booking_today(equipement, pro)
   create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/03 20:00','2019/09/02 21:00')
 end
 
+
+
 def create_full_booking_before_with_reviews(equipement, pro)
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 08:00','2019/08/28 09:00')
-  create_review("Super plombier !", "Je vous le recommande", rand(3..5), b)
+  equipement_sample = Equipement.all.sample
+  b = create_booking(equipement_sample,pro,'error 404','elle tombe toujours en panne','2019/08/28 08:00','2019/08/28 09:00')
+  create_review("Après Super Mario, Super #{b.user.first_name} ! 😂", "Je vous recommande #{b.user.first_name}.", rand(3..5), b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 09:00','2019/08/29 10:00')
-  create_review("Pro", "Le boulot est fait ! je vous le recommande", rand(3..5), b)
+  b = create_booking(equipement_sample,pro,'error 404','elle tombe toujours en panne','2019/08/28 09:00','2019/08/29 10:00')
+  create_review("Un travail de pro 🛠⚙️🙏", "Le boulot est fait ! N'hésitez vraiment pas", rand(3..5), b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 10:00','2019/08/27 11:00')
-  create_review("Travail impeccable", "Bravo !", rand(3..5), b)
+  b = create_booking(equipement_sample,pro,'error 404','elle tombe toujours en panne','2019/08/28 10:00','2019/08/27 11:00')
+  create_review("Travail impeccable 🛠⚙️🙏 ", "Un grand merci à #{b.user.first_name} d'avoir répondu rapidemment!", rand(3..5), b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 11:00','2019/08/30 12:00')
-  create_review("Good job", "Nice job", rand(3..5), b)
+  b = create_booking(equipement_sample,pro,'error 404','elle tombe toujours en panne','2019/08/28 11:00','2019/08/30 12:00')
+  create_review("Good job 💪", "J'avais une résa pour des clients Airbn'b, ouf! sauvé!", rand(3..5), b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 12:00','2019/08/25 12:00')
-  create_review("A fuire !", "Plus jamais", rand(1..3), b)
+  b = create_booking(equipement_sample,pro,'error 404','elle tombe toujours en panne','2019/08/28 12:00','2019/08/25 12:00')
+  create_review("A fuir vraiment 😱!", "Plus jamais, #{b.user.first_name} se dit dispo mais propose de revenir dans 3 jours parce que je n'aurai pas indiqué la bonne chaudière..comme si!!!", rand(1..3), b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 13:00','2019/09/02 14:00')
-  create_review("Top !", "Rien à dire", rand(3..5), b)
+  b = create_booking(equipement_sample,pro,'error 404','elle tombe toujours en panne','2019/08/28 13:00','2019/09/02 14:00')
+  create_review("Top 👏!", "Le tchat permet de gagner du temps et de suivre en temps réel 😀", rand(2..4), b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 14:00','2019/08/21 15:00')
-  create_review("Super !!!! Merci !", "Mon nouveau plombier de famille", rand(3..5), b)
+  b = create_booking(equipement_sample,pro,'error 404','elle tombe toujours en panne','2019/08/28 14:00','2019/08/21 15:00')
+  create_review("Super 👏🙏! Merci #{b.user.first_name}!", "#{b.user.first_name} est the plumber of family 👏", rand(3..5), b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 15:00','2019/09/03 16:00')
-  create_review("Youpi ! ", "Merci !", rand(3..5), b)
+  b = create_booking(equipement_sample,pro,'error 404','elle tombe toujours en panne','2019/08/28 15:00','2019/09/03 16:00')
+  create_review("Youpi! 🙏😃", "Merci à #{b.user.first_name} d'être intervenu, je peux enfin prendre une douche chaude !", rand(3..5), b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 16:00','2019/08/02 17:00')
-  create_review("Super plombier !", "Je vous le recommande", rand(3..5), b)
+  b = create_booking(equipement_sample,pro,'error 404','elle tombe toujours en panne','2019/08/28 16:00','2019/08/02 17:00')
+  create_review("Super #{b.user.first_name} 💪!", "Très à l'écoute et efficace et tout ça grace à Fix it", rand(2..4), b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 17:00','2019/08/01 18:00')
-  create_review("Super plombier !", "Je vous le recommande", rand(3..5), b)
+  b = create_booking(equipement_sample,pro,'error 404','elle tombe toujours en panne','2019/08/28 17:00','2019/08/01 18:00')
+  create_review("Une perle! 💎", "#{b.user.first_name} a sauvé mon week-end..et mon couple", rand(1..3), b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 18:00','2019/09/03 19:00')
-  create_review("Super plombier !", "Je vous le recommande", rand(3..5), b)
+  b = create_booking(equipement_sample,pro,'error 404','elle tombe toujours en panne','2019/08/28 18:00','2019/09/03 19:00')
+  create_review("Merci Fix it! 👏🙏", " #{b.user.first_name} est sympa et pro", rand(1..5), b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 19:00','2019/08/28 20:00')
-  create_review("Super plombier !", "Je vous le recommande", rand(3..5), b)
+  b = create_booking(equipement_sample,pro,'error 404','elle tombe toujours en panne','2019/08/28 19:00','2019/08/28 20:00')
+  create_review("Super #{b.user.first_name} 💎!", "J'adoOore le tchat 👨‍💻", rand(3..5), b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 20:00','2019/08/28 21:00')
+  b = create_booking(equipement_sample,pro,'error 404','elle tombe toujours en panne','2019/08/28 20:00','2019/08/28 21:00')
 end
 
 def create_full_booking_before_with_reviews_and_notation(equipement, pro, stars)
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 08:00','2019/08/28 09:00')
-  create_review("Super plombier !", "Je vous le recommande", stars, b)
+  equipement_sample = Equipement.all.sample
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 09:00','2019/08/28 10:00')
-  create_review("Pro", "Le boulot est fait ! je vous le recommande", stars, b)
+  b = create_booking(equipement_sample,pro,'error 404','elle tombe toujours en panne','2019/08/28 08:00','2019/08/28 09:00')
+  create_review("Une personne en Or 🙏😃 !", "Merci #{b.user.first_name}, Merci Fix it", stars, b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 10:00','2019/08/28 11:00')
-  create_review("Travail impeccable", "Bravo !", stars, b)
+  b = create_booking(equipement_sample,pro,'error 404','elle tombe toujours en panne','2019/08/28 09:00','2019/08/28 10:00')
+  create_review("Pro 👍", "Le boulot est fait ! je vous recommande #{b.user.first_name} chaudement", stars, b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 11:00','2019/08/28 12:00')
-  create_review("Good job", "Nice job", stars, b)
+  b = create_booking(equipement_sample,pro,'error 404','elle tombe toujours en panne','2019/08/28 10:00','2019/08/28 11:00')
+  create_review("Travail impeccable bien 🙏😃", "Bravo à #{b.user.first_name} d'avoir assuré !", stars, b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 12:00','2019/08/28 12:00')
-  create_review("A fuire !", "Plus jamais", stars, b)
+  b = create_booking(equipement_sample,pro,'error 404','elle tombe toujours en panne','2019/08/28 11:00','2019/08/28 12:00')
+  create_review("Good job 💪👍🙏", " bravo à #{b.user.first_name} et merci Fix it!", stars, b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 13:00','2019/08/28 14:00')
-  create_review("Top !", "Rien à dire", stars, b)
+  b = create_booking(equipement_sample,pro,'error 404','elle tombe toujours en panne','2019/08/28 12:00','2019/08/28 12:00')
+  create_review("A fuir 😱!", "Plus jamais, non mais!!! l'eau était trop chaude.🥵", stars, b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 14:00','2019/08/28 15:00')
-  create_review("Super !!!! Merci !", "Mon nouveau plombier de famille", stars, b)
+  b = create_booking(equipement_sample,pro,'error 404','elle tombe toujours en panne','2019/08/28 13:00','2019/08/28 14:00')
+  create_review("Top 💪!", "J'étais perdu, sans connaitre de plombier, Vive Fix it", stars, b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 15:00','2019/08/28 16:00')
-  create_review("Youpi ! ", "Merci !", stars, b)
+  b = create_booking(equipement_sample,pro,'error 404','elle tombe toujours en panne','2019/08/28 14:00','2019/08/28 15:00')
+  create_review("Super !!!! Merci 🙏 !", "La famille dit merci!", stars, b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 16:00','2019/08/28 17:00')
-  create_review("Super plombier !", "Je vous le recommande", stars, b)
+  b = create_booking(equipement_sample,pro,'error 404','elle tombe toujours en panne','2019/08/28 15:00','2019/08/28 16:00')
+  create_review("Youpi 👏! ", "Un vrai Grand Merci à #{b.user.first_name}!", stars, b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 17:00','2019/08/28 18:00')
-  create_review("Super plombier !", "Je vous le recommande", stars, b)
+  b = create_booking(equipement_sample,pro,'error 404','elle tombe toujours en panne','2019/08/28 16:00','2019/08/28 17:00')
+  create_review("Bravo et merci! 💪👍🙏", "J'étais fan de Mario, maintenant je suis fan de #{b.user.first_name}", stars, b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 18:00','2019/08/28 19:00')
-  create_review("Super plombier !", "Je vous le recommande", stars, b)
+  b = create_booking(equipement_sample,pro,'error 404','elle tombe toujours en panne','2019/08/28 17:00','2019/08/28 18:00')
+  create_review("Un pro vraiment pro 💪👍🙏!", "Enfin un pro qui sait ce qu'il fait", stars, b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 19:00','2019/08/28 20:00')
-  create_review("Super plombier !", "Je vous le recommande", stars, b)
+  b = create_booking(equipement_sample,pro,'error 404','elle tombe toujours en panne','2019/08/28 18:00','2019/08/28 19:00')
+  create_review("Super Mario? Non, Super #{b.user.first_name} !", "#{b.user.first_name} a réparé en deux-deux ma chaudière 🙏😃.", stars, b)
 
-  b = create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/08/28 20:00','2019/08/28 21:00')
+  b = create_booking(equipement_sample,pro,'error 404','elle tombe toujours en panne','2019/08/28 19:00','2019/08/28 20:00')
+  create_review("De l'eau chaude enfin 👍😃 !", "Merci qui? merci #{b.user.first_name}", stars, b)
+
+  b = create_booking(equipement_sample,pro,'error 404','elle tombe toujours en panne','2019/08/28 20:00','2019/08/28 21:00')
 end
 
 
@@ -176,9 +181,9 @@ def create_review(title, content, stars, booking)
     title:    title,
     content:  content,
     stars:    stars,
-    booking:  booking
+    booking:  booking,
   )
-  Review.last
+  review = Review.last
 end
 
 def create_message(sender, receiver, content)
@@ -203,8 +208,8 @@ User.destroy_all
 # CREATE CLIENTS ############################################
 
 # def create_client(
-#   first_name,
-#   last_name,
+#  first_name,
+#  last_name,
 #   phone,
 #   address,
 #   zip_code,
@@ -273,6 +278,52 @@ renald = create_client(
   'Lille',
   'https://ca.slack-edge.com/T02NE0241-UL7AQBP5E-2d8af2da19e6-48'
 )
+
+nicolas = create_client(
+  'nicolas',
+  'schmelzer',
+  '0320458754',
+  '32 allée Nounours',
+  '59800',
+  'Lille',
+  'https://ca.slack-edge.com/T02NE0241-UL7JFQ0R3-3696ceb54c45-72'
+  )
+faustine = create_client(
+  'faustine',
+  'lafaust',
+  '032045"754',
+  '5 boulevard des pommes',
+  '59000',
+  'Lille',
+  'https://ca.slack-edge.com/T02NE0241-UL79LBN2U-c39e691544c6-72'
+  )
+marine = create_client(
+  'marine',
+  'hacki',
+  '0320658754',
+  '76 rue Turing',
+  '59800',
+  'Lille',
+  'https://ca.slack-edge.com/T02NE0241-UL96Z3JUX-62eb1e8abb98-72'
+  )
+jean = create_client(
+  'jean',
+  'Kamarat',
+  '0320458754',
+  '59 rue Lebanon',
+  '59000',
+  'Lille',
+  'https://ca.slack-edge.com/T02NE0241-UKVSSU5NE-c9a10bc9c700-72'
+  )
+linus = create_client(
+  'linus',
+  'Torvalds',
+  '0320458754',
+  '10 avenue de Helsinski',
+  '59000',
+  'Lille',
+  'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinuxCon_Europe_Linus_Torvalds_03_%28cropped%29.jpg/240px-LinuxCon_Europe_Linus_Torvalds_03_%28cropped%29.jpg'
+  )
 
 puts "create pro"
 
@@ -410,17 +461,40 @@ chirac = create_pro(
 
 puts "create Equipement for remi"
 # def create_equipement(user, brand, model, status)
+#model : Frisquet", "Viessmann", "Chaffoteaux", "Atlantic", "Weishaupt", "Vergne", "Saunier Duval"
+chauffa = create_equipement(remi, 'Chaffoteaux', 'Chauftout', 'panne')
+thema_plus = create_equipement(remi, 'Weishaupt', 'thema plus', 'panne')
+#equipement for moritz
+chauffo = create_equipement(moritz, 'Chaffoteaux', 'Chauffo', 'panne')
+horizona = create_equipement(moritz, 'Atlantic', 'Horizona', 'panne')
+#equipement for renald
+mira = create_equipement(renald, 'Saunier Duval', 'Mira', 'panne')
+mark = create_equipement(renald, 'Vergne', 'Mark III', 'panne')
+#equipement for nicolas
+thema = create_equipement(nicolas, 'Frisquet', 'thema 2', 'panne')
+mark = create_equipement(nicolas, 'Vergne', 'Mark III', 'panne')
+#equipement for faustine
+thema_plus = create_equipement(faustine, 'Weishaupt', 'thema plus', 'panne')
+thema = create_equipement(faustine, 'Frisquet', 'thema 2', 'panne')
+#equipement for marine
+koln = create_equipement(marine, 'Weishaupt', 'Koln', 'panne')
+mark = create_equipement(marine, 'Vergne', 'Mark III', 'panne')
+#equipement for jean
+mira = create_equipement(jean, 'Saunier Duval', 'Mira', 'panne')
+wasser = create_equipement(jean, 'Viessmann', 'wasser', 'panne')
+#equipement for linus
+wasser = create_equipement(linus, 'Viessmann', 'wasser', 'panne')
+thema = create_equipement(linus, 'Frisquet', 'thema 2', 'panne')
 
-mira = create_equipement(remi, 'Chaffoteaux', 'Mira C Green', 'panne')
-thema_plus = create_equipement(remi, 'Saunier Duval', 'ThemaPlus Condens', 'panne')
-thema = create_equipement(remi, 'Saunier Duval', 'ThemaPlus Condens', 'panne')
 
 # def create_booking(equipement, pro, error_code, description, begin_string, end_string)
 
+create_full_booking_before_with_reviews_and_notation(chauffa, jesus, 4)
+create_full_booking_before_with_reviews_and_notation(wasser, jesus, 3)
+create_full_booking_before_with_reviews_and_notation(horizona, jesus, 2)
 create_full_booking_before_with_reviews_and_notation(thema, jesus, 4)
-create_full_booking_before_with_reviews_and_notation(thema, jesus, 3)
-create_full_booking_before_with_reviews_and_notation(thema, jesus, 2)
-create_full_booking_before_with_reviews_and_notation(thema, jesus, 4)
+create_full_booking_before_with_reviews_and_notation(thema_plus, jesus, 3)
+
 
 
 create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/30 13:00','2019/08/30 14:00')
@@ -443,36 +517,36 @@ create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/09/0
 create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/09/02 19:00','2019/09/02 08:00')
 create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/09/02 20:00','2019/09/02 08:00')
 
+create_full_booking_before_with_reviews_and_notation(koln, chirac, 4)
 create_full_booking_before_with_reviews_and_notation(thema, chirac, 4)
-create_full_booking_before_with_reviews_and_notation(thema, chirac, 4)
-create_full_booking_before_with_reviews_and_notation(thema, chirac, 4)
+create_full_booking_before_with_reviews_and_notation(mira, chirac, 4)
 
 
 # create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/08/30 13:00','2019/08/31 14:00')
 # create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/08/30 14:00','2019/08/31 15:00')
 create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/08/30 15:00','2019/08/31 16:00')
-create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/08/30 16:00','2019/08/31 17:00')
+create_booking(mira,chirac,'error 404','elle tombe toujours en panne','2019/08/30 16:00','2019/08/31 17:00')
 # create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/08/30 17:00','2019/08/31 18:00')
 # create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/08/30 18:00','2019/08/31 18:00')
 
 create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/09/02 07:00','2019/09/02 08:00')
-create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/09/02 08:00','2019/09/02 08:00')
-create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/09/02 09:00','2019/09/02 08:00')
-create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/09/02 11:00','2019/09/02 08:00')
-create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/09/02 12:00','2019/09/02 08:00')
+create_booking(mira,chirac,'error 404','elle tombe toujours en panne','2019/09/02 08:00','2019/09/02 08:00')
+create_booking(koln,chirac,'error 404','elle tombe toujours en panne','2019/09/02 09:00','2019/09/02 08:00')
+create_booking(wasser,chirac,'error 404','elle tombe toujours en panne','2019/09/02 11:00','2019/09/02 08:00')
+create_booking(mark,chirac,'error 404','elle tombe toujours en panne','2019/09/02 12:00','2019/09/02 08:00')
 create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/09/02 13:00','2019/09/02 08:00')
-create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/09/02 15:00','2019/09/02 08:00')
-create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/09/02 16:00','2019/09/02 08:00')
-create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/09/02 18:00','2019/09/02 08:00')
-create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/09/02 19:00','2019/09/02 08:00')
-create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/09/02 20:00','2019/09/02 08:00')
+create_booking(chauffa,chirac,'error 404','elle tombe toujours en panne','2019/09/02 15:00','2019/09/02 08:00')
+create_booking(horizona,chirac,'error 404','elle tombe toujours en panne','2019/09/02 16:00','2019/09/02 08:00')
+create_booking(wasser,chirac,'error 404','elle tombe toujours en panne','2019/09/02 18:00','2019/09/02 08:00')
+create_booking(mark,chirac,'error 404','elle tombe toujours en panne','2019/09/02 19:00','2019/09/02 08:00')
+create_booking(chauffo,chirac,'error 404','elle tombe toujours en panne','2019/09/02 20:00','2019/09/02 08:00')
 
 
 # rodolphe gentil
 
 create_full_booking_today(thema,rodolphe)
-create_full_booking_before_with_reviews(thema, rodolphe)
-create_full_booking_before_with_reviews(thema, rodolphe)
+create_full_booking_before_with_reviews(koln, rodolphe)
+create_full_booking_before_with_reviews(horizona, rodolphe)
 
 
 # michel acier
@@ -480,7 +554,7 @@ create_full_booking_before_with_reviews(thema, rodolphe)
 create_full_booking_today(thema,michel)
 bm1 = create_booking(thema,michel,'error 404','elle tombe toujours en panne','2019/09/02 07:00','2019/09/02 08:00')
 create_review("Au top !", "Efficace et rapide ! Merci", 4, bm1)
-create_full_booking_before_with_reviews(thema, michel)
+create_full_booking_before_with_reviews(horizona, michel)
 create_full_booking_before_with_reviews(thema, michel)
 
 
@@ -491,21 +565,21 @@ bj1 = create_booking(thema,jacquie,'error 404','elle tombe toujours en panne','2
 bj2 = create_booking(thema,jacquie,'error 404','elle tombe toujours en panne','2019/09/02 08:00','2019/09/02 09:00')
 create_review("Super plombier !", "Je vous le recommande", 3, bj1)
 create_review("Super !", "Bon rapport qualité / prix", 5, bj2)
-create_full_booking_before_with_reviews(thema, jacquie)
-create_full_booking_before_with_reviews(thema, jacquie)
+create_full_booking_before_with_reviews(koln, jacquie)
+create_full_booking_before_with_reviews(mira, jacquie)
 
 
 # eric plombar
 
 create_full_booking_today(thema ,eric)
 be1 = create_booking(thema,eric,'error 404','elle tombe toujours en panne','2019/09/02 07:00','2019/09/02 08:00')
-be2 = create_booking(thema,eric,'error 404','elle tombe toujours en panne','2019/09/02 08:00','2019/09/02 09:00')
+be2 = create_booking(mira,eric,'error 404','elle tombe toujours en panne','2019/09/02 08:00','2019/09/02 09:00')
 be3 = create_booking(thema,eric,'error 404','elle tombe toujours en panne','2019/09/02 09:00','2019/09/02 09:00')
-create_review("Super plombier !", "Je vous le recommande", 4, be1)
-create_review("Super plombier !", "Je vous le recommande", 4, be2)
+create_review("Super plombier 🙏😃 !", "Je vous le recommande", 4, be1)
+create_review("Excellent !", "Vive fix it ", 4, be2)
 create_review("Peu mieux faire", "Retard, le technicien est énervé mais c'est réparé", 2, be3)
 create_full_booking_before_with_reviews(thema, eric)
-create_full_booking_before_with_reviews(thema, eric)
+create_full_booking_before_with_reviews(mira, eric)
 create_full_booking_before_with_reviews(thema, eric)
 
 puts "Create messages"
