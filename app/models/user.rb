@@ -59,6 +59,10 @@ class User < ApplicationRecord
     # for refactoring
   # end
 
+  def pro?
+    self.user_type == "pro"
+  end
+
   def availability_today
     Time.now.hour > 7 ? h = Time.now.hour + 1 : h = 7
     shifts_today = (h..20).to_a
