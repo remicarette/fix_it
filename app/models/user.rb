@@ -23,7 +23,6 @@ class User < ApplicationRecord
   validates :city, presence: true, length: { minimum: 3 }
   validates :user_type, presence: true, inclusion: { in: %W(pro perso) }
 
-
   # def will_save_change_to_fulladress?
   #   self.fulladdress != fulladdress
   # end
