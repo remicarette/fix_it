@@ -219,7 +219,7 @@ puts "create client"
 users = [ ]
 
 users << remi = create_client('remi','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UL79224P2-7a94c0d24580-48')
-users << moritz = create_client('moritz','michalak','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UL7BFB5QQ-0a2dc0a5ae19-48')
+#users << moritz = create_client('moritz','michalak','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UL7BFB5QQ-0a2dc0a5ae19-48')
 # users << fx = create_client('fx','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-U04QWL5QD-b0caace14645-48')
 # users << marmouz = create_client('marmouz','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UL96Z3JUX-62eb1e8abb98-72')
 # users << nico = create_client('nounours','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UL7JFQ0R3-3696ceb54c45-48')
