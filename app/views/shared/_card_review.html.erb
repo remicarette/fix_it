@@ -7,11 +7,12 @@
     <% full = review.stars.to_i %>
     <% empty = (5 - full).to_i %>
     <div class = "top-rev d-flex justify-content-left ">
-      <div class="review-avatar">
+      <div class="review-avatar mt-1">
         <%= image_tag(review.booking.equipement.user.photo)%>
       </div>
-      <div class="review-descr ml-2 mt-2">
-        <p><%= review.booking.equipement.user.first_name.capitalize %> a écrit le <%= review.convert_date(review.created_at) %> :</p>
+      <div class="review-descr ml-2">
+        <p class="mb-0" style="font-size: 1.2rem"><%= review.booking.equipement.user.first_name.capitalize %></p>
+        <p> <%= review.convert_date(review.created_at) %> </p>
       </div>
     </div>
 

@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
 
-    <div class="col-7">
+    <div class="col-8">
         <div class="card-pro-show d-flex justify-content-center">
           <%= render"shared/card_pro_show" %>
         </div>
@@ -14,7 +14,7 @@
         <button id="more-button-review" class="btn-red btn-all-reviews mb-3"> Plus d'avis </button>
     </div>
 
-    <div class="col-5">
+    <div class="col-4">
       <div class="booking-form-show mt-5 position-fixed">
         <%= simple_form_for [@pro, @booking] do |f| %>
           <div>Votre équipement</div>
@@ -30,7 +30,7 @@
                       collection: @pro.availabilities_choices, label_method: :first, value_method: :second %>
           <%# f.input :begin, collection: [ ["Aujourd hui à 11h", "value pour simple_form_for"], ["Aujourd hui à 12h", "value pour simple_form_for"]], label_method: :first, value_method: :second %>
           <div class="d-flex mt-4 justify-content-center">
-            <%= f.submit "Réserver #{@pro.full_name}", class: "btn-red"  %>
+            <%= f.submit "Réserver #{@pro.full_name}", class: "btn-red w-100"  %>
           </div>
         <% end %>
       </div>
