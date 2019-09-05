@@ -233,7 +233,7 @@ User.create!(
 moritz = User.last
 
 jacques = create_pro(
-  'Jacques',
+  'jacques',
   'Mimexa',
   '03 20 34 45 09',
   '2 rue de la grande chaussée',
