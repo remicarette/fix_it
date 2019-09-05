@@ -1,15 +1,24 @@
 Rails.application.routes.draw do
+  mount ActionCable.server => "/cable"
   namespace :admin do
-      resources :users
-      resources :bookings
-      resources :equipements
-      resources :messages
-      resources :reviews
-      resources :skills
+    resources :users
+    resources :bookings
+    resources :equipements
+    resources :messages
+    resources :reviews
+    resources :skills
 
-      root to: "users#index"
-    end
+    root to: "users#index"
+  end
+
+  namespace :pro do
+    resources :bookings, only: [:index, :show, :update]
+    patch 'bookings/:id/reset', to:'bookings#reset', as: "booking_reset"
+    delete 'bookings/:id/delete_message', to:'messages#destroy_all', as: "destroy_messages"
+  end
+
   devise_for :users
+
   root to: 'pages#home'
 
   resources :user, only: [] do

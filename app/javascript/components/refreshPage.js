@@ -5,7 +5,9 @@ const reload = () => {
 const getChatbox = () => {
   const chatbox = document.getElementById('chatbox');
   if (chatbox !== null) {
+
     // window.setInterval(reload, 10000);
+
   }
 }
 

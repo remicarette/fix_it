@@ -4,5 +4,8 @@ class Message < ApplicationRecord
 
   validates :content, length: { maximum: 100  }
 
-
+  def conversation
+    conversation = Message.where(sender: self.sender, receiver: self.receiver) + Message.where(sender: self.receiver, receiver: self.sender)
+    @messages = conversation.sort_by { |message| message.created_at }
+  end
 end

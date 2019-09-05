@@ -2,8 +2,7 @@ form-casual {
   background-color: white;
 }
 
-
-textarea.form-control {
+#message_content {
   height: 40px;
   display:flex;
   width: 100%;
@@ -12,12 +11,10 @@ textarea.form-control {
   resize: none;
   border-radius: 5px;
 
-
   &:focus {
     color: $green-card;
     box-shadow: 0px 5px 5px rgba(0,0,0, 0.12);
   }
-
 }
 
 .border-blue {

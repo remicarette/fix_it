@@ -1,0 +1,71 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="text-center"><%= @booking.client.full_name %></h5>
+          <p><%= @booking.client.phone %></p>
+          <p><%= @booking.client.email %></p>
+          <p><%= "#{@booking.client.address} #{@booking.client.zip_code} #{@booking.client.city}" %></p>
+          <p><%= "Status : #{@booking.booking_status}" %></p>
+          <% if @booking.status < 4 %>
+            <%= link_to "Change status to #{@booking.next_status}", pro_booking_path(@booking),
+                  class: "btn btn-warning w-100",
+                  method: :patch  %>
+          <% end %>
+          <% if @booking.status > 0 %>
+            <%= link_to "Reset status #{@booking.next_status}", pro_booking_reset_path(@booking),
+                  class: "btn btn-danger w-100 mt-4",
+                  method: :patch,
+                  data: { confirm: 'Are you sure?' } %>
+          <% end %>
+          <%= link_to "Delete all messages", pro_destroy_messages_path(@booking),
+                  class: 'btn btn-danger w-100 mt-4',
+                  method: :delete %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-8">
+      <!-- CHAT -->
+        <%= render 'bookings/chatbox',
+          messages: @messages,
+          user_pro: @booking.client,
+          message:  @message %>
+    </div>
+  </div>
+</div>
+
+<% content_for :after_js do %>
+  <script>
+    App['booking_channel_<%= @booking.id %>'] = App.cable.subscriptions.create(
+      { channel: 'ChatChannel', booking_id: <%= @booking.id %> },
+      { received: (data) => {
+
+        msg = JSON.parse(data["message"])
+        message = msg.content
+        sender = data["sender"]
+        messages = document.getElementById('messages')
+        input = document.getElementById('message_content');
+
+        if (sender === "pro") {
+          messages.insertAdjacentHTML("beforeend", `<div class='send pt-2'><div class='message-sender'>${message}</div></div>`);
+          input.value = ""
+        }
+        else {
+          messages.insertAdjacentHTML("beforeend", `<div class='receive pt-2'><div class='message-receiver'>${message}</div></div>`);
+        }
+      }
+    })
+
+    App['progress_channel_<%= @booking.id %>'] = App.cable.subscriptions.create(
+      { channel: 'ProgressBarChannel', booking_id: <%= @booking.id %> },
+      { received: (data) => {
+          console.log(data)
+
+        }
+      }
+    )
+  </script>
+<% end %>

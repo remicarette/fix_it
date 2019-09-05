@@ -63,4 +63,121 @@
   </div>
 </div>
 
+<% content_for :after_js do %>
+  <script>
+    App['booking_channel_<%= @booking.id %>'] = App.cable.subscriptions.create(
+      { channel: 'ChatChannel', booking_id: <%= @booking.id %> },
+      { received: (data) => {
+
+        const msg = JSON.parse(data["message"])
+        const message = msg.content
+        const sender = data["sender"]
+        const messages = document.getElementById('messages')
+
+        const input = document.getElementById('message_content');
+
+        if (sender === "perso") {
+          messages.insertAdjacentHTML("beforeend", `<div class='send pt-2'><div class='message-sender'>${message}</div></div>`);
+          input.value = "";
+        }
+        else {
+          messages.insertAdjacentHTML("beforeend", `<div class='receive pt-2'><div class='message-receiver'>${message}</div></div>`);
+        }
+      }
+    })
+
+    App['progress_channel_<%= @booking.id %>'] = App.cable.subscriptions.create(
+      { channel: 'ProgressBarChannel', booking_id: <%= @booking.id %> },
+      { received: (data) => {
+
+
+        const sleep = (milliseconds) => {
+          var start = new Date().getTime();
+          for (var i = 0; i < 1e7; i++) {
+            if ((new Date().getTime() - start) > milliseconds){
+              break;
+            }
+          }
+        }
+
+        const getStatus = (data) => {
+          const booking = JSON.parse(data["booking"])
+          const status = booking.status
+          return status
+        }
+
+        const getTargetElement = (status) => {
+          const plane = document.querySelector(".fa-paper-plane")
+          const circle = document.querySelector(".fa-check-circle")
+          const calendar = document.querySelector(".fa-calendar-check")
+          const truck = document.querySelector(".fa-truck")
+          const thumbs = document.querySelector(".fa-thumbs-up")
+          const icons = [plane, circle, calendar, truck, thumbs]
+          const element = icons[status]
+          return element
+        }
+
+        const updateElements = (element, previousElement, nextElement, status) => {
+          // while(previousElement !== null && status > 0) {
+          //   for (i = 0; i < 4; i++) {
+          //     previousElement.classList.remove('fa-color')
+          //     previousElement.classList.remove('fa-color-fixed')
+          //     previousElement.classList.add('fa-color-fixed')
+          //     console.log(previousElement)
+          //     previousElement = previousElement.previousSibling.previousSibling
+          //   }
+          // }
+
+          if (status === 0 || status === 4) {
+            document.location.reload();
+          }
+
+          if (element.classList.contains('fa-color')) {
+            element.classList.remove('fa-color')
+          }
+          if (element.classList.contains('fa-color-fixed')) {
+            element.classList.remove('fa-color-fixed')
+          }
+
+          element.classList.add('fa-color')
+          element.classList.add('fa-color-fixed')
+
+          let counter = 0
+          while(nextElement !== null) {
+            if (counter === 0 && nextElement !== null) {
+              for (i = 0; i < 3; i++) {
+
+                if (nextElement.classList.contains('fa-color')) {
+                  nextElement.classList.remove('fa-color')
+                }
+                if (nextElement.classList.contains('fa-color-fixed')) {
+                  nextElement.classList.remove('fa-color-fixed')
+                }
+                nextElement.classList.add('fa-color')
+                nextElement.classList.add('fa-color-fixed')
+                nextElement = nextElement.nextSibling.nextSibling
+              }
+              counter += 1
+            } else {
+              for (i = 0; i < 4; i++) {
+                if (nextElement.classList.contains('fa-color')) {
+                  nextElement.classList.remove('fa-color')
+                }
+                if (nextElement.classList.contains('fa-color-fixed')) {
+                  nextElement.classList.remove('fa-color-fixed')
+                }
+                nextElement = nextElement.nextSibling.nextSibling
+              }
+            }
+          }
+        }
+          const status = getStatus(data)
+          element = getTargetElement(status)
+          let previousElement = element.previousSibling.previousSibling
+          let nextElement = element.nextSibling.nextSibling
+          updateElements(element, previousElement, nextElement, status)
+      }
+    })
+  </script>
+<% end %>
 
