@@ -1,6 +1,5 @@
 <div class="container">
   <div class="row">
-
     <div class="col-8">
       <div class="card-pro-show d-flex justify-content-center">
         <%= render"shared/card_pro_show" %>
@@ -8,14 +7,13 @@
       <% if @pro.reviews != [] %>
         <div class="all-reviews">
           <%= render"shared/card_review", array: @pro.reviews.sort_by{|review| review.created_at}.reverse.first(2) %>
-          <div class="display_btn_reviews display">
+          <div class="display_btn_reviews display" style="display:none">
             <%= render"shared/card_review", array: @pro.reviews.sort_by{|review| review.created_at}.reverse[3..-1] %>
           </div>
         </div>
         <button id="more-button-review" class="btn-red btn-all-reviews mb-3">Plus d'avis</button>
       <% end %>
     </div>
-
     <div class="col-4">
       <div class="booking-form-show mt-5 position-fixed">
         <h2 class="text-center">Confirmez votre Rendez-Vous</h2>
@@ -38,8 +36,5 @@
         <% end %>
       </div>
     </div>
-
   </div>
 </div>
-
-
