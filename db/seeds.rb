@@ -669,27 +669,6 @@ create_booking(mark,estelle,'error 404','elle tombe toujours en panne','2019/09/
 create_booking(chauffo,estelle,'error 404','elle tombe toujours en panne','2019/09/02 20:00','2019/09/02 08:00')
 
 
-# rodolphe gentil
-
-create_full_booking_today(thema,rodolphe)
-create_full_booking_before_with_reviews(koln, rodolphe)
-create_full_booking_before_with_reviews(horizona, rodolphe)
-
-
-# michele acier
-
-create_full_booking_today(thema,michele)
-bm1 = create_booking(thema,michele,'error 404','elle tombe toujours en panne','2019/09/02 07:00','2019/09/02 08:00')
-create_review("Au top !", "Efficace et rapide ! Merci", 4, bm1)
-create_full_booking_before_with_reviews(horizona, michele)
-create_full_booking_before_with_reviews(thema, michele)
-
-
-# jacques Mimexa
-
-#create_full_booking_today(thema,jacques)
-#create_full_booking_before_with_reviews(koln, jacques)
-#create_full_booking_before_with_reviews(mira, jacques)
 
 
 
@@ -742,6 +721,7 @@ create_full_booking_before_with_reviews_and_notation(mira, momo, 4)
 create_full_booking_today(mira, momo)
 
 # CREATION 2 RDV LE LENDEMAIN
+create_booking(mira,momo,'error 404','elle tombe toujours en panne','2019/09/06 07:00','2019/09/06 09:00')
 create_booking(mira,momo,'error 404','elle tombe toujours en panne','2019/09/06 08:00','2019/09/06 09:00')
 create_booking(mira,momo,'error 404','elle tombe toujours en panne','2019/09/06 09:00','2019/09/06 10:00')
 
@@ -757,6 +737,7 @@ create_full_booking_before_with_reviews_and_notation(mira, joseph, 2)
 create_full_booking_today(mira, joseph)
 
 # CREATION 2 RDV LE LENDEMAIN
+create_booking(mira,joseph,'error 404','elle tombe toujours en panne','2019/09/06 07:00','2019/09/06 09:00')
 create_booking(mira,joseph,'error 404','elle tombe toujours en panne','2019/09/06 08:00','2019/09/06 09:00')
 create_booking(mira,joseph,'error 404','elle tombe toujours en panne','2019/09/06 09:00','2019/09/06 10:00')
 create_booking(mira,joseph,'error 404','elle tombe toujours en panne','2019/09/06 10:00','2019/09/06 11:00')
@@ -773,6 +754,7 @@ create_full_booking_before_with_reviews_and_notation(mira, abdel, 2)
 create_full_booking_today(mira, abdel)
 
 # CREATION 2 RDV LE LENDEMAIN
+create_booking(mira,abdel,'error 404','elle tombe toujours en panne','2019/09/06 07:00','2019/09/06 09:00')
 create_booking(mira,abdel,'error 404','elle tombe toujours en panne','2019/09/06 08:00','2019/09/06 09:00')
 create_booking(mira,abdel,'error 404','elle tombe toujours en panne','2019/09/06 09:00','2019/09/06 10:00')
 create_booking(mira,abdel,'error 404','elle tombe toujours en panne','2019/09/06 10:00','2019/09/06 11:00')
@@ -790,6 +772,7 @@ create_full_booking_before_with_reviews_and_notation(mira, michele, 2)
 create_full_booking_today(mira, michele)
 
 # CREATION 2 RDV LE LENDEMAIN
+create_booking(mira,michele,'error 404','elle tombe toujours en panne','2019/09/06 07:00','2019/09/06 09:00')
 create_booking(mira,michele,'error 404','elle tombe toujours en panne','2019/09/06 08:00','2019/09/06 09:00')
 create_booking(mira,michele,'error 404','elle tombe toujours en panne','2019/09/06 09:00','2019/09/06 10:00')
 create_booking(mira,michele,'error 404','elle tombe toujours en panne','2019/09/06 10:00','2019/09/06 11:00')
@@ -808,11 +791,34 @@ create_full_booking_before_with_reviews_and_notation(mira, nordin, 1)
 create_full_booking_today(mira, nordin)
 
 # CREATION 2 RDV LE LENDEMAIN
+create_booking(mira,nordin,'error 404','elle tombe toujours en panne','2019/09/06 07:00','2019/09/06 09:00')
 create_booking(mira,nordin,'error 404','elle tombe toujours en panne','2019/09/06 08:00','2019/09/06 09:00')
 create_booking(mira,nordin,'error 404','elle tombe toujours en panne','2019/09/06 09:00','2019/09/06 10:00')
 create_booking(mira,nordin,'error 404','elle tombe toujours en panne','2019/09/06 10:00','2019/09/06 11:00')
 create_booking(mira,nordin,'error 404','elle tombe toujours en panne','2019/09/06 11:00','2019/09/06 11:00')
 create_booking(mira,nordin,'error 404','elle tombe toujours en panne','2019/09/06 12:00','2019/09/06 11:00')
+
+
+# 7=> ESTELLE
+
+# CREATION NOTE MOYENNE
+create_full_booking_before_with_reviews_and_notation(mira, estelle, 1)
+create_full_booking_before_with_reviews_and_notation(mira, estelle, 3)
+create_full_booking_before_with_reviews_and_notation(mira, estelle, 1)
+
+# CREATION BOOKING FULL AUJOURDHUI
+
+create_full_booking_today(mira, estelle)
+
+# CREATION 2 RDV LE LENDEMAIN
+create_booking(mira,estelle,'error 404','elle tombe toujours en panne','2019/09/06 07:00','2019/09/06 09:00')
+create_booking(mira,estelle,'error 404','elle tombe toujours en panne','2019/09/06 08:00','2019/09/06 09:00')
+create_booking(mira,estelle,'error 404','elle tombe toujours en panne','2019/09/06 09:00','2019/09/06 10:00')
+create_booking(mira,estelle,'error 404','elle tombe toujours en panne','2019/09/06 10:00','2019/09/06 11:00')
+create_booking(mira,estelle,'error 404','elle tombe toujours en panne','2019/09/06 11:00','2019/09/06 11:00')
+create_booking(mira,estelle,'error 404','elle tombe toujours en panne','2019/09/06 12:00','2019/09/06 11:00')
+
+
 
 
 
@@ -851,6 +857,9 @@ create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/
 
 # 7=> RODOLPHE
 
+create_full_booking_before_with_reviews(mira, rodolphe)
+
+
 # CREATION DES RDV LE JOUR MEME
 create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 08:00','2019/09/05 09:00')
 create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 09:00','2019/09/05 10:00')
@@ -864,8 +873,6 @@ create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09
 create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 17:00','2019/09/05 11:00')
 create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 18:00','2019/09/05 11:00')
 create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 19:00','2019/09/05 11:00')
-
-
 
 
 puts "Create messages"

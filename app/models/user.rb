@@ -67,19 +67,20 @@ class User < ApplicationRecord
     Time.now.hour > 7 ? h = Time.now.hour + 1 : h = 7
     shifts_today = (h..20).to_a
     booked_today = self.bookings.select do |booking|
-      booking.begin.day == Time.now.day
+      (booking.begin.day + booking.begin.month * 30 + booking.begin.year) == (Time.now.day + Time.now.month * 30 + Time.now.year)
       # booking.begin.day == Date.today.day
     end
     booked_today.each do |booking|
       shifts_today.delete(booking.begin.hour)
     end
+    # raise
     return shifts_today
   end
 
   def availability_tomorrow
     shifts = (7..20).to_a
     booked_tomorrow = self.bookings.select do |booking|
-      booking.begin.day == Date.tomorrow.day
+      (booking.begin.day + booking.begin.month * 30 + booking.begin.year) == (Date.tomorrow.day + Date.tomorrow.month * 30 + Date.tomorrow.year)
     end
     booked_tomorrow.each do |booking|
       shifts.delete(booking.begin.hour)
