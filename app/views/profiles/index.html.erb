@@ -3,7 +3,7 @@
     <div class="col-12">
       <h1>Nos meilleures entreprises à <%= @geo.city.nil? ? @geo.city_district : @geo.city %></h1>
     </div>
-      <%= render"shared/card_pro", array: @users.sort_by{|user| [user.first_free_slot, -user.average_stars_pro, -user.reviews.count]} %>
+    <%= render"shared/card_pro", array: @users.sort_by{|user| [user.first_free_slot, -user.average_stars_pro, -user.reviews.count]} %>
   </div>
 </div>
 
