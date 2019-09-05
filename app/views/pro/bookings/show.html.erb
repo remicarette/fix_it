@@ -58,5 +58,14 @@
         }
       }
     })
+
+    App['progress_channel_<%= @booking.id %>'] = App.cable.subscriptions.create(
+      { channel: 'ProgressBarChannel', booking_id: <%= @booking.id %> },
+      { received: (data) => {
+          console.log(data)
+
+        }
+      }
+    )
   </script>
 <% end %>
