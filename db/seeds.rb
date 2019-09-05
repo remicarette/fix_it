@@ -71,19 +71,19 @@ end
 
 
 def create_full_booking_today(equipement, pro)
-  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/03 08:00','2019/09/03 09:00')
-  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/03 09:00','2019/09/03 10:00')
-  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/03 10:00','2019/09/03 11:00')
-  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/03 11:00','2019/09/03 12:00')
-  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/03 12:00','2019/09/03 12:00')
-  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/03 13:00','2019/09/03 14:00')
-  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/03 14:00','2019/09/03 15:00')
-  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/03 15:00','2019/09/03 16:00')
-  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/03 16:00','2019/09/03 17:00')
-  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/03 17:00','2019/09/03 18:00')
-  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/03 18:00','2019/09/03 19:00')
-  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/03 19:00','2019/09/03 20:00')
-  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/03 20:00','2019/09/02 21:00')
+  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/05 08:00','2019/09/05 09:00')
+  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/05 09:00','2019/09/05 10:00')
+  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/05 10:00','2019/09/05 11:00')
+  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/05 11:00','2019/09/05 12:00')
+  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/05 12:00','2019/09/05 12:00')
+  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/05 13:00','2019/09/05 14:00')
+  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/05 14:00','2019/09/05 15:00')
+  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/05 15:00','2019/09/05 16:00')
+  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/05 16:00','2019/09/05 17:00')
+  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/05 17:00','2019/09/05 18:00')
+  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/05 18:00','2019/09/05 19:00')
+  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/05 19:00','2019/09/05 20:00')
+  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/05 20:00','2019/09/02 21:00')
 end
 
 
@@ -171,11 +171,6 @@ def create_full_booking_before_with_reviews_and_notation(equipement, pro, stars)
   b = create_booking(equipement_sample,pro,'error 404','elle tombe toujours en panne','2019/08/28 20:00','2019/08/28 21:00')
 end
 
-
-
-
-# '2001/02/03 03:05'
-
 def create_review(title, content, stars, booking)
   Review.create!(
     title:    title,
@@ -219,40 +214,7 @@ User.destroy_all
 
 puts "create client"
 
-# CREATE 3 USERS
-
-users = [ ]
-
-users << remi = create_client('remi','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UL79224P2-7a94c0d24580-48')
-#users << moritz = create_client('moritz','michalak','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UL7BFB5QQ-0a2dc0a5ae19-48')
-# users << fx = create_client('fx','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-U04QWL5QD-b0caace14645-48')
-# users << marmouz = create_client('marmouz','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UL96Z3JUX-62eb1e8abb98-72')
-# users << nico = create_client('nounours','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UL7JFQ0R3-3696ceb54c45-48')
-# users << pab = create_client('Pierre Antoine','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UL0U0N3NV-f7cb9889f0c7-48')
-
-# users << simon = create_client('simon','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UL7B9TJRW-8ac16206f4ef-48')
-# users << alex = create_client('Alexandre','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-U8PB5EDA7-77484b5916bb-48')
-# users << richetin = create_client('richetin','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UL12X27UZ-d1d5d66ec638-48')
-# users << jean = create_client('Jean','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UKVSSU5NE-c9a10bc9c700-48')
-# users << lea = create_client('Léa','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-U6317MLEN-589a70b497ad-48')
-# users << pauline = create_client('pauline','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UHPSUU48H-1133cb05d3eb-48')
-
-# users << zuza = create_client('zuza','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UBGQ0BJN5-3050831c17e3-48')
-# users << saunier = create_client('Sebastien','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-U02NE0247-e4421ea8648d-48')
-# users << james = create_client('james','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UKPL7B534-a850a2c242f2-48')
-# users << edouard = create_client('edouard','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UF9B65UP8-7d1fb4b6b2ab-48')
-# users << martin = create_client('martin','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-U4A8MS264-73769aabb729-48')
-# users << carl = create_client('Carl','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UHRGG9RRS-836bce4715df-48')
-
-# users << lisa = create_client('Lisa','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UD41T1DQC-c8ddc1161b50-48')
-
-# users << nico = create_client('nicolas','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UA2RBL0E5-074dba9f9557-48')
-# users << tristan = create_client('tristan','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UHSBPN26T-30dd301382cc-48')
-
-#############################################################################################
-
-
-
+remi = create_client('remi','carette','0680782606','2 rue de condé','59000','La madeleine','https://ca.slack-edge.com/T02NE0241-UL79224P2-7a94c0d24580-48')
 
 User.create!(
   email:        "moritz@fix-it.com",
@@ -268,6 +230,8 @@ User.create!(
   company_name: ''
 )
 
+moritz = User.last
+
 jacques = create_pro(
   'Jacques',
   'Mimexa',
@@ -279,7 +243,9 @@ jacques = create_pro(
   'ReparLil'
 )
 
-moritz = User.last
+jacques.employees = "12"
+jacques.save
+
 
 renald = create_client(
   'renald',
@@ -290,218 +256,118 @@ renald = create_client(
   'Lille',
   'https://ca.slack-edge.com/T02NE0241-UL7AQBP5E-2d8af2da19e6-48'
 )
-equipement = create_equipement(renald, 'Chaffoteaux', 'chauffa', 'fonctionne')
 
+
+
+# CREATE EQUIPEMENTS & BOOKINGS TO DO SOME REVIEWS FOR JACQUES MIMEXA
+
+
+equipement = create_equipement(renald, 'Chaffoteaux', 'chauffa', 'fonctionne')
 bj = create_booking(equipement,jacques,'error 409','elle tombe toujours en panne','2019/09/03 07:00','2019/09/03 08:00')
 create_review("Super plombier !", "Je vous le recommande chaudement, #{bj.user.first_name} est très bien", 3, bj)
 r = Review.last
 r.created_at = DateTime.parse("2019-09-04 09:00")
 r.save
 
-nicolas = create_client(
-  'nicolas',
-  'schmelzer',
-  '03 20 45 87 54',
-  '32 allée Nounours',
-  '59800',
-  'Lille',
-  'https://ca.slack-edge.com/T02NE0241-UL7JFQ0R3-3696ceb54c45-72'
-  )
+nicolas = create_client('nicolas','schmelzer','03 20 45 87 54','32 allée Nounours','59800','Lille','https://ca.slack-edge.com/T02NE0241-UL7JFQ0R3-3696ceb54c45-72')
 equipement = create_equipement(nicolas, 'Vergne', 'Mark III', 'fonctionne')
-
 bj2 = create_booking(equipement,jacques,'error 404','elle tombe toujours en panne','2019/09/01 08:00','2019/08/01 09:00')
-  create_review("Super!!", "Je vous recommande #{bj2.user.first_name}. Il est très efficace et sympa 🙏, la famille peut enfin prendre une douche!!", 4, bj2)
-  r2 = Review.last
-  r2.created_at = DateTime.parse("2019-09-02 07:00")
-  r2.save
+create_review("Super!!", "Je vous recommande #{bj2.user.first_name}. Il est très efficace et sympa 🙏, la famille peut enfin prendre une douche!!", 4, bj2)
+r2 = Review.last
+r2.created_at = DateTime.parse("2019-09-02 07:00")
+r2.save
 
-faustine = create_client(
-  'faustine',
-  'lafaust',
-  '03 20 45 57 54',
-  '5 boulevard des pommes',
-  '59000',
-  'Lille',
-  'https://ca.slack-edge.com/T02NE0241-UL79LBN2U-c39e691544c6-72'
-  )
+faustine = create_client('faustine','lafaust','03 20 45 57 54','5 boulevard des pommes','59000','Lille','https://ca.slack-edge.com/T02NE0241-UL79LBN2U-c39e691544c6-72')
 equipement = create_equipement(faustine, 'Weishaupt', 'Them +', 'fonctionne')
 bj3 = create_booking(equipement, jacques,'erreur 450','elle tombe toujours en panne','2019/08/28 09:00','2019/08/29 10:00')
-  create_review("Top moumoute", "Un travail de pro, fini la galère des douches trop 🥵 trop 🥶! 🛠⚙️🙏 ", 5, bj3)
-  r3 = Review.last
-  r3.created_at = DateTime.parse("2019-08-28 11:00")
-  r3.save
+create_review("Top moumoute", "Un travail de pro, fini la galère des douches trop 🥵 trop 🥶! 🛠⚙️🙏 ", 5, bj3)
+r3 = Review.last
+r3.created_at = DateTime.parse("2019-08-28 11:00")
+r3.save
 
-marine = create_client(
-  'marine',
-  'hacki',
-  '03 20 65 87 54',
-  '76 rue Turing',
-  '59800',
-  'Lille',
-  'https://ca.slack-edge.com/T02NE0241-UL96Z3JUX-62eb1e8abb98-72'
-  )
+marine = create_client('marine','hacki','03 20 65 87 54','76 rue Turing','59800','Lille','https://ca.slack-edge.com/T02NE0241-UL96Z3JUX-62eb1e8abb98-72')
 equipement = create_equipement(marine, 'Chaffoteaux', 'chauffa', 'fonctionne')
 bj4 = create_booking(equipement, jacques,'erreur 408','elle tombe toujours en panne','2019/08/26 10:00','2019/08/26 11:00')
-  create_review("Géeeenial", "Un grand merci à #{bj4.user.first_name} d'avoir répondu rapidemment! ", 4, bj4)
-  r4 = Review.last
-  r4.created_at = DateTime.parse("2019-08-27 08:00")
-  r4.save
+create_review("Géeeenial", "Un grand merci à #{bj4.user.first_name} d'avoir répondu rapidemment! ", 4, bj4)
+r4 = Review.last
+r4.created_at = DateTime.parse("2019-08-27 08:00")
+r4.save
 
-jean = create_client(
-  'jean',
-  'kamarat',
-  '03 20 45 87 54',
-  '59 rue Lebanon',
-  '59000',
-  'Lille',
-  'https://ca.slack-edge.com/T02NE0241-UKVSSU5NE-c9a10bc9c700-72'
-  )
+jean = create_client('jean','kamarat','03 20 45 87 54','59 rue Lebanon','59000','Lille','https://ca.slack-edge.com/T02NE0241-UKVSSU5NE-c9a10bc9c700-72')
 equipement = create_equipement(jean, 'Atlantic', 'Horizona', 'fonctionne')
 bj5 = create_booking(equipement,jacques ,'erreur 509','elle tombe toujours en panne','2019/08/27 11:00','2019/08/27 12:00')
-  create_review("ouf", "Good job 💪 merci fixit, j'avais une résa pour des clients Airbn'b, ouf! sauvé!", 4, bj5)
-  r5 = Review.last
-  r5.created_at = DateTime.parse("2019-08-26 01:00")
-  r5.save
+create_review("ouf", "Good job 💪 merci fixit, j'avais une résa pour des clients Airbn'b, ouf! sauvé!", 4, bj5)
+r5 = Review.last
+r5.created_at = DateTime.parse("2019-08-26 01:00")
+r5.save
 
-linus = create_client(
-  'linus',
-  'torvalds',
-  '03 20 45 87 54',
-  '10 avenue de Helsinski',
-  '59000',
-  'Lille',
-  'https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinuxCon_Europe_Linus_Torvalds_03_%28cropped%29.jpg/240px-LinuxCon_Europe_Linus_Torvalds_03_%28cropped%29.jpg'
-  )
+linus = create_client('linus','torvalds','03 20 45 87 54','10 avenue de Helsinski','59000','Lille','https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/LinuxCon_Europe_Linus_Torvalds_03_%28cropped%29.jpg/240px-LinuxCon_Europe_Linus_Torvalds_03_%28cropped%29.jpg')
 equipement = create_equipement(linus, 'Saunier Duval', 'Mira', 'fonctionne')
 bj6 = create_booking(equipement,jacques,'erreur 409','elle tombe toujours en panne','2019/08/23 12:00','2019/08/23 13:00')
-  create_review("Mouai bof", "Le matin la galère 😱! Plus jamais, #{bj6.user.first_name} se dit dispo mais propose de revenir dans 3 jours parce que je n'aurai pas indiqué la bonne chaudière..comme si!!!", 2, bj6)
-  r6 = Review.last
-  r6.created_at = DateTime.parse("2019-08-24 19:00")
-  r6.save
+create_review("Mouai bof", "Le matin la galère 😱! Plus jamais, #{bj6.user.first_name} se dit dispo mais propose de revenir dans 3 jours parce que je n'aurai pas indiqué la bonne chaudière..comme si!!!", 2, bj6)
+r6 = Review.last
+r6.created_at = DateTime.parse("2019-08-24 19:00")
+r6.save
 
-simon = create_client(
-  'simon',
-  'northmen',
-  '03 20 45 17 52',
-  '62 avenue de Wozniak',
-  '59800',
-  'Lille',
-  'https://ca.slack-edge.com/T02NE0241-UL7B9TJRW-8ac16206f4ef-72'
-  )
+simon = create_client('simon','northmen','03 20 45 17 52','62 avenue de Wozniak','59800','Lille','https://ca.slack-edge.com/T02NE0241-UL7B9TJRW-8ac16206f4ef-72')
 equipement = create_equipement(simon, 'Frisquet', 'Thema', 'fonctionne')
 bj7 = create_booking(equipement, jacques,'erreur 404','elle tombe toujours en panne','2019/08/20 15:00','2019/08/20 16:00')
-  create_review("Le web c'est trop bien", "Top 👏! Après Doctolib, maintenant Fix it trooop bien, le tchat permet de gagner du temps et de suivre en temps réel 😀", 4, bj7)
-  r7 = Review.last
-  r7.created_at = DateTime.parse("2019-08-20 21:00")
-  r7.save
+create_review("Le web c'est trop bien", "Top 👏! Après Doctolib, maintenant Fix it trooop bien, le tchat permet de gagner du temps et de suivre en temps réel 😀", 4, bj7)
+r7 = Review.last
+r7.created_at = DateTime.parse("2019-08-20 21:00")
+r7.save
 
-yohann = create_client(
-  'yoann',
-  'platini',
-  '03 20 25 82 54',
-  '10 boulevard de Lorraine',
-  '59000',
-  'Lille',
-  'http://images.performgroup.com/di/library/GOAL_INTERNATIONAL/3f/17/michel-platini-at-euro-1984_4jc38um0ske51mtjlorrdwi5f.jpg?t=-1277979991&'
-  )
+yohann = create_client('yoann','platini','03 20 25 82 54','10 boulevard de Lorraine','59000','Lille','http://images.performgroup.com/di/library/GOAL_INTERNATIONAL/3f/17/michele-platini-at-euro-1984_4jc38um0ske51mtjlorrdwi5f.jpg?t=-1277979991&')
 equipement = create_equipement(yohann, 'Viessmann', 'wasser', 'fonctionne')
 bj8 = create_booking(equipement,jacques,'erreur 466','elle tombe toujours en panne','2019/08/19 14:00','2019/08/19 15:00')
-  create_review("Merci merci", "Super 👏🙏! Merci à #{bj8.user.first_name}! the plumber of family 👏", 5, bj8)
-  r8 = Review.last
-  r8.created_at = DateTime.parse("2019-08-19 21:00")
-  r8.save
+create_review("Merci merci", "Super 👏🙏! Merci à #{bj8.user.first_name}! the plumber of family 👏", 5, bj8)
+r8 = Review.last
+r8.created_at = DateTime.parse("2019-08-19 21:00")
+r8.save
 
-pab = create_client(
-  'pierre-antoine',
-  'ive',
-  '03 20 48 82 54',
-  '1bis rue Pierre Mauroy',
-  '59800',
-  'Lille',
-  'https://ca.slack-edge.com/T02NE0241-UL0U0N3NV-f7cb9889f0c7-72'
-  )
+pab = create_client('pierre-antoine','ive','03 20 48 82 54','1bis rue Pierre Mauroy','59800','Lille','https://ca.slack-edge.com/T02NE0241-UL0U0N3NV-f7cb9889f0c7-72')
 equipement = create_equipement(pab, 'Saunier Duval', 'Mira', 'fonctionne')
 bj9 = create_booking(equipement,jacques,'erreur 477','elle tombe toujours en panne','2019/08/17 15:00','2019/08/17 16:00')
-  create_review("C'est pas du bluff", "J'en ai révé, une app est là enfin fini la galère de chaudière! 🙏😃 Merci à #{bj9.user.first_name} d'être intervenu, je peux enfin prendre une douche chaude !", 4, bj9)
-  r9 = Review.last
-  r9.created_at = DateTime.parse("2019-08-17 21:00")
-  r9.save
+create_review("C'est pas du bluff", "J'en ai révé, une app est là enfin fini la galère de chaudière! 🙏😃 Merci à #{bj9.user.first_name} d'être intervenu, je peux enfin prendre une douche chaude !", 4, bj9)
+r9 = Review.last
+r9.created_at = DateTime.parse("2019-08-17 21:00")
+r9.save
 
-sarah = create_client(
-  'sarah',
-  'tepas',
-  '03 20 44 82 57',
-  '10 allée de la madelon',
-  '59800',
-  'Lille',
-  'https://ca.slack-edge.com/T02NE0241-UL6V81HN0-310f612b9485-72'
-  )
+sarah = create_client('sarah','tepas','03 20 44 82 57','10 allée de la madelon','59800','Lille','https://ca.slack-edge.com/T02NE0241-UL6V81HN0-310f612b9485-72')
 equipement = create_equipement(sarah, 'Viessmann', 'wasser', 'fonctionne')
 bj10 = create_booking(equipement, jacques,'erreur 478','elle tombe toujours en panne','2019/08/16 16:00','2019/08/16 17:00')
-  create_review("Super super", "Super #{bj10.user.first_name} 💪! je peux enfin faire ma vaisselle et tout ça grace à Fix it", 4, bj10)
-  r10 = Review.last
-  r10.created_at = DateTime.parse("2019-08-17 12:00")
-  r10.save
+create_review("Super super", "Super #{bj10.user.first_name} 💪! je peux enfin faire ma vaisselle et tout ça grace à Fix it", 4, bj10)
+r10 = Review.last
+r10.created_at = DateTime.parse("2019-08-17 12:00")
+r10.save
 
-alexandre = create_client(
-  'alexandre',
-  'buddy',
-  '03 20 45 82 52',
-  '33 rue de Gironde',
-  '59000',
-  'Lille',
-  'https://ca.slack-edge.com/T02NE0241-UL12X27UZ-d1d5d66ec638-72'
-  )
+alexandre = create_client('alexandre','buddy','03 20 45 82 52','33 rue de Gironde','59000','Lille','https://ca.slack-edge.com/T02NE0241-UL12X27UZ-d1d5d66ec638-72')
 equipement = create_equipement(alexandre, 'Weishaupt', 'Thema +', 'fonctionne')
 bj11 = create_booking(equipement,jacques,'erreur 567','elle tombe toujours en panne','2019/08/13 17:00','2019/08/13 18:00')
-  create_review("Une perle!", " 💎 le chat permet une intervention rapide, magique..#{bj11.user.first_name} a sauvé mon week-end..et mon couple", 4, bj11)
-  r11 = Review.last
-  r11.created_at = DateTime.parse("2019-08-14 09:00")
-  r11.save
+create_review("Une perle!", " 💎 le chat permet une intervention rapide, magique..#{bj11.user.first_name} a sauvé mon week-end..et mon couple", 4, bj11)
+r11 = Review.last
+r11.created_at = DateTime.parse("2019-08-14 09:00")
+r11.save
 
-raphael = create_client(
-  'raphael',
-  'leonard',
-  '03 20 78 92 54',
-  '26 avenue des orties',
-  '59800',
-  'Lille',
-  'https://ca.slack-edge.com/T02NE0241-UKVUHDRPD-ad1f633af161-72'
-  )
+raphael = create_client('raphael','leonard','03 20 78 92 54','26 avenue des orties','59800','Lille','https://ca.slack-edge.com/T02NE0241-UKVUHDRPD-ad1f633af161-72')
 equipement = create_equipement(raphael, 'Vergne', 'Mark III', 'fonctionne')
 bj12 = create_booking(equipement,jacques,'erreur 455','elle tombe toujours en panne','2019/08/10 18:00','2019/09/10 19:00')
-  create_review("Merci Fix it! 👏🙏", "Enfin une douche chaude pour mes poussins et  #{bj12.user.first_name} est sympa et pro, l'app assure avec le chat", 5, bj12)
-  r12 = Review.last
-  r12.created_at = DateTime.parse("2019-08-11 12:00")
-  r12.save
+create_review("Merci Fix it! 👏🙏", "Enfin une douche chaude pour mes poussins et  #{bj12.user.first_name} est sympa et pro, l'app assure avec le chat", 5, bj12)
+r12 = Review.last
+r12.created_at = DateTime.parse("2019-08-11 12:00")
+r12.save
 
 
-barbara = create_client(
-  'barbara',
-  'exarchopoulos',
-  '03 20 45 83 95',
-  '45 rue de Marco Polo',
-  '59800',
-  'Lille',
-  'https://s2.qwant.com/thumbr/0x380/c/9/98fc63b568e16caf0f631656bf61da3488e5f3474e32cac98a6209040957cb/adele-exarchopoulos-844761l.jpg?u=http%3A%2F%2Fstatic.cinemagia.ro%2Fimg%2Fdb%2Factor%2F28%2F23%2F67%2Fadele-exarchopoulos-844761l.jpg&q=0&b=1&p=0&a=1'
-  )
+barbara = create_client('barbara','exarchopoulos','03 20 45 83 95','45 rue de Marco Polo','59800','Lille','https://s2.qwant.com/thumbr/0x380/c/9/98fc63b568e16caf0f631656bf61da3488e5f3474e32cac98a6209040957cb/adele-exarchopoulos-844761l.jpg?u=http%3A%2F%2Fstatic.cinemagia.ro%2Fimg%2Fdb%2Factor%2F28%2F23%2F67%2Fadele-exarchopoulos-844761l.jpg&q=0&b=1&p=0&a=1')
 equipement = create_equipement(barbara, 'Frisquet', 'Thema', 'fonctionne')
 bj13 = create_booking(equipement,jacques,'erreur 456','elle tombe toujours en panne','2019/08/09 19:00','2019/08/09 20:00')
-  create_review("Super #{bj13.user.first_name} 💎!", "J'adoOore le tchat 👨‍💻", 5, bj13)
-  r13 = Review.last
-  r13.created_at = DateTime.parse("2019-08-10 9:00")
-  r13.save
+create_review("Super #{bj13.user.first_name} 💎!", "J'adoOore le tchat 👨‍💻", 5, bj13)
+r13 = Review.last
+r13.created_at = DateTime.parse("2019-08-10 9:00")
+r13.save
 
 
-maxime = create_client(
-  'maxime',
-  'nakamoto',
-  '03 20 51 51 51',
-  '51 avenue des Boers',
-  '59000',
-  'Lille',
-  'http://i.huffpost.com/gen/1664081/images/o-SATOSHI-NAKAMOTO-facebook.jpg'
-  )
+maxime = create_client('maxime','nakamoto','03 20 51 51 51','51 avenue des Boers','59000','Lille','http://i.huffpost.com/gen/1664081/images/o-SATOSHI-NAKAMOTO-facebook.jpg')
 equipement = create_equipement(maxime, 'Saunier Duval', 'Mira', 'fonctionne')
 bj14 = create_booking(equipement,jacques,'erreur 411','elle tombe toujours en panne','2019/08/05 20:00','2019/08/05 21:00')
   create_review("Là c'est du niveau", "#{bj14.user.first_name} est vraiment pro et le chat permet d'anticiper l'intervention, thanks fix it 💎!", 4, bj14)
@@ -510,89 +376,49 @@ bj14 = create_booking(equipement,jacques,'erreur 411','elle tombe toujours en pa
   r14.save
 
 
-sebastien = create_client(
-  'sebastien',
-  'turing',
-  '03 20 09 67 86',
-  '24 rue des trains',
-  '59000',
-  'Lille',
-  'http://static1.businessinsider.com/image/5395f70feab8eae063e61436-1199-899/alan-turing-7.jpg'
-  )
+sebastien = create_client('sebastien','turing','03 20 09 67 86','24 rue des trains','59000','Lille','http://static1.businessinsider.com/image/5395f70feab8eae063e61436-1199-899/alan-turing-7.jpg')
 equipement = create_equipement(sebastien, 'Chaffoteaux', 'chauffa', 'fonctionne')
 bj15 = create_booking(equipement,jacques,'erruer 490','elle tombe toujours en panne','2019/08/02 08:00','2019/08/02 09:00')
-  create_review("Rassurant", "Super! Efficace et rassurant avec le chat et le technicien #{bj15.user.first_name} a été top!!", 5, bj15)
-  r15 = Review.last
-  r15.created_at = DateTime.parse("2019-08-03 20:00")
-  r15.save
+create_review("Rassurant", "Super! Efficace et rassurant avec le chat et le technicien #{bj15.user.first_name} a été top!!", 5, bj15)
+r15 = Review.last
+r15.created_at = DateTime.parse("2019-08-03 20:00")
+r15.save
 
 
-boris = create_client(
-  'boris',
-  'evening',
-  '03 20 36 25 45',
-  '2 chemin du disco',
-  '59000',
-  'Lille',
-  'http://www.clipzik.com/images/posts/1181762143.jpg'
-  )
+boris = create_client('boris','evening','03 20 36 25 45','2 chemin du disco','59000','Lille','http://www.clipzik.com/images/posts/1181762143.jpg')
 equipement = create_equipement(boris, 'Weishaupt', 'Thema +', 'fonctionne')
 bj16 = create_booking(equipement,jacques,'erreur 409','elle tombe toujours en panne','2019/07/29 08:00','2019/07/29 09:00')
-  create_review("Super!", " efficace et rassurant avec le chat et le technicien #{bj16.user.first_name} a été top!!", 5, bj16)
-  r16 = Review.last
-  r16.created_at = DateTime.parse("2019-07-30 12:00")
-  r16.save
+create_review("Super!", " efficace et rassurant avec le chat et le technicien #{bj16.user.first_name} a été top!!", 5, bj16)
+r16 = Review.last
+r16.created_at = DateTime.parse("2019-07-30 12:00")
+r16.save
 
 
-julien = create_client(
-  'julien',
-  'eclair',
-  '03 20 45 82 54',
-  '13 place Apollo',
-  '59800',
-  'Lille',
-  'http://i2.cdn.cnn.com/cnnnext/dam/assets/140715171130-buzz-aldrin-super-tease.jpg'
-  )
+julien = create_client('julien','eclair','03 20 45 82 54','13 place Apollo','59800','Lille','http://i2.cdn.cnn.com/cnnnext/dam/assets/140715171130-buzz-aldrin-super-tease.jpg')
 equipement = create_equipement(julien, 'Vergne', 'Mark III', 'fonctionne')
 bj16 = create_booking(equipement,jacques,'erreur 444','elle tombe toujours en panne','2019/07/26 08:00','2019/07/26 09:00')
-  create_review("Le boulot est fait!", " Le chat permet d'assurer sur l'intervention. N'hésitez vraiment pas!!", 5, bj16)
-  r16 = Review.last
-  r16.created_at = DateTime.parse("2019-07-27 12:00")
-  r16.save
+create_review("Le boulot est fait!", " Le chat permet d'assurer sur l'intervention. N'hésitez vraiment pas!!", 5, bj16)
+r16 = Review.last
+r16.created_at = DateTime.parse("2019-07-27 12:00")
+r16.save
 
 
-steve = create_client(
-  'steve',
-  'arbeito',
-  '03 20 45 90 54',
-  '2 boulevard de Cupertino',
-  '59800',
-  'Lille',
-  'http://cdn.macrumors.com/article-new/2015/03/Steve-Jobs-Movie.png?retina'
-  )
+steve = create_client('steve','arbeito','03 20 45 90 54','2 boulevard de Cupertino','59800','Lille','http://cdn.macrumors.com/article-new/2015/03/Steve-Jobs-Movie.png?retina')
 equipement = create_equipement(steve, 'Viessmann', 'wasser', 'fonctionne')
 bj17 = create_booking(equipement,jacques,'erreur 444','elle tombe toujours en panne','2019/07/23 08:00','2019/07/23 09:00')
-  create_review("Après Super Mario, Super #{bj17.user.first_name}! 😂","Franchement grave super cool l'app avec la messagerie, OKLM!!", 5, bj17)
-  r17 = Review.last
-  r17.created_at = DateTime.parse("2019-07-24 09:00")
-  r17.save
+create_review("Après Super Mario, Super #{bj17.user.first_name}! 😂","Franchement grave super cool l'app avec la messagerie, OKLM!!", 5, bj17)
+r17 = Review.last
+r17.created_at = DateTime.parse("2019-07-24 09:00")
+r17.save
 
 
-marie = create_client(
-  'marie',
-  'currium',
-  '03 20 46 66 64',
-  '23 boulevard Pasteur',
-  '59000',
-  'Lille',
-  'https://images-na.ssl-images-amazon.com/images/M/MV5BNGQ3ZGZiMzQtMzkwYS00NzY1LTgxNjUtZjYyYzMxOWU0ZGZkXkEyXkFqcGdeQXVyMjQ3NzUxOTM@._V1_UY1200_CR109,0,630,1200_AL_.jpg'
-  )
+marie = create_client('marie','currium','03 20 46 66 64','23 boulevard Pasteur','59000','Lille','https://images-na.ssl-images-amazon.com/images/M/MV5BNGQ3ZGZiMzQtMzkwYS00NzY1LTgxNjUtZjYyYzMxOWU0ZGZkXkEyXkFqcGdeQXVyMjQ3NzUxOTM@._V1_UY1200_CR109,0,630,1200_AL_.jpg')
 equipement = create_equipement(marie, 'Saunier Duval', 'Mira', 'fonctionne')
 bj18 = create_booking(equipement,jacques,'erreur 433','elle tombe toujours en panne','2019/07/20 08:00','2019/07/20 09:00')
-  create_review("Travail impeccable", "Un travail de pro, good style! 😃🛠⚙️🙏 #{bj18.user.first_name} a été top!!", 5, bj18)
-  r18 = Review.last
-  r18.created_at = DateTime.parse("2019-07-21 13:00")
-  r18.save
+create_review("Travail impeccable", "Un travail de pro, good style! 😃🛠⚙️🙏 #{bj18.user.first_name} a été top!!", 5, bj18)
+r18 = Review.last
+r18.created_at = DateTime.parse("2019-07-21 13:00")
+r18.save
 
 ###########################################################################
 #vive fix it vive #{bj6.user.first_name}!🙏😃"
@@ -602,16 +428,7 @@ bj18 = create_booking(equipement,jacques,'erreur 433','elle tombe toujours en pa
 
 # CREATE 8 PRO
 
-# def create_pro(
-#   first_name,
-#   last_name,
-#   phone,
-#   address,
-#   zip_code,
-#   city,
-#   photo,
-#   company
-# )
+
 
 # create 6 pro on lille
 
@@ -626,7 +443,7 @@ daniel = create_pro(
   'BelgoPlomb'
 )
 
-eric = create_pro(
+nordin = create_pro(
   'Nordin',
   'Hateur',
   '0320000000',
@@ -639,7 +456,7 @@ eric = create_pro(
 
 
 
-michel = create_pro(
+michele = create_pro(
   'Michèle',
   'Hattubil',
   '0320000000',
@@ -699,7 +516,7 @@ abdel = create_pro(
 
 # create 2 pro on Lille mais non dispo
 
-jesus = create_pro(
+mh = create_pro(
   'Marie-Hélène',
   'Linepo',
   '0320000000',
@@ -710,7 +527,7 @@ jesus = create_pro(
   'MHL ReparInstall'
 )
 
-chirac = create_pro(
+estelle = create_pro(
   'Estelle',
   'Andraxele',
   '0320000000',
@@ -724,6 +541,7 @@ chirac = create_pro(
 # create equipements for remi
 
 puts "create Equipement for remi"
+
 # def create_equipement(user, brand, model, status)
 #model : Frisquet", "Viessmann", "Chaffoteaux", "Atlantic", "Weishaupt", "Vergne", "Saunier Duval"
 chauffa = create_equipement(remi, 'Chaffoteaux', 'Chauffo', 'panne')
@@ -798,57 +616,57 @@ thema = create_equipement(linus, 'Frisquet', 'thema 2', 'panne')
 
 # def create_booking(equipement, pro, error_code, description, begin_string, end_string)
 
-create_full_booking_before_with_reviews_and_notation(chauffa, jesus, 4)
-create_full_booking_before_with_reviews_and_notation(wasser, jesus, 3)
-create_full_booking_before_with_reviews_and_notation(horizona, jesus, 2)
-create_full_booking_before_with_reviews_and_notation(thema, jesus, 4)
-create_full_booking_before_with_reviews_and_notation(thema_plus, jesus, 3)
+create_full_booking_before_with_reviews_and_notation(chauffa, mh, 4)
+create_full_booking_before_with_reviews_and_notation(wasser, mh, 3)
+create_full_booking_before_with_reviews_and_notation(horizona, mh, 2)
+create_full_booking_before_with_reviews_and_notation(thema, mh, 4)
+create_full_booking_before_with_reviews_and_notation(thema_plus, mh, 3)
 
 
 
-create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/30 13:00','2019/08/30 14:00')
-create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/30 14:00','2019/08/30 15:00')
-create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/30 15:00','2019/08/30 16:00')
-create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/30 16:00','2019/08/30 17:00')
-create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/30 17:00','2019/08/30 18:00')
+create_booking(thema,mh,'error 404','elle tombe toujours en panne','2019/08/30 13:00','2019/08/30 14:00')
+create_booking(thema,mh,'error 404','elle tombe toujours en panne','2019/08/30 14:00','2019/08/30 15:00')
+create_booking(thema,mh,'error 404','elle tombe toujours en panne','2019/08/30 15:00','2019/08/30 16:00')
+create_booking(thema,mh,'error 404','elle tombe toujours en panne','2019/08/30 16:00','2019/08/30 17:00')
+create_booking(thema,mh,'error 404','elle tombe toujours en panne','2019/08/30 17:00','2019/08/30 18:00')
 
-create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 07:00','2019/08/31 08:00')
-create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 08:00','2019/08/31 08:00')
-create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 09:00','2019/08/31 08:00')
-create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/08/31 10:00','2019/08/31 08:00')
-create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/09/02 11:00','2019/09/02 08:00')
-create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/09/02 12:00','2019/09/02 08:00')
-create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/09/02 13:00','2019/09/02 08:00')
-create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/09/02 14:00','2019/09/02 08:00')
-create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/09/02 15:00','2019/09/02 08:00')
-create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/09/02 16:00','2019/09/02 08:00')
-create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/09/02 18:00','2019/09/02 08:00')
-create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/09/02 19:00','2019/09/02 08:00')
-create_booking(thema,jesus,'error 404','elle tombe toujours en panne','2019/09/02 20:00','2019/09/02 08:00')
+create_booking(thema,mh,'error 404','elle tombe toujours en panne','2019/08/31 07:00','2019/08/31 08:00')
+create_booking(thema,mh,'error 404','elle tombe toujours en panne','2019/08/31 08:00','2019/08/31 08:00')
+create_booking(thema,mh,'error 404','elle tombe toujours en panne','2019/08/31 09:00','2019/08/31 08:00')
+create_booking(thema,mh,'error 404','elle tombe toujours en panne','2019/08/31 10:00','2019/08/31 08:00')
+create_booking(thema,mh,'error 404','elle tombe toujours en panne','2019/09/02 11:00','2019/09/02 08:00')
+create_booking(thema,mh,'error 404','elle tombe toujours en panne','2019/09/02 12:00','2019/09/02 08:00')
+create_booking(thema,mh,'error 404','elle tombe toujours en panne','2019/09/02 13:00','2019/09/02 08:00')
+create_booking(thema,mh,'error 404','elle tombe toujours en panne','2019/09/02 14:00','2019/09/02 08:00')
+create_booking(thema,mh,'error 404','elle tombe toujours en panne','2019/09/02 15:00','2019/09/02 08:00')
+create_booking(thema,mh,'error 404','elle tombe toujours en panne','2019/09/02 16:00','2019/09/02 08:00')
+create_booking(thema,mh,'error 404','elle tombe toujours en panne','2019/09/02 18:00','2019/09/02 08:00')
+create_booking(thema,mh,'error 404','elle tombe toujours en panne','2019/09/02 19:00','2019/09/02 08:00')
+create_booking(thema,mh,'error 404','elle tombe toujours en panne','2019/09/02 20:00','2019/09/02 08:00')
 
-create_full_booking_before_with_reviews_and_notation(koln, chirac, 4)
-create_full_booking_before_with_reviews_and_notation(thema, chirac, 4)
-create_full_booking_before_with_reviews_and_notation(mira, chirac, 4)
+create_full_booking_before_with_reviews_and_notation(koln, estelle, 4)
+create_full_booking_before_with_reviews_and_notation(thema, estelle, 4)
+create_full_booking_before_with_reviews_and_notation(mira, estelle, 4)
 
 
-# create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/08/30 13:00','2019/08/31 14:00')
-# create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/08/30 14:00','2019/08/31 15:00')
-create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/08/30 15:00','2019/08/31 16:00')
-create_booking(mira,chirac,'error 404','elle tombe toujours en panne','2019/08/30 16:00','2019/08/31 17:00')
-# create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/08/30 17:00','2019/08/31 18:00')
-# create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/08/30 18:00','2019/08/31 18:00')
+# create_booking(thema,estelle,'error 404','elle tombe toujours en panne','2019/08/30 13:00','2019/08/31 14:00')
+# create_booking(thema,estelle,'error 404','elle tombe toujours en panne','2019/08/30 14:00','2019/08/31 15:00')
+create_booking(thema,estelle,'error 404','elle tombe toujours en panne','2019/08/30 15:00','2019/08/31 16:00')
+create_booking(mira,estelle,'error 404','elle tombe toujours en panne','2019/08/30 16:00','2019/08/31 17:00')
+# create_booking(thema,estelle,'error 404','elle tombe toujours en panne','2019/08/30 17:00','2019/08/31 18:00')
+# create_booking(thema,estelle,'error 404','elle tombe toujours en panne','2019/08/30 18:00','2019/08/31 18:00')
 
-create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/09/02 07:00','2019/09/02 08:00')
-create_booking(mira,chirac,'error 404','elle tombe toujours en panne','2019/09/02 08:00','2019/09/02 08:00')
-create_booking(koln,chirac,'error 404','elle tombe toujours en panne','2019/09/02 09:00','2019/09/02 08:00')
-create_booking(wasser,chirac,'error 404','elle tombe toujours en panne','2019/09/02 11:00','2019/09/02 08:00')
-create_booking(mark,chirac,'error 404','elle tombe toujours en panne','2019/09/02 12:00','2019/09/02 08:00')
-create_booking(thema,chirac,'error 404','elle tombe toujours en panne','2019/09/02 13:00','2019/09/02 08:00')
-create_booking(chauffa,chirac,'error 404','elle tombe toujours en panne','2019/09/02 15:00','2019/09/02 08:00')
-create_booking(horizona,chirac,'error 404','elle tombe toujours en panne','2019/09/02 16:00','2019/09/02 08:00')
-create_booking(wasser,chirac,'error 404','elle tombe toujours en panne','2019/09/02 18:00','2019/09/02 08:00')
-create_booking(mark,chirac,'error 404','elle tombe toujours en panne','2019/09/02 19:00','2019/09/02 08:00')
-create_booking(chauffo,chirac,'error 404','elle tombe toujours en panne','2019/09/02 20:00','2019/09/02 08:00')
+create_booking(thema,estelle,'error 404','elle tombe toujours en panne','2019/09/02 07:00','2019/09/02 08:00')
+create_booking(mira,estelle,'error 404','elle tombe toujours en panne','2019/09/02 08:00','2019/09/02 08:00')
+create_booking(koln,estelle,'error 404','elle tombe toujours en panne','2019/09/02 09:00','2019/09/02 08:00')
+create_booking(wasser,estelle,'error 404','elle tombe toujours en panne','2019/09/02 11:00','2019/09/02 08:00')
+create_booking(mark,estelle,'error 404','elle tombe toujours en panne','2019/09/02 12:00','2019/09/02 08:00')
+create_booking(thema,estelle,'error 404','elle tombe toujours en panne','2019/09/02 13:00','2019/09/02 08:00')
+create_booking(chauffa,estelle,'error 404','elle tombe toujours en panne','2019/09/02 15:00','2019/09/02 08:00')
+create_booking(horizona,estelle,'error 404','elle tombe toujours en panne','2019/09/02 16:00','2019/09/02 08:00')
+create_booking(wasser,estelle,'error 404','elle tombe toujours en panne','2019/09/02 18:00','2019/09/02 08:00')
+create_booking(mark,estelle,'error 404','elle tombe toujours en panne','2019/09/02 19:00','2019/09/02 08:00')
+create_booking(chauffo,estelle,'error 404','elle tombe toujours en panne','2019/09/02 20:00','2019/09/02 08:00')
 
 
 # rodolphe gentil
@@ -858,13 +676,13 @@ create_full_booking_before_with_reviews(koln, rodolphe)
 create_full_booking_before_with_reviews(horizona, rodolphe)
 
 
-# michel acier
+# michele acier
 
-create_full_booking_today(thema,michel)
-bm1 = create_booking(thema,michel,'error 404','elle tombe toujours en panne','2019/09/02 07:00','2019/09/02 08:00')
+create_full_booking_today(thema,michele)
+bm1 = create_booking(thema,michele,'error 404','elle tombe toujours en panne','2019/09/02 07:00','2019/09/02 08:00')
 create_review("Au top !", "Efficace et rapide ! Merci", 4, bm1)
-create_full_booking_before_with_reviews(horizona, michel)
-create_full_booking_before_with_reviews(thema, michel)
+create_full_booking_before_with_reviews(horizona, michele)
+create_full_booking_before_with_reviews(thema, michele)
 
 
 # jacques Mimexa
@@ -875,18 +693,18 @@ create_full_booking_before_with_reviews(thema, michel)
 
 
 
-# eric plombar
+# nordin plombar
 
-create_full_booking_today(thema ,eric)
-be1 = create_booking(thema,eric,'error 404','elle tombe toujours en panne','2019/09/02 07:00','2019/09/02 08:00')
-be2 = create_booking(mira,eric,'error 404','elle tombe toujours en panne','2019/09/02 08:00','2019/09/02 09:00')
-be3 = create_booking(thema,eric,'error 404','elle tombe toujours en panne','2019/09/02 09:00','2019/09/02 09:00')
+create_full_booking_today(thema ,nordin)
+be1 = create_booking(thema,nordin,'error 404','elle tombe toujours en panne','2019/09/02 07:00','2019/09/02 08:00')
+be2 = create_booking(mira,nordin,'error 404','elle tombe toujours en panne','2019/09/02 08:00','2019/09/02 09:00')
+be3 = create_booking(thema,nordin,'error 404','elle tombe toujours en panne','2019/09/02 09:00','2019/09/02 09:00')
 create_review("Super plombier 🙏😃 !", "Je vous le recommande", 4, be1)
 create_review("Excellent !", "Vive fix it ", 4, be2)
 create_review("Peu mieux faire", "Retard, le technicien est énervé mais c'est réparé", 2, be3)
-create_full_booking_before_with_reviews(thema, eric)
-create_full_booking_before_with_reviews(mira, eric)
-create_full_booking_before_with_reviews(thema, eric)
+create_full_booking_before_with_reviews(thema, nordin)
+create_full_booking_before_with_reviews(mira, nordin)
+create_full_booking_before_with_reviews(thema, nordin)
 
 #puts "create pro"
 
@@ -895,13 +713,159 @@ create_full_booking_before_with_reviews(thema, eric)
 
 
 
-#review.update(created_at: Date.today - 10.days)
-#review.update(created_at: Date.today - 9.days)
-#review.update(created_at: Date.today - 8.days)
-#review.update(created_at: Date.today - 7.days)
-#review.update(created_at: Date.today - 6.days)
-#review.update(created_at: Date.today - 5.days)
-#review.update(created_at: Date.today - 4.days)
+# #############################################################################################################################################
+
+# 1=> MH
+
+# CREATION NOTE MOYENNE
+create_full_booking_before_with_reviews_and_notation(mira, mh, 2)
+create_full_booking_before_with_reviews_and_notation(mira, mh, 3)
+create_full_booking_before_with_reviews_and_notation(mira, mh, 4)
+
+# CREATION BOOKING FULL AUJOURDHUI
+
+create_full_booking_today(mira, mh)
+
+# CREATION 1 RDV LE LENDEMAIN
+create_booking(mira,mh,'error 404','elle tombe toujours en panne','2019/09/05 08:00','2019/09/05 09:00')
+
+
+# 2=> MOMO
+
+# CREATION NOTE MOYENNE
+create_full_booking_before_with_reviews_and_notation(mira, momo, 3)
+create_full_booking_before_with_reviews_and_notation(mira, momo, 3)
+create_full_booking_before_with_reviews_and_notation(mira, momo, 4)
+
+# CREATION BOOKING FULL AUJOURDHUI
+
+create_full_booking_today(mira, momo)
+
+# CREATION 2 RDV LE LENDEMAIN
+create_booking(mira,momo,'error 404','elle tombe toujours en panne','2019/09/06 08:00','2019/09/06 09:00')
+create_booking(mira,momo,'error 404','elle tombe toujours en panne','2019/09/06 09:00','2019/09/06 10:00')
+
+# 3=> JOSEPH
+
+# CREATION NOTE MOYENNE
+create_full_booking_before_with_reviews_and_notation(mira, joseph, 2)
+create_full_booking_before_with_reviews_and_notation(mira, joseph, 3)
+create_full_booking_before_with_reviews_and_notation(mira, joseph, 2)
+
+# CREATION BOOKING FULL AUJOURDHUI
+
+create_full_booking_today(mira, joseph)
+
+# CREATION 2 RDV LE LENDEMAIN
+create_booking(mira,joseph,'error 404','elle tombe toujours en panne','2019/09/06 08:00','2019/09/06 09:00')
+create_booking(mira,joseph,'error 404','elle tombe toujours en panne','2019/09/06 09:00','2019/09/06 10:00')
+create_booking(mira,joseph,'error 404','elle tombe toujours en panne','2019/09/06 10:00','2019/09/06 11:00')
+
+# 4=> ABDEL
+
+# CREATION NOTE MOYENNE
+create_full_booking_before_with_reviews_and_notation(mira, abdel, 2)
+create_full_booking_before_with_reviews_and_notation(mira, abdel, 3)
+create_full_booking_before_with_reviews_and_notation(mira, abdel, 2)
+
+# CREATION BOOKING FULL AUJOURDHUI
+
+create_full_booking_today(mira, abdel)
+
+# CREATION 2 RDV LE LENDEMAIN
+create_booking(mira,abdel,'error 404','elle tombe toujours en panne','2019/09/06 08:00','2019/09/06 09:00')
+create_booking(mira,abdel,'error 404','elle tombe toujours en panne','2019/09/06 09:00','2019/09/06 10:00')
+create_booking(mira,abdel,'error 404','elle tombe toujours en panne','2019/09/06 10:00','2019/09/06 11:00')
+create_booking(mira,abdel,'error 404','elle tombe toujours en panne','2019/09/06 11:00','2019/09/06 11:00')
+
+# 5=> MICHELE
+
+# CREATION NOTE MOYENNE
+create_full_booking_before_with_reviews_and_notation(mira, michele, 4)
+create_full_booking_before_with_reviews_and_notation(mira, michele, 4)
+create_full_booking_before_with_reviews_and_notation(mira, michele, 2)
+
+# CREATION BOOKING FULL AUJOURDHUI
+
+create_full_booking_today(mira, michele)
+
+# CREATION 2 RDV LE LENDEMAIN
+create_booking(mira,michele,'error 404','elle tombe toujours en panne','2019/09/06 08:00','2019/09/06 09:00')
+create_booking(mira,michele,'error 404','elle tombe toujours en panne','2019/09/06 09:00','2019/09/06 10:00')
+create_booking(mira,michele,'error 404','elle tombe toujours en panne','2019/09/06 10:00','2019/09/06 11:00')
+create_booking(mira,michele,'error 404','elle tombe toujours en panne','2019/09/06 11:00','2019/09/06 11:00')
+create_booking(mira,michele,'error 404','elle tombe toujours en panne','2019/09/06 12:00','2019/09/06 11:00')
+
+# 6=> NORDIN
+
+# CREATION NOTE MOYENNE
+create_full_booking_before_with_reviews_and_notation(mira, nordin, 1)
+create_full_booking_before_with_reviews_and_notation(mira, nordin, 3)
+create_full_booking_before_with_reviews_and_notation(mira, nordin, 1)
+
+# CREATION BOOKING FULL AUJOURDHUI
+
+create_full_booking_today(mira, nordin)
+
+# CREATION 2 RDV LE LENDEMAIN
+create_booking(mira,nordin,'error 404','elle tombe toujours en panne','2019/09/06 08:00','2019/09/06 09:00')
+create_booking(mira,nordin,'error 404','elle tombe toujours en panne','2019/09/06 09:00','2019/09/06 10:00')
+create_booking(mira,nordin,'error 404','elle tombe toujours en panne','2019/09/06 10:00','2019/09/06 11:00')
+create_booking(mira,nordin,'error 404','elle tombe toujours en panne','2019/09/06 11:00','2019/09/06 11:00')
+create_booking(mira,nordin,'error 404','elle tombe toujours en panne','2019/09/06 12:00','2019/09/06 11:00')
+
+
+
+
+################################ A VERIFIER AVANT DEMODAY
+
+
+# 6=> JACQUES
+
+# CREATION DES RDV LE JOUR MEME
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/05 08:00','2019/09/05 09:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/05 09:00','2019/09/05 10:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/05 10:00','2019/09/05 11:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/05 11:00','2019/09/05 11:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/05 12:00','2019/09/05 11:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/05 13:00','2019/09/05 11:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/05 14:00','2019/09/05 11:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/05 15:00','2019/09/05 11:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/05 16:00','2019/09/05 11:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/05 17:00','2019/09/05 11:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/05 18:00','2019/09/05 11:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/05 19:00','2019/09/05 11:00')
+
+# CREATION DES RDV LE LENDEMAIN
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/06 08:00','2019/09/06 09:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/06 09:00','2019/09/06 10:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/06 11:00','2019/09/06 11:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/06 12:00','2019/09/06 11:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/06 13:00','2019/09/06 11:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/06 15:00','2019/09/06 11:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/06 16:00','2019/09/06 11:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/06 17:00','2019/09/06 11:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/06 18:00','2019/09/06 11:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/06 19:00','2019/09/06 11:00')
+
+
+# 7=> RODOLPHE
+
+# CREATION DES RDV LE JOUR MEME
+create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 08:00','2019/09/05 09:00')
+create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 09:00','2019/09/05 10:00')
+create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 10:00','2019/09/05 11:00')
+create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 11:00','2019/09/05 11:00')
+create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 12:00','2019/09/05 11:00')
+create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 13:00','2019/09/05 11:00')
+create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 14:00','2019/09/05 11:00')
+create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 15:00','2019/09/05 11:00')
+create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 16:00','2019/09/05 11:00')
+create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 17:00','2019/09/05 11:00')
+create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 18:00','2019/09/05 11:00')
+create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 19:00','2019/09/05 11:00')
+
+
 
 
 puts "Create messages"
