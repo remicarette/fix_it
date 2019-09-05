@@ -5,36 +5,45 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
   .rails-default-error-page {
-    background-color: #EFEFEF;
+    background-color: #D6FCF5;
     color: #2E2F30;
     text-align: center;
     font-family: arial, sans-serif;
-    margin: 0;
+    margin-top: 20%;
+  }
+   .rails-default-error-page img {
+    background-size:      cover;
+    background-position:  center;
+    width:                790px;
+    height:               600px;
+    position:             absolute;
+    bottom:               20px;
+    right:                20px;
   }
 
   .rails-default-error-page div.dialog {
-    width: 95%;
-    max-width: 33em;
-    margin: 4em auto 0;
+    width: 40%;
+    margin-left: 10%;
+
   }
 
   .rails-default-error-page div.dialog > div {
+
     border: 1px solid #CCC;
-    border-right-color: #999;
-    border-left-color: #999;
-    border-bottom-color: #BBB;
-    border-top: #B00100 solid 4px;
-    border-top-left-radius: 9px;
+    border-radius: 15px;
     border-top-right-radius: 9px;
-    background-color: white;
+    background-color: #6FF6D5;
     padding: 7px 12% 0;
     box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   }
 
   .rails-default-error-page h1 {
-    font-size: 100%;
-    color: #730E15;
-    line-height: 1.5em;
+    color: #EB4644;
+  }
+
+  .rails-default-error-page p {
+    color: #3B8ECC;
+    font-size: 20px;
   }
 
   .rails-default-error-page div.dialog > p {
@@ -54,13 +63,16 @@
   </style>
 </head>
 
+
 <body class="rails-default-error-page">
   <!-- This file lives in public/500.html -->
   <div class="dialog">
     <div>
-      <h1>We're sorry, but something went wrong.</h1>
+      <h1>Error 500</h1>
+      <p>C'est pas vous, c'est chez nous le probleme.</p>
+      <p>On est en train de FIX-IT :)</p>
     </div>
-    <p>If you are the application owner check the logs for more information.</p>
   </div>
+  <img src="banner-404.svg">
 </body>
 </html>
