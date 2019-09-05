@@ -24,13 +24,21 @@ class Pro::BookingsController < ApplicationController
   def update
     @booking = Booking.find(params[:id])
     @booking.status += 1
-    redirect_to pro_booking_path(@booking) if @booking.save
+    if @booking.save
+      ActionCable.server.broadcast("progress_channel_#{@booking.id}", {
+        booking: @booking.to_json })
+      redirect_to pro_booking_path(@booking) if @booking.save
+    end
   end
 
   def reset
     @booking = Booking.find(params[:id])
     @booking.status = 0
-    redirect_to pro_booking_path(@booking) if @booking.save
+    if @booking.save
+      ActionCable.server.broadcast("progress_channel_#{@booking.id}", {
+        booking: @booking.to_json })
+      redirect_to pro_booking_path(@booking)
+    end
   end
 
 end
