@@ -128,6 +128,10 @@
           //   }
           // }
 
+          if (status === 0 || status === 4) {
+            document.location.reload();
+          }
+
           if (element.classList.contains('fa-color')) {
             element.classList.remove('fa-color')
           }
