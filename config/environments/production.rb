@@ -47,9 +47,6 @@ Rails.application.configure do
   config.action_cable.url = 'wss://fix-it.best/cable'
   config.action_cable.allowed_request_origins = [ 'http://fix-it.best', 'https://fix-it.best' ]
 
-  config.action_cable.url = "wss://www.yourdomain.top/cable"
-  config.action_cable.allowed_request_origins = [ "http://www.yourdomain.top", "https://www.yourdomain.top" ]
-
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
 
