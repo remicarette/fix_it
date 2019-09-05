@@ -5,18 +5,20 @@
       <div class="card-pro-show d-flex justify-content-center">
         <%= render"shared/card_pro_show" %>
       </div>
-      <div class="all-reviews">
-        <%= render"shared/card_review", array: @pro.reviews.sort_by{|review| review.created_at}.reverse.first(2) %>
-        <div class="display_btn_reviews display">
-          <%= render"shared/card_review", array: @pro.reviews.sort_by{|review| review.created_at}.reverse[3..-1] %>
+      <% if @pro.reviews != [] %>
+        <div class="all-reviews">
+          <%= render"shared/card_review", array: @pro.reviews.sort_by{|review| review.created_at}.reverse.first(2) %>
+          <div class="display_btn_reviews display">
+            <%= render"shared/card_review", array: @pro.reviews.sort_by{|review| review.created_at}.reverse[3..-1] %>
+          </div>
         </div>
-      </div>
-      <button id="more-button-review" class="btn-red btn-all-reviews mb-3"> Plus d'avis </button>
+        <button id="more-button-review" class="btn-red btn-all-reviews mb-3">Plus d'avis</button>
+      <% end %>
     </div>
 
     <div class="col-4">
       <div class="booking-form-show mt-5 position-fixed">
-        <h2>Confirmez votre Rendez-Vous</h2>
+        <h2 class="text-center">Confirmez votre Rendez-Vous</h2>
         <%= simple_form_for [@pro, @booking] do |f| %>
           <div class="title-booking-form mt-4">Votre équipement</div>
           <%= f.input :equipement, label: false, collection: @equipements, input_html: { class: "input-review w-100 mt-3 select2" } %>
