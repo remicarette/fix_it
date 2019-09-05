@@ -1,5 +1,5 @@
 meta_product_name: "Fix it"
 meta_title: "Fix it | Vous ne trouverez pas plus rapide pour vous dépanner !"
 meta_description: "Fix it est une application pour trouver un dépanneur autour de vous disponible dans l'heure"
-meta_image: "cover.svg" # should exist in `app/assets/images/`
+meta_image: "cover.png" # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Cards
