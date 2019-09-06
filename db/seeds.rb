@@ -317,7 +317,7 @@ r7 = Review.last
 r7.created_at = DateTime.parse("2019-08-20 21:00")
 r7.save
 
-yohann = create_client('yoann','platini','03 20 25 82 54','10 boulevard de Lorraine','59000','Lille','http://images.performgroup.com/di/library/GOAL_INTERNATIONAL/3f/17/michele-platini-at-euro-1984_4jc38um0ske51mtjlorrdwi5f.jpg?t=-1277979991&')
+yohann = create_client('sebastien','platini','03 20 25 82 54','10 boulevard de Lorraine','59000','Lille','https://ca.slack-edge.com/T02NE0241-U02NE0247-e4421ea8648d-48')
 equipement = create_equipement(yohann, 'Viessmann', 'wasser', 'fonctionne')
 bj8 = create_booking(equipement,jacques,'erreur 466','elle tombe toujours en panne','2019/08/19 14:00','2019/08/19 15:00')
 create_review("Merci merci", "Super 👏🙏! Merci à #{bj8.user.first_name}! the plumber of family 👏", 5, bj8)
@@ -376,7 +376,7 @@ bj14 = create_booking(equipement,jacques,'erreur 411','elle tombe toujours en pa
   r14.save
 
 
-sebastien = create_client('sebastien','turing','03 20 09 67 86','24 rue des trains','59000','Lille','http://static1.businessinsider.com/image/5395f70feab8eae063e61436-1199-899/alan-turing-7.jpg')
+sebastien = create_client('seb','turing','03 20 09 67 86','24 rue des trains','59000','Lille','http://static1.businessinsider.com/image/5395f70feab8eae063e61436-1199-899/alan-turing-7.jpg')
 equipement = create_equipement(sebastien, 'Chaffoteaux', 'chauffa', 'fonctionne')
 bj15 = create_booking(equipement,jacques,'erruer 490','elle tombe toujours en panne','2019/08/02 08:00','2019/08/02 09:00')
 create_review("Rassurant", "Super! Efficace et rassurant avec le chat et le technicien #{bj15.user.first_name} a été top!!", 5, bj15)
