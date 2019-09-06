@@ -71,19 +71,19 @@ end
 
 
 def create_full_booking_today(equipement, pro)
-  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/05 08:00','2019/09/05 09:00')
-  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/05 09:00','2019/09/05 10:00')
-  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/05 10:00','2019/09/05 11:00')
-  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/05 11:00','2019/09/05 12:00')
-  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/05 12:00','2019/09/05 12:00')
-  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/05 13:00','2019/09/05 14:00')
-  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/05 14:00','2019/09/05 15:00')
-  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/05 15:00','2019/09/05 16:00')
-  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/05 16:00','2019/09/05 17:00')
-  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/05 17:00','2019/09/05 18:00')
-  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/05 18:00','2019/09/05 19:00')
-  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/05 19:00','2019/09/05 20:00')
-  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/05 20:00','2019/09/02 21:00')
+  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/06 08:00','2019/09/06 09:00')
+  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/06 09:00','2019/09/06 10:00')
+  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/06 10:00','2019/09/06 11:00')
+  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/06 11:00','2019/09/06 12:00')
+  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/06 12:00','2019/09/06 12:00')
+  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/06 13:00','2019/09/06 14:00')
+  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/06 14:00','2019/09/06 15:00')
+  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/06 15:00','2019/09/06 16:00')
+  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/06 16:00','2019/09/06 17:00')
+  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/06 17:00','2019/09/06 18:00')
+  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/06 18:00','2019/09/06 19:00')
+  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/06 19:00','2019/09/06 20:00')
+  create_booking(equipement,pro,'error 404','elle tombe toujours en panne','2019/09/06 20:00','2019/09/06 21:00')
 end
 
 
@@ -706,7 +706,7 @@ create_full_booking_before_with_reviews_and_notation(mira, mh, 4)
 create_full_booking_today(mira, mh)
 
 # CREATION 1 RDV LE LENDEMAIN
-create_booking(mira,mh,'error 404','elle tombe toujours en panne','2019/09/05 08:00','2019/09/05 09:00')
+create_booking(mira,mh,'error 404','elle tombe toujours en panne','2019/09/05 08:00','2019/09/07 09:00')
 
 
 # 2=> MOMO
@@ -721,9 +721,9 @@ create_full_booking_before_with_reviews_and_notation(mira, momo, 4)
 create_full_booking_today(mira, momo)
 
 # CREATION 2 RDV LE LENDEMAIN
-create_booking(mira,momo,'error 404','elle tombe toujours en panne','2019/09/06 07:00','2019/09/06 09:00')
-create_booking(mira,momo,'error 404','elle tombe toujours en panne','2019/09/06 08:00','2019/09/06 09:00')
-create_booking(mira,momo,'error 404','elle tombe toujours en panne','2019/09/06 09:00','2019/09/06 10:00')
+create_booking(mira,momo,'error 404','elle tombe toujours en panne','2019/09/07 07:00','2019/09/07 09:00')
+create_booking(mira,momo,'error 404','elle tombe toujours en panne','2019/09/07 08:00','2019/09/07 09:00')
+create_booking(mira,momo,'error 404','elle tombe toujours en panne','2019/09/07 09:00','2019/09/06 10:00')
 
 # 3=> JOSEPH
 
@@ -737,10 +737,10 @@ create_full_booking_before_with_reviews_and_notation(mira, joseph, 2)
 create_full_booking_today(mira, joseph)
 
 # CREATION 2 RDV LE LENDEMAIN
-create_booking(mira,joseph,'error 404','elle tombe toujours en panne','2019/09/06 07:00','2019/09/06 09:00')
-create_booking(mira,joseph,'error 404','elle tombe toujours en panne','2019/09/06 08:00','2019/09/06 09:00')
-create_booking(mira,joseph,'error 404','elle tombe toujours en panne','2019/09/06 09:00','2019/09/06 10:00')
-create_booking(mira,joseph,'error 404','elle tombe toujours en panne','2019/09/06 10:00','2019/09/06 11:00')
+create_booking(mira,joseph,'error 404','elle tombe toujours en panne','2019/09/07 07:00','2019/09/07 09:00')
+create_booking(mira,joseph,'error 404','elle tombe toujours en panne','2019/09/07 08:00','2019/09/07 09:00')
+create_booking(mira,joseph,'error 404','elle tombe toujours en panne','2019/09/07 09:00','2019/09/07 10:00')
+create_booking(mira,joseph,'error 404','elle tombe toujours en panne','2019/09/07 10:00','2019/09/07 11:00')
 
 # 4=> ABDEL
 
@@ -754,11 +754,11 @@ create_full_booking_before_with_reviews_and_notation(mira, abdel, 2)
 create_full_booking_today(mira, abdel)
 
 # CREATION 2 RDV LE LENDEMAIN
-create_booking(mira,abdel,'error 404','elle tombe toujours en panne','2019/09/06 07:00','2019/09/06 09:00')
-create_booking(mira,abdel,'error 404','elle tombe toujours en panne','2019/09/06 08:00','2019/09/06 09:00')
-create_booking(mira,abdel,'error 404','elle tombe toujours en panne','2019/09/06 09:00','2019/09/06 10:00')
-create_booking(mira,abdel,'error 404','elle tombe toujours en panne','2019/09/06 10:00','2019/09/06 11:00')
-create_booking(mira,abdel,'error 404','elle tombe toujours en panne','2019/09/06 11:00','2019/09/06 11:00')
+create_booking(mira,abdel,'error 404','elle tombe toujours en panne','2019/09/07 07:00','2019/09/07 09:00')
+create_booking(mira,abdel,'error 404','elle tombe toujours en panne','2019/09/07 08:00','2019/09/07 09:00')
+create_booking(mira,abdel,'error 404','elle tombe toujours en panne','2019/09/07 09:00','2019/09/07 10:00')
+create_booking(mira,abdel,'error 404','elle tombe toujours en panne','2019/09/07 10:00','2019/09/07 11:00')
+create_booking(mira,abdel,'error 404','elle tombe toujours en panne','2019/09/07 11:00','2019/09/07 11:00')
 
 # 5=> MICHELE
 
@@ -772,12 +772,12 @@ create_full_booking_before_with_reviews_and_notation(mira, michele, 2)
 create_full_booking_today(mira, michele)
 
 # CREATION 2 RDV LE LENDEMAIN
-create_booking(mira,michele,'error 404','elle tombe toujours en panne','2019/09/06 07:00','2019/09/06 09:00')
-create_booking(mira,michele,'error 404','elle tombe toujours en panne','2019/09/06 08:00','2019/09/06 09:00')
-create_booking(mira,michele,'error 404','elle tombe toujours en panne','2019/09/06 09:00','2019/09/06 10:00')
-create_booking(mira,michele,'error 404','elle tombe toujours en panne','2019/09/06 10:00','2019/09/06 11:00')
-create_booking(mira,michele,'error 404','elle tombe toujours en panne','2019/09/06 11:00','2019/09/06 11:00')
-create_booking(mira,michele,'error 404','elle tombe toujours en panne','2019/09/06 12:00','2019/09/06 11:00')
+create_booking(mira,michele,'error 404','elle tombe toujours en panne','2019/09/07 07:00','2019/09/07 09:00')
+create_booking(mira,michele,'error 404','elle tombe toujours en panne','2019/09/07 08:00','2019/09/07 09:00')
+create_booking(mira,michele,'error 404','elle tombe toujours en panne','2019/09/07 09:00','2019/09/07 10:00')
+create_booking(mira,michele,'error 404','elle tombe toujours en panne','2019/09/07 10:00','2019/09/07 11:00')
+create_booking(mira,michele,'error 404','elle tombe toujours en panne','2019/09/07 11:00','2019/09/07 11:00')
+create_booking(mira,michele,'error 404','elle tombe toujours en panne','2019/09/07 12:00','2019/09/07 11:00')
 
 # 6=> NORDIN
 
@@ -791,12 +791,12 @@ create_full_booking_before_with_reviews_and_notation(mira, nordin, 1)
 create_full_booking_today(mira, nordin)
 
 # CREATION 2 RDV LE LENDEMAIN
-create_booking(mira,nordin,'error 404','elle tombe toujours en panne','2019/09/06 07:00','2019/09/06 09:00')
-create_booking(mira,nordin,'error 404','elle tombe toujours en panne','2019/09/06 08:00','2019/09/06 09:00')
-create_booking(mira,nordin,'error 404','elle tombe toujours en panne','2019/09/06 09:00','2019/09/06 10:00')
-create_booking(mira,nordin,'error 404','elle tombe toujours en panne','2019/09/06 10:00','2019/09/06 11:00')
-create_booking(mira,nordin,'error 404','elle tombe toujours en panne','2019/09/06 11:00','2019/09/06 11:00')
-create_booking(mira,nordin,'error 404','elle tombe toujours en panne','2019/09/06 12:00','2019/09/06 11:00')
+create_booking(mira,nordin,'error 404','elle tombe toujours en panne','2019/09/07 07:00','2019/09/07 09:00')
+create_booking(mira,nordin,'error 404','elle tombe toujours en panne','2019/09/07 08:00','2019/09/07 09:00')
+create_booking(mira,nordin,'error 404','elle tombe toujours en panne','2019/09/07 09:00','2019/09/07 10:00')
+create_booking(mira,nordin,'error 404','elle tombe toujours en panne','2019/09/07 10:00','2019/09/07 11:00')
+create_booking(mira,nordin,'error 404','elle tombe toujours en panne','2019/09/07 11:00','2019/09/07 11:00')
+create_booking(mira,nordin,'error 404','elle tombe toujours en panne','2019/09/07 12:00','2019/09/07 11:00')
 
 
 # 7=> ESTELLE
@@ -811,12 +811,12 @@ create_full_booking_before_with_reviews_and_notation(mira, estelle, 1)
 create_full_booking_today(mira, estelle)
 
 # CREATION 2 RDV LE LENDEMAIN
-create_booking(mira,estelle,'error 404','elle tombe toujours en panne','2019/09/06 07:00','2019/09/06 09:00')
-create_booking(mira,estelle,'error 404','elle tombe toujours en panne','2019/09/06 08:00','2019/09/06 09:00')
-create_booking(mira,estelle,'error 404','elle tombe toujours en panne','2019/09/06 09:00','2019/09/06 10:00')
-create_booking(mira,estelle,'error 404','elle tombe toujours en panne','2019/09/06 10:00','2019/09/06 11:00')
-create_booking(mira,estelle,'error 404','elle tombe toujours en panne','2019/09/06 11:00','2019/09/06 11:00')
-create_booking(mira,estelle,'error 404','elle tombe toujours en panne','2019/09/06 12:00','2019/09/06 11:00')
+create_booking(mira,estelle,'error 404','elle tombe toujours en panne','2019/09/07 07:00','2019/09/07 09:00')
+create_booking(mira,estelle,'error 404','elle tombe toujours en panne','2019/09/07 08:00','2019/09/07 09:00')
+create_booking(mira,estelle,'error 404','elle tombe toujours en panne','2019/09/07 09:00','2019/09/07 10:00')
+create_booking(mira,estelle,'error 404','elle tombe toujours en panne','2019/09/07 10:00','2019/09/07 11:00')
+create_booking(mira,estelle,'error 404','elle tombe toujours en panne','2019/09/07 11:00','2019/09/07 11:00')
+create_booking(mira,estelle,'error 404','elle tombe toujours en panne','2019/09/07 12:00','2019/09/07 11:00')
 
 
 
@@ -829,30 +829,30 @@ create_booking(mira,estelle,'error 404','elle tombe toujours en panne','2019/09/
 # 6=> JACQUES
 
 # CREATION DES RDV LE JOUR MEME
-create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/05 08:00','2019/09/05 09:00')
-create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/05 09:00','2019/09/05 10:00')
-create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/05 10:00','2019/09/05 11:00')
-create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/05 11:00','2019/09/05 11:00')
-create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/05 12:00','2019/09/05 11:00')
-create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/05 13:00','2019/09/05 11:00')
-create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/05 14:00','2019/09/05 11:00')
-create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/05 15:00','2019/09/05 11:00')
-create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/05 16:00','2019/09/05 11:00')
-create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/05 17:00','2019/09/05 11:00')
-create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/05 18:00','2019/09/05 11:00')
-create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/05 19:00','2019/09/05 11:00')
-
-# CREATION DES RDV LE LENDEMAIN
 create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/06 08:00','2019/09/06 09:00')
 create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/06 09:00','2019/09/06 10:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/06 10:00','2019/09/06 11:00')
 create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/06 11:00','2019/09/06 11:00')
 create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/06 12:00','2019/09/06 11:00')
 create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/06 13:00','2019/09/06 11:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/06 14:00','2019/09/06 11:00')
 create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/06 15:00','2019/09/06 11:00')
 create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/06 16:00','2019/09/06 11:00')
 create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/06 17:00','2019/09/06 11:00')
 create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/06 18:00','2019/09/06 11:00')
 create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/06 19:00','2019/09/06 11:00')
+
+# CREATION DES RDV LE LENDEMAIN
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/07 08:00','2019/09/07 09:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/07 09:00','2019/09/07 10:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/07 11:00','2019/09/07 11:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/07 12:00','2019/09/07 11:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/07 13:00','2019/09/07 11:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/07 15:00','2019/09/07 11:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/07 16:00','2019/09/07 11:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/07 17:00','2019/09/07 11:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/07 18:00','2019/09/07 11:00')
+create_booking(mira,jacques,'error 404','elle tombe toujours en panne','2019/09/07 19:00','2019/09/07 11:00')
 
 
 # 7=> RODOLPHE
@@ -861,18 +861,18 @@ create_full_booking_before_with_reviews(mira, rodolphe)
 
 
 # CREATION DES RDV LE JOUR MEME
-create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 08:00','2019/09/05 09:00')
-create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 09:00','2019/09/05 10:00')
-create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 10:00','2019/09/05 11:00')
-create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 11:00','2019/09/05 11:00')
-create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 12:00','2019/09/05 11:00')
-create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 13:00','2019/09/05 11:00')
-create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 14:00','2019/09/05 11:00')
-create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 15:00','2019/09/05 11:00')
-create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 16:00','2019/09/05 11:00')
-create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 17:00','2019/09/05 11:00')
-create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 18:00','2019/09/05 11:00')
-create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/05 19:00','2019/09/05 11:00')
+create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/06 08:00','2019/09/06 09:00')
+create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/06 09:00','2019/09/06 10:00')
+create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/06 10:00','2019/09/06 11:00')
+create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/06 11:00','2019/09/06 11:00')
+create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/06 12:00','2019/09/06 11:00')
+create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/06 13:00','2019/09/06 11:00')
+create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/06 14:00','2019/09/06 11:00')
+create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/06 15:00','2019/09/06 11:00')
+create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/06 16:00','2019/09/06 11:00')
+create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/06 17:00','2019/09/06 11:00')
+create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/06 18:00','2019/09/06 11:00')
+create_booking(mira,rodolphe,'error 404','elle tombe toujours en panne','2019/09/06 19:00','2019/09/06 11:00')
 
 
 puts "Create messages"
