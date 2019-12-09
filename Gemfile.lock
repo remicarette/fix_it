@@ -202,7 +202,7 @@ GEM
       sprockets-rails
       tilt
     selectize-rails (0.12.6)
-    simple_form (4.1.0)
+    simple_form (5.0.0)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
     spring (2.1.0)
