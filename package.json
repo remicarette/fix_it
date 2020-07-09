@@ -2,11 +2,16 @@
   "name": "fix_it",
   "private": true,
   "dependencies": {
+    "@babel/preset-react": "^7.10.4",
     "@rails/webpacker": "^5.x",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "bootstrap": "^4.3.1",
     "flatpickr": "^4.6.2",
     "jquery": "^3.5.0",
     "popper.js": "^1.15.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "select2": "^4.0.10"
   },
   "devDependencies": {
