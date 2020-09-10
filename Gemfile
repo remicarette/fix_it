@@ -23,6 +23,7 @@ gem 'sprockets-es6'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
+
 end
 
 group :development, :test do
@@ -32,4 +33,6 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
+  gem 'rspec-rails', ">= 3.9.0"
+
 end

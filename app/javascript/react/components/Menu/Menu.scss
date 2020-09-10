@@ -1,0 +1,41 @@
+.menu {
+  position: relative;
+  .elements {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    padding: 16px;
+    width: 200px;
+  }
+  transition: color 1s;
+}
+
+.example-enter {
+  opacity: 0;
+  color: red;
+}
+
+.example-enter-active {
+  opacity: 1;
+  color: yellow;
+  transition: opacity 1s;
+}
+
+.is-menu-open {
+  color: red;
+}
+
+
+.MenuIcon {
+  transition: opacity 1s;
+}
+
+.invisble {
+  opacity: 0;
+}
+
+.visible {
+  opacity: 1;
+}

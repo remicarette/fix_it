@@ -1,6 +1,7 @@
 
+<!-- 
 <div class="navbar navbar-expand-sm navbar-light navbar-fix-it fixed <%= "transparent" if params[:action] == "home" %>">
-  <%= link_to root_path, class: 'navbar-brand d-flex align-items-center' do %>
+  <%#= link_to root_path, class: 'navbar-brand d-flex align-items-center' do %>
     <h3>Fi<i class="fas fa-tools"></i> it</h3>
   <% end %>
 
@@ -12,11 +13,11 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
 
-      <% if user_signed_in? %>
+      <%# if user_signed_in? %>
         <li class="nav-item active d-flex align-items-center">
           <%= link_to "Home", root_path, class: "nav-link" %>
         </li>
-        <% if current_user.pro? %>
+        <%# if current_user.pro? %>
           <li class="nav-item active d-flex align-items-center">
             |
           </li>
@@ -43,3 +44,5 @@
     </ul>
   </div>
 </div>
+
+-->

@@ -1,0 +1,23 @@
+.navbar {
+  height: 80px;
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+.navbar a {
+  color: #666;
+}
+
+.navbar .logo {
+  animation: rotate 10s linear infinite;
+  height: 56px;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
