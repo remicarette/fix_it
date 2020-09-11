@@ -4,12 +4,23 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import PropTypes from 'prop-types'
 import App from '../react/App';
+
+import { Provider } from 'react-redux';
+import { createStore, combineReducers } from 'redux';
+
+import clickedReducer from '../react/reducers/clickedReducer';
+
+const reducers = combineReducers({
+  clicked: clickedReducer
+});
+
 
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    <App />,
+    <Provider store={createStore(reducers)}>
+      <App />
+    </Provider>,
     document.body.appendChild(document.createElement('div')),
   )
 })

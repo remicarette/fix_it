@@ -9,6 +9,7 @@ import JobbersIndexPage from './pages/JobbersIndexPage';
 import JobbersShowPage from './pages/JobbersShowPage';
 import Navbar from './components/Navbar/Navbar';
 
+
 const ProtectedRoute = ({ Co}) => {
   return(
     <div>
@@ -16,6 +17,8 @@ const ProtectedRoute = ({ Co}) => {
     </div>
   )
 }
+
+
 
 const App = () => {
 
